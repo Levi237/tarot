@@ -5,29 +5,28 @@ import { getFirestore, collection, query, where, getDocs } from "firebase/firest
 
 const FetchData = () => {
 
-const [test, setTest] = useState([]);
+    const [test, setTest] = useState([]);
 
-useEffect(() => {
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     async function fetchData(){
-    const q = query(collection(db, "test"));
+        const q = query(collection(db, "test"));
 
-    const querySnapshot = await getDocs(q);
-    // console.log("collection?", querySnapshot);
-    querySnapshot.forEach((doc) => {
-        if (doc.exists) {
-            console.log(doc);
-            setTest(state => ([...state, {
-                id: doc.id, data: doc.data()
-            }]));
-        } else {
-            console.log('nothing');
-        }
-        console.log(doc.id, " => ", doc.data().testString);
-    });
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            if (doc) {
+                setTest(prevState => ([...prevState, {
+                    id: doc.id, data: doc.data()
+                }]));
+                console.log(doc.data());
+            } else {
+                console.log('nothing');
+            }
+            console.log(doc.id, " => ", doc.data().testString);
+        });
     }
-    fetchData();
-}, []);
 
     return (
         <>
