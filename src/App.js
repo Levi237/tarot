@@ -37,6 +37,7 @@ const [user, setUser] = useState([]);
 
   return (
     <div className="App">
+      <button className="signout-home" onClick={clickSignOut}>Sign Out</button>
       { user ? <div>{user.displayName ? user.displayName : user.email}</div> : <div>Login</div>}
       {/* <FetchData/> */}
       {/* <StateTest/> */}

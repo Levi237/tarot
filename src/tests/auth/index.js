@@ -10,7 +10,7 @@ const AuthTest = ({user, clickSignOut}) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [input, setInput] = useState(false);
+  const [input, setInput] = useState(true);
 
 
 const handleCreateAccount = (e) => {
@@ -54,10 +54,10 @@ const clearState = () => {
     const modal = document.getElementById('auth-container');
     setTimeout(() => {
         modal.style.opacity = 0;
-    }, 6000);
+    }, 1000);
     setTimeout(() => {
         modal.style.marginTop = '-100vh';
-    }, 12000);
+    }, 2000);
 }
 
 const toggleCreateLogin = (e) => {
@@ -91,7 +91,6 @@ const toggleCreateLogin = (e) => {
             : 
             <>
             <h1>Welcome!</h1>
-            <button onClick={clickSignOut}>Sign Out</button>
             </>
         }
         </div>

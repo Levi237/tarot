@@ -16,3 +16,8 @@ code {
   margin-block-start: 0;
   margin-block-end: 0;
 }
+
+.signout-home {
+  position: absolute;
+  z-index: 3;
+}
