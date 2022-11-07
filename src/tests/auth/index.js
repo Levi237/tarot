@@ -9,6 +9,7 @@ const AuthTest = ({user, clickSignOut}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [input, setInput] = useState(false);
 
 
@@ -17,14 +18,14 @@ const handleCreateAccount = (e) => {
 
   createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in 
+    //==> Signed in 
     const user = userCredential.user;
     clearState();
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    console.log(errorCode, "<=code | CREATE | message =>", errorMessage);
+    // console.log(errorCode, "<=code | CREATE | message =>", errorMessage);
     setError(true);
   });
 };
@@ -33,15 +34,16 @@ const handleSignIn = (e) => {
   e.preventDefault();
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in 
+    //==> Signed in 
     const user = userCredential.user;
     clearState();
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    console.log(errorCode, "<=code | SIGNIN | message =>", errorMessage);
+    // console.log(errorCode, "<=code | SIGNIN | message =>", errorMessage);
     setError(true);
+    setErrorMessage(errorMessage)
   });
 };
 
