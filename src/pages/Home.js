@@ -7,7 +7,7 @@ const HomePage = () => {
 
     return (
         <>
-
+Home Page Test
         </>
     )
 }
