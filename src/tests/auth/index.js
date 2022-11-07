@@ -19,8 +19,7 @@ const handleCreateAccount = (e) => {
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    // ...
-    console.log(user);
+    clearState();
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -36,6 +35,7 @@ const handleSignIn = (e) => {
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
+    clearState();
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -44,6 +44,11 @@ const handleSignIn = (e) => {
     setError(true);
   });
 };
+
+const clearState = () => {
+    setEmail('');
+    setPassword('');
+}
 
 const toggleCreateLogin = (e) => {
     if(input){
