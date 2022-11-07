@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import db from '../firebase/config';
 
-import { getFirestore, collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, getDocs } from "firebase/firestore";
 
 const FetchData = () => {
 
@@ -28,11 +28,9 @@ const FetchData = () => {
         });
     }
 
-    return (
-        <>
+    return(<>
         Fetch Test
-        </>
-    )
+    </>)
 }
 
 
