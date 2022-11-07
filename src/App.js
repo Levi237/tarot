@@ -1,14 +1,16 @@
 import React from 'react';
-import './App.css';
 
-import FetchData from './tests/fetch';
-import StateTest from './tests/state';
-
+// import FetchData from './tests/fetch';
+// import StateTest from './tests/state';
+import AuthTest from './tests/auth/authenticate';
+import Home from './pages/Home'
 const App = () => {
   return (
     <div className="App">
-      <FetchData/>
-      <StateTest/>
+      {/* <FetchData/> */}
+      {/* <StateTest/> */}
+       <AuthTest/>
+      <Home />
     </div>
   );
 }
