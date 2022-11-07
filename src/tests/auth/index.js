@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'fire
 
 import './auth.css';
 
-const AuthTest = ({user}) => {
+const AuthTest = ({user, clickSignOut}) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,9 +25,8 @@ const handleCreateAccount = (e) => {
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    // ..
-    console.log(errorCode, "<=code | message =>", errorMessage);
-    setError(true)
+    console.log(errorCode, "<=code | CREATE | message =>", errorMessage);
+    setError(true);
   });
 };
 
@@ -37,16 +36,16 @@ const handleSignIn = (e) => {
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    // ...
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    console.log(errorCode, "<=code | SIGNIN | message =>", errorMessage);
+    setError(true);
   });
 };
 
 const toggleCreateLogin = (e) => {
-    // e.preventDefault();
     if(input){
         setInput(false);
     } else {
@@ -54,28 +53,29 @@ const toggleCreateLogin = (e) => {
     }
 };
 
-const showWelcome = (e) => {
-    console.log("clicked submit, trigger showWelcome");
-    const modal = document.getElementById('signup-modal');
-    if (!error) { 
-        modal.style.display = 'none';
-    }
-}
+
     return(
-        <div id="signup-modal" className="signup modal-window" onSubmit={input ? handleSignIn : handleCreateAccount}>
+        <div className="signup modal-window" onSubmit={input ? handleSignIn : handleCreateAccount}>
+            { (!user.uid) ?
+
             <div className="modal-container">
-                <h1>{input ? "Sign In" : "Create Account"}</h1>
-                <form>
-                    <input type="email" placeholder="Your Email"  onChange={e => setEmail(e.target.value)}/>
-                    <input type="password" placeholder="Password"  onChange={e => setPassword(e.target.value)}/>
-                    <button type="submit" onClick={showWelcome}>Submit</button>
-                    { error && <>uh oh!  error</> }
-                </form>
-                <section>
-                    <p>{input ? "Don't have an account?" : "Already have an account?"}</p>
-                    <button className="link-btn" onClick={toggleCreateLogin}>{input ? "Create Account" : "Sign in"}</button>
-                </section>
+                <div id="input-form" >
+                    <h1>{input ? "Sign In" : "Create Account"}</h1>
+                    <form>
+                        <input type="email" placeholder="Your Email"  onChange={e => setEmail(e.target.value)}/>
+                        <input type="password" placeholder="Password"  onChange={e => setPassword(e.target.value)}/>
+                        <button type="submit">Submit</button>
+                        { error && <>uh oh!  error</> }
+                    </form>
+                    <section>
+                        <p>{input ? "Don't have an account?" : "Already have an account?"}</p>
+                        <button className="link-btn" onClick={toggleCreateLogin}>{input ? "Create Account" : "Sign in"}</button>
+                    </section>
+                </div>
             </div>
+            : 
+            <button onClick={clickSignOut}>Sign Out</button>
+            }
         </div>
     );
 };
