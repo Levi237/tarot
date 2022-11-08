@@ -70,30 +70,33 @@ const toggleCreateLogin = (e) => {
 
 
     return(
-        <div id="auth-container" className="signup modal-window" onSubmit={input ? handleSignIn : handleCreateAccount}>
+        <div 
+            id="auth-container" 
+            className="signup modal-window" 
+            onSubmit={input ? handleSignIn : handleCreateAccount}
+            style={{opacity: '0', marginTop: '-100vh'}}
+            >
             <div className="modal-container">
-            { (!user.uid) ?
-
-
-                <div id="input-form" >
-                    <h1>{input ? "Sign In" : "Create Account"}</h1>
-                    <form>
-                        <input type="email" placeholder="Your Email"  onChange={e => setEmail(e.target.value)}/>
-                        <input type="password" placeholder="Password"  onChange={e => setPassword(e.target.value)}/>
-                        <button type="submit">Submit</button>
-                        { error && <span>uh oh!  {errorMessage}</span> }
-                    </form>
-                    <section>
-                        <p>{input ? "Don't have an account?" : "Already have an account?"}</p>
-                        <button className="link-btn" onClick={toggleCreateLogin}>{input ? "Create Account" : "Sign in"}</button>
-                    </section>
-                </div>
-            : 
-            <>
-            <h1>Welcome!</h1>
-            </>
-        }
-        </div>
+                { user.uid ?
+                    <>
+                        <h1>Welcome!</h1>
+                    </>
+                :
+                    <div id="input-form" >
+                        <h1>{input ? "Sign In" : "Create Account"}</h1>
+                        <form>
+                            <input type="email" placeholder="Your Email"  onChange={e => setEmail(e.target.value)}/>
+                            <input type="password" placeholder="Password"  onChange={e => setPassword(e.target.value)}/>
+                            <button type="submit">Submit</button>
+                            { error && <span>uh oh!  {errorMessage}</span> }
+                        </form>
+                        <section>
+                            <p>{input ? "Don't have an account?" : "Already have an account?"}</p>
+                            <button className="link-btn" onClick={toggleCreateLogin}>{input ? "Create Account" : "Sign in"}</button>
+                        </section>
+                    </div>
+                }
+            </div>
         </div>
     );
 };

@@ -11,6 +11,7 @@ import { click } from '@testing-library/user-event/dist/click';
 const App = () => {
 
 const [user, setUser] = useState([]);
+// const [signIn, setSignIn] = useState(false);
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -33,16 +34,25 @@ const [user, setUser] = useState([]);
       }, function(error) {
         console.error('Sign Out Error', error);
       });
+      const loginBtn = document.getElementById('login-btn');
+      loginBtn.style.display = 'inline-block';
 };
-
+const openSignIn = (e) => {
+  const modal = document.getElementById('auth-container');
+  modal.style.opacity = 1;
+  modal.style.marginTop = '0vh';
+  const loginBtn = document.getElementById('login-btn');
+  loginBtn.style.display = 'none';
+};
   return (
     <div className="App">
-      <button className="signout-home" onClick={clickSignOut}>Sign Out</button>
-      { user ? <div>{user.displayName ? user.displayName : user.email}</div> : <div>Login</div>}
+      { user.uid && <button className="signout-home" onClick={clickSignOut}>Sign Out</button> }
+      { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> }
+      <button id="login-btn" onClick={openSignIn} >Login</button>
       {/* <FetchData/> */}
       {/* <StateTest/> */}
-      <Home />
       <AuthTest user={user} clickSignOut={clickSignOut}/>
+      <Home />
     </div>
   );
 }
