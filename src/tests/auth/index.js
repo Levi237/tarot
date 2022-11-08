@@ -10,7 +10,7 @@ const AuthTest = ({user, clickSignOut}) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [input, setInput] = useState(true);
+  const [showSignIn, setshowSignIn] = useState(true);
 
 
 const handleCreateAccount = (e) => {
@@ -58,13 +58,14 @@ const clearState = () => {
     setTimeout(() => {
         modal.style.marginTop = '-100vh';
     }, 2000);
+    setshowSignIn(true);
 }
 
 const toggleCreateLogin = (e) => {
-    if(input){
-        setInput(false);
+    if(showSignIn){
+        setshowSignIn(false);
     } else {
-        setInput(true);
+        setshowSignIn(true);
     }
 };
 
@@ -73,7 +74,7 @@ const toggleCreateLogin = (e) => {
         <div 
             id="auth-container" 
             className="signup modal-window" 
-            onSubmit={input ? handleSignIn : handleCreateAccount}
+            onSubmit={showSignIn ? handleSignIn : handleCreateAccount}
             style={{opacity: '0', marginTop: '-100vh'}}
             >
             <div className="modal-container">
@@ -83,7 +84,7 @@ const toggleCreateLogin = (e) => {
                     </>
                 :
                     <div id="input-form" >
-                        <h1>{input ? "Sign In" : "Create Account"}</h1>
+                        <h1>{showSignIn ? "Sign In" : "Create Account"}</h1>
                         <form>
                             <input type="email" placeholder="Your Email"  onChange={e => setEmail(e.target.value)}/>
                             <input type="password" placeholder="Password"  onChange={e => setPassword(e.target.value)}/>
@@ -91,8 +92,8 @@ const toggleCreateLogin = (e) => {
                             { error && <span>uh oh!  {errorMessage}</span> }
                         </form>
                         <section>
-                            <p>{input ? "Don't have an account?" : "Already have an account?"}</p>
-                            <button className="link-btn" onClick={toggleCreateLogin}>{input ? "Create Account" : "Sign in"}</button>
+                            <p>{showSignIn ? "Don't have an account?" : "Already have an account?"}</p>
+                            <button className="link-btn" onClick={toggleCreateLogin}>{showSignIn ? "Create Account" : "Sign in"}</button>
                         </section>
                     </div>
                 }
