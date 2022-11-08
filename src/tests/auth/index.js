@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'fire
 
 import './auth.css';
 
-const AuthTest = ({user, clickSignOut}) => {
+const AuthTest = ({ user }) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -51,14 +51,13 @@ const handleSignIn = (e) => {
 const clearState = () => {
     setEmail('');
     setPassword('');
-    const modal = document.getElementById('auth-container');
-    setTimeout(() => {
-        modal.style.opacity = 0;
-    }, 1000);
-    setTimeout(() => {
-        modal.style.marginTop = '-100vh';
-    }, 2000);
+    hideModal();
     setshowSignIn(true);
+}
+const closeBtn = () => {
+    hideModal();
+    const loginBtn = document.getElementById('login-btn');
+    loginBtn.style.display = 'inline-block';
 }
 
 const toggleCreateLogin = (e) => {
@@ -68,7 +67,13 @@ const toggleCreateLogin = (e) => {
         setshowSignIn(true);
     }
 };
-
+const hideModal = () => {
+    const modal = document.getElementById('auth-container');
+    modal.style.opacity = 0;
+    setTimeout(() => {
+        modal.style.marginTop = '-100vh';
+    }, 1000);
+  }
 
     return(
         <div 
@@ -78,6 +83,7 @@ const toggleCreateLogin = (e) => {
             style={{opacity: '0', marginTop: '-100vh'}}
             >
             <div className="modal-container">
+                <button className="close-btn" onClick={closeBtn}>X</button>
                 { user.uid ?
                     <>
                         <h1>Welcome!</h1>

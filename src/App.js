@@ -44,6 +44,7 @@ const openSignIn = (e) => {
   const loginBtn = document.getElementById('login-btn');
   loginBtn.style.display = 'none';
 };
+
   return (
     <div className="App">
       { user.uid && <button className="signout-home" onClick={clickSignOut}>Sign Out</button> }
