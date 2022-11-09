@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'fire
 
 import './auth.css';
 
-const UserAuth = ({ user }) => {
+const Login = ({ user }) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -98,11 +98,12 @@ const hideModal = () => {
                 <input type="password" placeholder="Password"  onChange={e => setPassword(e.target.value)}/>
                 <button type="submit">Submit</button>
                   <center className="error">&nbsp;
-                { error && 
-                  <>uh oh!  
-                    {( errorMessage === 'Firebase: Error (auth/wrong-password).' || errorMessage === 'Firebase: Error (auth/user-not-found).' ) ? 'incorrect email/password' : 'an error has occured' }
-                  </>
-                }
+                  { error && 
+                    <>
+                      uh oh!&nbsp;
+                      {( errorMessage === 'Firebase: Error (auth/wrong-password).' || errorMessage === 'Firebase: Error (auth/user-not-found).' ) ? 'incorrect email/password' : 'an error has occured' }
+                    </>
+                  }
                   &nbsp;</center>
             </form>
             <section>
@@ -116,4 +117,4 @@ const hideModal = () => {
   );
 };
 
-export default UserAuth;
+export default Login;
