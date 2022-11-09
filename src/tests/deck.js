@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import fs from '../firebase/config';
-import { doc, addDoc, collection } from "firebase/firestore"; 
+import { addDoc, collection } from "firebase/firestore"; 
 
 const DeckInfo = () => {
     const [ deck, setDeck] = useState([]);
@@ -1261,14 +1261,16 @@ const DeckInfo = () => {
         ));
     }, []);
 
-    const clickUpdateList = async () => {
-        const addTest = collection(fs, 'test')
+    const clickUpdateDeck = async () => {
+        const addTest = collection(fs, 'deck')
         return addDoc(addTest, {
+                id: `deck`,
+                timestamp: Date(),
                 deck: deck
             });
     }
         return(
-            <><button onClick={clickUpdateList}>click this to update deck</button></>
+            <button onClick={clickUpdateDeck}>click this to update deck</button>
         );
 };
 export default DeckInfo;
