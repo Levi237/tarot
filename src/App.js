@@ -6,7 +6,7 @@ import fs                             from './firebase/config';
 import { collection, getDocs }        from 'firebase/firestore'; 
 
 // import UpdateDeck                    from './tests/deck';
-import AuthTest                       from './tests/auth/';
+import AuthTest                       from './features/authentication';
 import Home                           from './pages/Home';
 
 

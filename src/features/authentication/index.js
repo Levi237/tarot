@@ -95,7 +95,13 @@ const hideModal = () => {
                             <input type="email" placeholder="Your Email"  onChange={e => setEmail(e.target.value)}/>
                             <input type="password" placeholder="Password"  onChange={e => setPassword(e.target.value)}/>
                             <button type="submit">Submit</button>
-                            { error && <span>uh oh!  {errorMessage}</span> }
+                              <center className="error">&nbsp;
+                            { error && 
+                              <>uh oh!  
+                                {( errorMessage === 'Firebase: Error (auth/wrong-password).' || errorMessage === 'Firebase: Error (auth/user-not-found).' ) ? 'incorrect email/password' : 'an error has occured' }
+                              </>
+                            }
+                              &nbsp;</center>
                         </form>
                         <section>
                             <p>{showSignIn ? "Don't have an account?" : "Already have an account?"}</p>
