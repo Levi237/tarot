@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'fire
 
 import './auth.css';
 
-const AuthTest = ({ user }) => {
+const UserAuth = ({ user }) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,7 +25,6 @@ const handleCreateAccount = (e) => {
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    // console.log(errorCode, "<=code | CREATE | message =>", errorMessage);
     setError(true);
     setErrorMessage(errorMessage)
   });
@@ -42,7 +41,6 @@ const handleSignIn = (e) => {
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    // console.log(errorCode, "<=code | SIGNIN | message =>", errorMessage);
     setError(true);
     setErrorMessage(errorMessage)
   });
@@ -53,65 +51,69 @@ const clearState = () => {
     setPassword('');
     hideModal();
     setshowSignIn(true);
-}
+};
+
 const closeBtn = () => {
+  //=> Hide modal and redisplay login butto
     hideModal();
     const loginBtn = document.getElementById('login-btn');
     loginBtn.style.display = 'inline-block';
-}
+};
 
 const toggleCreateLogin = (e) => {
+  //=> Show either Sign In or Create Account
     if(showSignIn){
         setshowSignIn(false);
     } else {
         setshowSignIn(true);
     }
 };
-const hideModal = () => {
-    const modal = document.getElementById('auth-container');
-    modal.style.opacity = 0;
-    setTimeout(() => {
-        modal.style.marginTop = '-100vh';
-    }, 1000);
-  }
 
-    return(
-        <div 
-            id="auth-container" 
-            className="signup modal-window" 
-            onSubmit={showSignIn ? handleSignIn : handleCreateAccount}
-            style={{opacity: '0', marginTop: '-100vh'}}
-            >
-            <div className="modal-container">
-                <button className="close-btn" onClick={closeBtn}>X</button>
-                { user.uid ?
-                    <>
-                        <h1>Welcome!</h1>
-                    </>
-                :
-                    <div id="input-form" >
-                        <h1>{showSignIn ? "Sign In" : "Create Account"}</h1>
-                        <form>
-                            <input type="email" placeholder="Your Email"  onChange={e => setEmail(e.target.value)}/>
-                            <input type="password" placeholder="Password"  onChange={e => setPassword(e.target.value)}/>
-                            <button type="submit">Submit</button>
-                              <center className="error">&nbsp;
-                            { error && 
-                              <>uh oh!  
-                                {( errorMessage === 'Firebase: Error (auth/wrong-password).' || errorMessage === 'Firebase: Error (auth/user-not-found).' ) ? 'incorrect email/password' : 'an error has occured' }
-                              </>
-                            }
-                              &nbsp;</center>
-                        </form>
-                        <section>
-                            <p>{showSignIn ? "Don't have an account?" : "Already have an account?"}</p>
-                            <button className="link-btn" onClick={toggleCreateLogin}>{showSignIn ? "Create Account" : "Sign in"}</button>
-                        </section>
-                    </div>
-                }
-            </div>
-        </div>
-    );
+const hideModal = () => {
+  const modal = document.getElementById('auth-container');
+  modal.style.opacity = 0;
+  setTimeout(() => {
+      modal.style.marginTop = '-100vh';
+  }, 1000);
 };
 
-export default AuthTest;
+  return(
+    <div 
+      id="auth-container" 
+      className="signup modal-window" 
+      onSubmit={showSignIn ? handleSignIn : handleCreateAccount}
+      style={{opacity: '0', marginTop: '-100vh'}}
+      >
+      <div className="modal-container">
+        <button className="close-btn" onClick={closeBtn}>X</button>
+        { user.uid ?
+          <>
+            <h1>Welcome!</h1>
+          </>
+        :
+          <div id="input-form" >
+            <h1>{showSignIn ? "Sign In" : "Create Account"}</h1>
+            <form>
+                <input type="email" placeholder="Your Email"  onChange={e => setEmail(e.target.value)}/>
+                <input type="password" placeholder="Password"  onChange={e => setPassword(e.target.value)}/>
+                <button type="submit">Submit</button>
+                  <center className="error">&nbsp;
+                { error && 
+                  <>uh oh!  
+                    {( errorMessage === 'Firebase: Error (auth/wrong-password).' || errorMessage === 'Firebase: Error (auth/user-not-found).' ) ? 'incorrect email/password' : 'an error has occured' }
+                  </>
+                }
+                  &nbsp;</center>
+            </form>
+            <section>
+              <p>{showSignIn ? "Don't have an account?" : "Already have an account?"}</p>
+              <button className="link-btn" onClick={toggleCreateLogin}>{showSignIn ? "Create Account" : "Sign in"}</button>
+            </section>
+          </div>
+        }
+      </div>
+    </div>
+  );
+};
+
+export default UserAuth;

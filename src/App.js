@@ -6,7 +6,7 @@ import fs                             from './firebase/config';
 import { collection, getDocs }        from 'firebase/firestore'; 
 
 // import UpdateDeck                    from './tests/deck';
-import AuthTest                       from './features/authentication';
+import UserAuth                       from './features/authentication';
 import Home                           from './pages/Home';
 
 
@@ -72,7 +72,7 @@ const App = () => {
       { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> }
       <button id="login-btn" onClick={openSignIn} >Login</button>
       {/* <UpdateDeck/> */}
-      <AuthTest user={user} clickSignOut={clickSignOut}/>
+      <UserAuth user={user} clickSignOut={clickSignOut}/>
       <Home />
     </div>
   );
