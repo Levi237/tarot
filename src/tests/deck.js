@@ -1,6 +1,5 @@
 //=> Activate component to update collection
 //=> Must delete previous doc in deck collection
-
 import React, { useState, useEffect }   from 'react';
 import fs                               from '../firebase/config';
 import { addDoc, collection }           from "firebase/firestore"; 
