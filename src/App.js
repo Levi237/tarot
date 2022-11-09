@@ -8,6 +8,7 @@ import { collection, getDocs }        from 'firebase/firestore';
 // import UpdateDeck                    from './tests/deck';
 import UserAuth                       from './features/authentication';
 import Home                           from './pages/Home';
+import Admin                           from './pages/Admin';
 
 
 const App = () => {
@@ -55,8 +56,6 @@ const App = () => {
       }, function(error) {
         console.error('Sign Out Error', error);
       });
-      const loginBtn = document.getElementById('login-btn');
-      loginBtn.style.display = 'inline-block';
   };
   const openSignIn = (e) => {
     const modal = document.getElementById('auth-container');
@@ -70,10 +69,11 @@ const App = () => {
     <div className="App">
       { user.uid && <button className="signout-home" onClick={clickSignOut}>Sign Out</button> }
       { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> }
-      <button id="login-btn" onClick={openSignIn} >Login</button>
+      { !user.uid && <button id="login-btn" onClick={openSignIn} >Login</button> }
       {/* <UpdateDeck/> */}
       <UserAuth user={user} clickSignOut={clickSignOut}/>
       <Home />
+      { (user.uid === 'IcaB6QA5frhOaMWRf80gqxYF8Er2') && <Admin /> }
     </div>
   );
 }
