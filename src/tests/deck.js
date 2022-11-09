@@ -1262,13 +1262,13 @@ const DeckInfo = () => {
     }, []);
 
     const clickUpdateDeck = async () => {
-        const addTest = collection(fs, 'deck')
+        const addTest = collection(fs, 'deck');
         return addDoc(addTest, {
                 id: `deck`,
                 timestamp: Date(),
                 deck: deck
             });
-    }
+    };
         return(
             <button onClick={clickUpdateDeck}>click this to update deck</button>
         );

@@ -14,9 +14,7 @@ const FetchData = () => {
 
         const getTest = collection(fs, 'deck');
         const docSnap = await getDocs(getTest);
-        console.log("getTest => ", getTest);
         docSnap.forEach((doc) => {
-            console.log("doc =>", doc.data().deck);
             setTest(doc.data().deck);
         });
     };
