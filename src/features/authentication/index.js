@@ -9,6 +9,7 @@ const Login = ({ user }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
+  const [errorCode, setErrorCode] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [showSignIn, setshowSignIn] = useState(true);
 
@@ -26,7 +27,8 @@ const handleCreateAccount = (e) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     setError(true);
-    setErrorMessage(errorMessage)
+    setErrorCode(errorCode);
+    setErrorMessage(errorMessage);
   });
 };
 
@@ -42,7 +44,8 @@ const handleSignIn = (e) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     setError(true);
-    setErrorMessage(errorMessage)
+    setErrorCode(errorCode);
+    setErrorMessage(errorMessage);
   });
 };
 
@@ -101,7 +104,12 @@ const hideModal = () => {
                   { error && 
                     <>
                       uh oh!&nbsp;
-                      {( errorMessage === 'Firebase: Error (auth/wrong-password).' || errorMessage === 'Firebase: Error (auth/user-not-found).' ) ? 'incorrect email/password' : 'an error has occured' }
+                      {/* Sign In Error Messages */}
+                      {( errorCode === 'auth/wrong-password' || errorCode === 'auth/user-not-found' ) && 'incorrect email/password' }
+                      {( errorCode === 'auth/internal-error' && password === '' || errorCode === 'auth/invalid-email' && email === '' ) && 'needs email/password' }
+                      {/* Create Account Error Messages */}
+                      {( errorCode === 'auth/weak-password' ) && 'use stronger password' }
+                      {( errorCode === 'email-already-in-use' ) && 'email already in use' }
                     </>
                   }
                   &nbsp;</center>
