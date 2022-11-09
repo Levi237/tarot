@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { auth } from './firebase/config';
 import { onAuthStateChanged } from "firebase/auth";
 
-// import FetchData from './tests/fetch';
-// import StateTest from './tests/state';
+import FetchData from './tests/fetch';
+import DeckInfo from './tests/deck';
 import AuthTest from './tests/auth/';
 import Home from './pages/Home'
 import { click } from '@testing-library/user-event/dist/click';
@@ -50,8 +50,8 @@ const openSignIn = (e) => {
       { user.uid && <button className="signout-home" onClick={clickSignOut}>Sign Out</button> }
       { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> }
       <button id="login-btn" onClick={openSignIn} >Login</button>
-      {/* <FetchData/> */}
-      {/* <StateTest/> */}
+      <FetchData/>
+      <DeckInfo/>
       <AuthTest user={user} clickSignOut={clickSignOut}/>
       <Home />
     </div>
