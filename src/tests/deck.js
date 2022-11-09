@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import fs from '../firebase/config';
-import { addDoc, collection } from "firebase/firestore"; 
+import React, { useState, useEffect }   from 'react';
+import fs                               from '../firebase/config';
+import { addDoc, collection }           from "firebase/firestore"; 
 
 const DeckInfo = () => {
     const [ deck, setDeck] = useState([]);
