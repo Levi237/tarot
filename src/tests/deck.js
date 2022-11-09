@@ -4,7 +4,7 @@ import React, { useState, useEffect }   from 'react';
 import fs                               from '../firebase/config';
 import { addDoc, collection }           from "firebase/firestore"; 
 
-const DeckInfo = () => {
+const UpdateDeck = () => {
     const [ deck, setDeck] = useState([]);
 
     useEffect(() => {
@@ -1275,4 +1275,4 @@ const DeckInfo = () => {
         <button onClick={clickUpdateDeck}>click this to update deck</button>
     );
 };
-export default DeckInfo;
+export default UpdateDeck;

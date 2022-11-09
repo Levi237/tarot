@@ -4,7 +4,7 @@ import { auth } from './firebase/config';
 import { onAuthStateChanged } from "firebase/auth";
 
 import FetchData from './tests/fetch';
-import DeckInfo from './tests/deck';
+// import UpdateDeck from './tests/deck';
 import AuthTest from './tests/auth/';
 import Home from './pages/Home'
 import { click } from '@testing-library/user-event/dist/click';
@@ -51,7 +51,7 @@ const openSignIn = (e) => {
       { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> }
       <button id="login-btn" onClick={openSignIn} >Login</button>
       <FetchData/>
-      <DeckInfo/>
+      {/* <UpdateDeck/> */}
       <AuthTest user={user} clickSignOut={clickSignOut}/>
       <Home />
     </div>
