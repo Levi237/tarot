@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
-// import { getDatabase, ref, push, set } from "firebase/database";
-import { doc, setDoc, getFirestore } from "firebase/firestore"; 
-
-
-
+import fs from '../firebase/config';
+import { doc, addDoc, collection } from "firebase/firestore"; 
 
 const DeckInfo = () => {
     const [ deck, setDeck] = useState([]);
-    const db = getFirestore();
-
-
 
     useEffect(() => {
         setDeck(prevState => (
@@ -1269,16 +1262,10 @@ const DeckInfo = () => {
     }, []);
 
     const clickUpdateList = async () => {
-        console.log("click update deck => ");
-        const deckRef = doc(db, 'test');
-        await setDoc(deckRef, { test: true }, { merge: true });
-        // const postListRef = ref(db, 'test');
-        // const newPostRef = push(postListRef);
-        // set(newPostRef, {
-        //     'deck': deck
-        // }).catch((error) => {
-        //     console.log(error, deck)
-        // });
+        const addTest = collection(fs, 'test')
+        return addDoc(addTest, {
+                deck: deck
+            });
     }
         return(
             <><button onClick={clickUpdateList}>click this to update deck</button></>

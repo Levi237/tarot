@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import fs from '../firebase/config';
-import { collection, doc, getDocs } from "firebase/firestore"; 
+import React, { useState, useEffect }   from 'react';
+import fs                               from '../firebase/config';
+import { collection, getDocs }          from 'firebase/firestore'; 
 
 const FetchData = () => {
 
@@ -16,15 +16,16 @@ const FetchData = () => {
         const docSnap = await getDocs(getTest);
         console.log("getTest => ", getTest);
         docSnap.forEach((doc) => {
-        console.log("doc =>", doc.id)
-        })
-    }
+            console.log("doc =>", doc.data().deck);
+            setTest(doc.data().deck);
+        });
+    };
 
     return(<>
         Fetch Test
     </>)
-}
+};
 
 
 
-export default FetchData
+export default FetchData;
