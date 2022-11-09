@@ -1,17 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { auth } from './firebase/config';
-import { onAuthStateChanged } from "firebase/auth";
+import { auth }                       from './firebase/config';
+import { onAuthStateChanged }         from 'firebase/auth';
+import fs                             from './firebase/config';
+import { collection, getDocs }        from 'firebase/firestore'; 
 
-import FetchData from './tests/fetch';
-// import UpdateDeck from './tests/deck';
-import AuthTest from './tests/auth/';
-import Home from './pages/Home'
-import { click } from '@testing-library/user-event/dist/click';
+// import UpdateDeck                    from './tests/deck';
+import AuthTest                       from './tests/auth/';
+import Home                           from './pages/Home';
+
+
 const App = () => {
 
-const [user, setUser] = useState([]);
-// const [signIn, setSignIn] = useState(false);
+  const [deck, setDeck] = useState([]);
+  const [user, setUser] = useState([]);
+  // const [signIn, setSignIn] = useState(false);
+
+  useEffect(() => {
+    //=> Get deck from deck collection doc
+      fetchData();
+  }, []);
+
+  useEffect(() => {
+    console.log("deck ==>", deck);
+  }, [deck]);
+
+  const fetchData = async () => {
+    //=> Get deck from deck collection doc
+      const getDeck = collection(fs, 'deck');
+      const docSnap = await getDocs(getDeck);
+      docSnap.forEach((doc) => {
+          setDeck(doc.data().deck);
+      });
+  };
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -36,21 +57,20 @@ const [user, setUser] = useState([]);
       });
       const loginBtn = document.getElementById('login-btn');
       loginBtn.style.display = 'inline-block';
-};
-const openSignIn = (e) => {
-  const modal = document.getElementById('auth-container');
-  modal.style.opacity = 1;
-  modal.style.marginTop = '0vh';
-  const loginBtn = document.getElementById('login-btn');
-  loginBtn.style.display = 'none';
-};
+  };
+  const openSignIn = (e) => {
+    const modal = document.getElementById('auth-container');
+    modal.style.opacity = 1;
+    modal.style.marginTop = '0vh';
+    const loginBtn = document.getElementById('login-btn');
+    loginBtn.style.display = 'none';
+  };
 
   return (
     <div className="App">
       { user.uid && <button className="signout-home" onClick={clickSignOut}>Sign Out</button> }
       { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> }
       <button id="login-btn" onClick={openSignIn} >Login</button>
-      <FetchData/>
       {/* <UpdateDeck/> */}
       <AuthTest user={user} clickSignOut={clickSignOut}/>
       <Home />

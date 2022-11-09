@@ -2,9 +2,9 @@
 //=> Must delete previous doc in deck collection
 import React, { useState, useEffect }   from 'react';
 import fs                               from '../firebase/config';
-import { addDoc, collection }           from "firebase/firestore"; 
+import { addDoc, collection }           from 'firebase/firestore'; 
 
-const UpdateDeck = () => {
+const Update = () => {
     const [ deck, setDeck] = useState([]);
 
     useEffect(() => {
@@ -1275,4 +1275,4 @@ const UpdateDeck = () => {
         <button onClick={clickUpdateDeck}>click this to update deck</button>
     );
 };
-export default UpdateDeck;
+export default Update;
