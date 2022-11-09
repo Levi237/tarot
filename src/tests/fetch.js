@@ -12,7 +12,7 @@ const FetchData = () => {
 
     const fetchData = async () => {
 
-        const getTest = collection(fs, 'test');
+        const getTest = collection(fs, 'deck');
         const docSnap = await getDocs(getTest);
         console.log("getTest => ", getTest);
         docSnap.forEach((doc) => {
