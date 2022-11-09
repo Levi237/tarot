@@ -1,17 +1,17 @@
 import React from 'react';
-import Deck from '../tests/deck';
+import UpdateDeck from '../features/admin/udpates/deck';
 
 const AdminPage = () => {
 
    
 
     return (
-        <>
+        <div>
         <br/><br/><br/><br/><br/>
-Admin Page Test<br/>
-Logged In<br/>
-<Deck/>
-        </>
+        Admin Page Test<br/>
+        Logged In<br/>
+        <UpdateDeck/>
+        </div>
     )
 }
 

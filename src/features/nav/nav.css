@@ -1,0 +1,21 @@
+#nav-menu {
+    position: absolute;
+    right: 0;
+    z-index: 9;
+    transition: all 1s ease;
+}
+
+.view-menu {
+    width: 100%;
+    max-width: 480px;
+}
+
+.hide-menu {
+    width: 100%;
+    max-width: 0;
+}
+
+#nav-menu a {
+    display: block;
+    min-width: 320px;
+}

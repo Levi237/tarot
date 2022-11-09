@@ -5,11 +5,11 @@ import { onAuthStateChanged }         from 'firebase/auth';
 import fs                             from './firebase/config';
 import { collection, getDocs }        from 'firebase/firestore'; 
 
-// import UpdateDeck                    from './tests/deck';
+// import UpdateDeck                    from './features/admin/udpates/deck';
 import UserAuth                       from './features/authentication';
 import Home                           from './pages/Home';
-import Admin                           from './pages/Admin';
-
+import Admin                          from './pages/Admin';
+import NavMenu                        from './features/nav';
 
 const App = () => {
 
@@ -61,16 +61,15 @@ const App = () => {
     const modal = document.getElementById('auth-container');
     modal.style.opacity = 1;
     modal.style.marginTop = '0vh';
-    const loginBtn = document.getElementById('login-btn');
-    loginBtn.style.display = 'none';
   };
 
   return (
     <div className="App">
-      { user.uid && <button className="signout-home" onClick={clickSignOut}>Sign Out</button> }
+      {/* { user.uid && <button className="signout-home" onClick={clickSignOut}>Sign Out</button> } */}
       { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> }
-      { !user.uid && <button id="login-btn" onClick={openSignIn} >Login</button> }
+      {/* { !user.uid && <button id="login-btn" onClick={openSignIn} >Login</button> } */}
       {/* <UpdateDeck/> */}
+      <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
       <UserAuth user={user} clickSignOut={clickSignOut}/>
       <Home />
       { (user.uid === 'IcaB6QA5frhOaMWRf80gqxYF8Er2') && <Admin /> }

@@ -1,7 +1,7 @@
 //=> Activate component to update collection
 //=> Must delete previous doc in deck collection
 import React, { useState, useEffect }   from 'react';
-import fs                               from '../firebase/config';
+import fs                               from '../../../firebase/config';
 import { addDoc, collection }           from 'firebase/firestore'; 
 
 const Update = () => {
@@ -12,7 +12,8 @@ const Update = () => {
             [{
                 num: 0,
                 suit: `major`,
-                title: `0 The Fool`,
+                majorNum: `0`,
+                title: `The Fool`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -28,7 +29,8 @@ const Update = () => {
             },{
                 num: 1,
                 suit: `major`,
-                title: `I The Magician`,
+                majorNum: `I`,
+                title: `The Magician`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -44,7 +46,8 @@ const Update = () => {
             },{
                 num: 2,
                 suit: `major`,
-                title: `II The High Priestess`,
+                majorNum: `II`,
+                title: `The High Priestess`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -53,14 +56,16 @@ const Update = () => {
                 seph: `Connects Kether to Tiphareth`,
                 role: ``,
                 keys: [`balanced forces`, `reflection`, `looking within`, `insight`, `doing inner work`, `hidden information`, `secrets`, `pursuit of deeper understanding`, `potential fertility and growth`, `duality`, `lunar cycles`],
-                revkeys: [`power imbalance`, `blindness`, `deceit`, `shallow perspective`, `personal stagnation`, `lack of growth`, `resistance to change`, `looking for external enemies`, `illusions`, `avoiding reflection`],            
+                majorNum: ``,revkeys: [`power imbalance`, `blindness`, `deceit`, `shallow perspective`, `personal stagnation`, `lack of growth`, `resistanc
+                e to change`, `looking for external enemies`, `illusions`, `avoiding reflection`],            
                 desc: [``],
                 revdesc: [``],           
                 major: [`The High Priestess helps The Fool to see the dualities and nuances of the world and himself. He begins to practice spiritual discipline, allowing his high self to influence his thoughts and actions.`],
             },{
                 num: 3,
                 suit: `major`,
-                title: `III The Empress`,
+                majorNum: `III`,
+                title: `The Empress`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -76,7 +81,8 @@ const Update = () => {
             },{
                 num: 4,
                 suit: `major`,
-                title: `IV The Emperor`,
+                majorNum: `IV`,
+                title: `The Emperor`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -92,7 +98,8 @@ const Update = () => {
             },{
                 num: 5,
                 suit: `major`,
-                title: `V The Hierophant`,
+                majorNum: `V`,
+                title: `The Hierophant`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -108,7 +115,8 @@ const Update = () => {
             },{
                 num: 6,
                 suit: `major`,
-                title: `VI The Lovers`,
+                majorNum: `VI`,
+                title: `The Lovers`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -124,7 +132,8 @@ const Update = () => {
             },{
                 num: 7,
                 suit: `major`,
-                title: `VII The Chariot`,
+                majorNum: `VII`,
+                title: `The Chariot`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -140,7 +149,8 @@ const Update = () => {
             },{
                 num: 8,
                 suit: `major`,
-                title: `VIII Strength`,
+                majorNum: `VIII`,
+                title: `Strength`,
                 subtitle: ``,
                 element: [``],
                 subelem: ``,
@@ -157,7 +167,8 @@ const Update = () => {
             },{
                 num: 9,
                 suit: `major`,
-                title: `IX The Hermit`,
+                majorNum: `IX`,
+                title: `The Hermit`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -173,7 +184,8 @@ const Update = () => {
             },{
                 num: 10,
                 suit: `major`,
-                title: `X The Wheel of Fortune`,
+                majorNum: `X`,
+                title: `The Wheel of Fortune`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -189,7 +201,8 @@ const Update = () => {
             },{
                 num: 11,
                 suit: `major`,
-                title: `XI Justice`,
+                majorNum: `XI`,
+                title: `Justice`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -205,7 +218,8 @@ const Update = () => {
             },{
                 num: 12,
                 suit: `major`,
-                title: `XII The Hanged Man`,
+                majorNum: `XII`,
+                title: `The Hanged Man`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -221,6 +235,7 @@ const Update = () => {
             },{
                 num: 13,
                 suit: `major`,
+                majorNum: `XIII`,
                 title: `Death`,
                 subtitle: ``,
                 element: [``],
@@ -237,7 +252,8 @@ const Update = () => {
             },{
                 num: 14,
                 suit: `major`,
-                title: `XIV Temperance`,
+                majorNum: `XIV`,
+                title: `Temperance`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -253,7 +269,8 @@ const Update = () => {
             },{
                 num: 15,
                 suit: `major`,
-                title: `XV The Devil`,
+                majorNum: `XV`,
+                title: `The Devil`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -269,7 +286,8 @@ const Update = () => {
             },{
                 num: 16,
                 suit: `major`,
-                title: `XVI The Tower`,
+                majorNum: `XVI`,
+                title: `The Tower`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -285,7 +303,8 @@ const Update = () => {
             },{
                 num: 17,
                 suit: `major`,
-                title: `XVII The Star`,
+                majorNum: `XVII`,
+                title: `The Star`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -301,7 +320,8 @@ const Update = () => {
             },{
                 num: 18,
                 suit: `major`,
-                title: `XVIII The Moon`,
+                majorNum: `XVIII`,
+                title: `The Moon`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -317,7 +337,8 @@ const Update = () => {
             },{
                 num: 19,
                 suit: `major`,
-                title: `XIX The Sun`,
+                majorNum: `XIX`,
+                title: `The Sun`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -333,7 +354,8 @@ const Update = () => {
             },{
                 num: 20,
                 suit: `major`,
-                title: `XX Judgment`,
+                majorNum: `XX`,
+                title: `Judgment`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -349,7 +371,8 @@ const Update = () => {
             },{
                 num: 21,
                 suit: `major`,
-                title: `XXI The World`,
+                majorNum: `XXI`,
+                title: `The World`,
                 subtitle: ``,
                 element: [``],
                 subelem: [``],
@@ -1272,7 +1295,7 @@ const Update = () => {
         });
     };
     return(
-        <button onClick={clickUpdateDeck}>click this to update deck</button>
+        <button onClick={clickUpdateDeck}>update deck info</button>
     );
 };
 export default Update;
