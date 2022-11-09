@@ -1,3 +1,4 @@
+//=> Get deck from deck collection doc
 import React, { useState, useEffect }   from 'react';
 import fs                               from '../firebase/config';
 import { collection, getDocs }          from 'firebase/firestore'; 
