@@ -12,7 +12,7 @@ const Deck = ({deck}) => {
                 <div className="card" key={key}>
                     <img src={`/cards/${img}.jpg`} alt={card.title}/>
                 </div>
-                );
+            );
         });
 
    
