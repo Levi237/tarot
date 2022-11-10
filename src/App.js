@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import * as routes from './constants/routes';
 
 import { auth }                       from './firebase/config';
 import { onAuthStateChanged }         from 'firebase/auth';
@@ -7,6 +9,8 @@ import { collection, getDocs }        from 'firebase/firestore';
 
 // import UpdateDeck                    from './features/admin/udpates/deck';
 import UserAuth                       from './components/authentication';
+import Account                        from './pages/Account';
+import Draw                           from './pages/Draw';
 import Home                           from './pages/Home';
 import Admin                          from './pages/Admin';
 import NavMenu                        from './components/nav';
@@ -68,7 +72,12 @@ const App = () => {
       { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> }
       <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
       <UserAuth user={user} clickSignOut={clickSignOut}/>
-      <Home />
+      <Routes>
+          <Route path={routes.DRAW} exact element={<Draw />}/>
+          <Route path={routes.ACCT} exact element={<Account />}/>
+          <Route path={routes.ROOT} exact element={<Home />}/>
+          <Route path={routes.ROOT} element={<>wrong url</>}/>
+        </Routes>
       { (user.uid === 'IcaB6QA5frhOaMWRf80gqxYF8Er2') && <Admin /> }
     </div>
   );
