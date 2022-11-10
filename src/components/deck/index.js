@@ -1,17 +1,16 @@
 //=> Create Deck to be used in Draw
 import React, { useState, useEffect }   from 'react';
 
+import './card.css';
+
 const Deck = ({deck}) => {
 
 
-        const mapDeck = deck.map((card) => {
-            const img = card.title;
-            img.split(' ').join('_');
-            img.toLowerCase();
+        const mapDeck = deck.map((card, key) => {
+            const img = card.title.toLowerCase().split(' ').join('_');
             return (
-                <div className="card">
-                <h1>{card.title}</h1>
-                <img src={`/cards/${img}.jpg`} alt={card.title}/>
+                <div className="card" key={key}>
+                    <img src={`/cards/${img}.jpg`} alt={card.title}/>
                 </div>
                 );
         });
