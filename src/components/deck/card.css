@@ -1,6 +1,9 @@
+/***** Card Dimensions: 23/40 */
 .card {
-    height: 320px;
-    width: 120px;
+    --percentage: .5;
+    height: calc(40vw * var(--percentage));
+    width: calc(23vw * var(--percentage));
+    display: inline-block;
 }
 
 .card img {
