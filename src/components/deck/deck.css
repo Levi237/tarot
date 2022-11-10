@@ -1,0 +1,14 @@
+.deck {
+    max-width: calc(78 * 12vw);
+    /* width: calc(78 * 320px);
+    height:  */
+    width: 400%;
+    overflow-x: scroll;
+}
+.cards {
+    max-width: calc(78 * 12vw);
+    width: calc(78 * 12vw);
+}
+.card + .card {
+    margin-left: -100px;
+}
