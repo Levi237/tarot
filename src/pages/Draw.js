@@ -8,6 +8,7 @@ const DrawPage = ({deck}) => {
     return (
         <>
 Draw Page Test
+<br/>
 <Deck deck={deck}/>
         </>
     )
