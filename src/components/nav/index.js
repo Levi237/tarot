@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 
+import Hamburger from './hamburger';
+
 import './nav.css';
 
 const NavMenu = ({user, clickSignOut, openSignIn}) => {
@@ -11,7 +13,7 @@ const NavMenu = ({user, clickSignOut, openSignIn}) => {
         menu.classList.toggle('hide-menu');
     }
 return (<>
-    <button class="hamburger-icon" onClick={toggleNavMenu}>HAMBURGER BUTTON</button>
+    <Hamburger toggleNavMenu={toggleNavMenu}/>
     <div id="nav-menu" className="hide-menu">
         <NavLink activeClassName="nav-active" to={routes.ROOT} >HOME</NavLink>
         <NavLink activeClassName="nav-active" to={routes.DRAW} >DRAW CARDS</NavLink>

@@ -6,10 +6,10 @@ import fs                             from './firebase/config';
 import { collection, getDocs }        from 'firebase/firestore'; 
 
 // import UpdateDeck                    from './features/admin/udpates/deck';
-import UserAuth                       from './features/authentication';
+import UserAuth                       from './components/authentication';
 import Home                           from './pages/Home';
 import Admin                          from './pages/Admin';
-import NavMenu                        from './features/nav';
+import NavMenu                        from './components/nav';
 
 const App = () => {
 
@@ -65,10 +65,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* { user.uid && <button className="signout-home" onClick={clickSignOut}>Sign Out</button> } */}
       { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> }
-      {/* { !user.uid && <button id="login-btn" onClick={openSignIn} >Login</button> } */}
-      {/* <UpdateDeck/> */}
       <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
       <UserAuth user={user} clickSignOut={clickSignOut}/>
       <Home />

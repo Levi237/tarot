@@ -1,0 +1,27 @@
+#hamburger-container {
+    position: absolute;
+    z-index: 9;
+    right: 20px;
+    top: 20px;
+}
+#hamburger-container .hamburger-close {
+    padding-top: 10px;
+  }
+  #hamburger-container .hamburger-close > section {
+    margin: 8px 0!important;
+  }
+  #hamburger-container .hamburger-close > section:first-of-type {
+    transform: rotate(45deg)!important;
+  }
+  #hamburger-container .hamburger-close > section:last-of-type {
+    transform: rotate(-45deg)!important;
+    margin-top: -12px!important;
+  }  
+  
+  #hamburger-btn > section {
+    margin: 6px 0;
+    width: 35px;
+    height: 4px;
+    background-color: #000;
+    transition: all .3s ease;
+  }

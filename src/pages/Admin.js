@@ -1,5 +1,5 @@
 import React from 'react';
-import UpdateDeck from '../features/admin/udpates/deck';
+import UpdateDeck from '../components/admin/udpates/deck';
 
 const AdminPage = () => {
 
