@@ -11,14 +11,17 @@ const NavMenu = ({user, clickSignOut, openSignIn}) => {
         const menu = document.getElementById('nav-menu');
         menu.classList.toggle('view-menu');
         menu.classList.toggle('hide-menu');
+        document.getElementById('hamburger-btn').classList.toggle('hamburger-close');
     }
 return (<>
     <Hamburger toggleNavMenu={toggleNavMenu}/>
     <div id="nav-menu" className="hide-menu">
-        <NavLink activeClassName="nav-active" to={routes.ROOT} >HOME</NavLink>
-        <NavLink activeClassName="nav-active" to={routes.DRAW} >DRAW CARDS</NavLink>
-        { user.uid && <NavLink activeClassName="nav-active" to={routes.ACCT} >ACCOUNT</NavLink> }
-        { user.uid ? <button className="signout-" onClick={()=>{clickSignOut();toggleNavMenu();}}>Sign Out</button> : <button id="login-btn"  onClick={()=>{openSignIn();toggleNavMenu();}} >Login</button> }
+        <div>
+            <NavLink activeClassName="nav-active" to={routes.ROOT} onClick={toggleNavMenu}>HOME</NavLink>
+            <NavLink activeClassName="nav-active" to={routes.DRAW} onClick={toggleNavMenu}>DRAW CARDS</NavLink>
+            { user.uid && <NavLink activeClassName="nav-active" to={routes.ACCT} onClick={toggleNavMenu} >ACCOUNT</NavLink> }
+            { user.uid ? <button className="signout-" onClick={()=>{clickSignOut();toggleNavMenu();}}>Sign Out</button> : <button id="login-btn"  onClick={()=>{openSignIn();toggleNavMenu();}} >Login</button> }
+        </div>
     </div></>)
 }
 
