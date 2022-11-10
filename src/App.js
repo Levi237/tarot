@@ -8,7 +8,8 @@ import { collection, getDocs }        from 'firebase/firestore';
 // import UpdateDeck                    from './tests/deck';
 import UserAuth                       from './components/authentication';
 import Home                           from './pages/Home';
-import Admin                           from './pages/Admin';
+import Admin                          from './pages/Admin';
+import Card                           from './components/card';
 
 
 const App = () => {
@@ -73,6 +74,7 @@ const App = () => {
       {/* <UpdateDeck/> */}
       <UserAuth user={user} clickSignOut={clickSignOut}/>
       <Home />
+      <Card />
       { (user.uid === 'IcaB6QA5frhOaMWRf80gqxYF8Er2') && <Admin /> }
     </div>
   );
