@@ -10,7 +10,7 @@ const Update = () => {
     useEffect(() => {
         setDeck(prevState => (
             [{
-                num: 0,
+                id: 0,
                 suit: `major`,
                 majorNum: `0`,
                 title: `The Fool`,
@@ -27,7 +27,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Fool is the Everyman, representing each soul's journey through the world over multiple lifetimes. The Fool sets out to sacrifice his innocence through experience in search of wisdom. If The Fool can successfully navigate the 21 stations of the major arcana he will return to spirit as an enlightened sage or ascended master.`],
             },{
-                num: 1,
+                id: 1,
                 suit: `major`,
                 majorNum: `I`,
                 title: `The Magician`,
@@ -44,7 +44,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Magician teaches The Fool how to direct his will, and influence his world. The Fool becomes acquainted with his tools and the foundational elements. He learns that he has power, begins to take charge of his life, and specialize his interests.`],
             },{
-                num: 2,
+                id: 2,
                 suit: `major`,
                 majorNum: `II`,
                 title: `The High Priestess`,
@@ -62,7 +62,7 @@ const Update = () => {
                 revdesc: [``],           
                 major: [`The High Priestess helps The Fool to see the dualities and nuances of the world and himself. He begins to practice spiritual discipline, allowing his high self to influence his thoughts and actions.`],
             },{
-                num: 3,
+                id: 3,
                 suit: `major`,
                 majorNum: `III`,
                 title: `The Empress`,
@@ -79,7 +79,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Empress teaches The Fool to combine the skills of The Magician and High Priestess, conceiving new things and birthing them into being. In her realm The Fool perceives the interconnectedness of all things, value beauty, and take joy in life within and without.`],
             },{
-                num: 4,
+                id: 4,
                 suit: `major`,
                 majorNum: `IV`,
                 title: `The Emperor`,
@@ -96,7 +96,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Emperor teaches The Fool discipline and the value of order. The Fool comes to understand that power and responsibility cannot be effectively separated, and concepts of balance are reinforced especially between responsibility and desire.`],
             },{
-                num: 5,
+                id: 5,
                 suit: `major`,
                 majorNum: `V`,
                 title: `The Hierophant`,
@@ -113,7 +113,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Hierophant teaches The Fool about the usefulness of structure, and how proper application of law allows liberty to thrive. The Fool learns that higher levels of wisdom and power may only be rightly accessed through mastery of lower levels. In station five The Fool has reached the midpoint of his apprenticeship, and begins to take on responsibilities becoming a mentor in his own rite.`],
             },{
-                num: 6,
+                id: 6,
                 suit: `major`,
                 majorNum: `VI`,
                 title: `The Lovers`,
@@ -130,7 +130,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Lovers help The Fool to deepen his self understanding, and strengthen the connection with his high self when confronted with temptation. They also teach The Fool the value of varied perspective, and the personal growth that comes through collaboration.`],
             },{
-                num: 7,
+                id: 7,
                 suit: `major`,
                 majorNum: `VII`,
                 title: `The Chariot`,
@@ -147,7 +147,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Now that The Fool understands his true nature, is connected to his high self through his subconscious, and understands the shape and nature of his world through science he has the ability to drive The Chariot wherever he wishes to go. So long as he is the master of his will and desire The Chariot will serve him.`],
             },{
-                num: 8,
+                id: 8,
                 suit: `major`,
                 majorNum: `VIII`,
                 title: `Strength`,
@@ -165,7 +165,7 @@ const Update = () => {
                 major: [`Strength teaches The Fool that gentleness can be a stronger influence than force, that respect bears more authority than fear, and that true strength flows from spirit. The Fool discovers that when his high self is allowed to lead, superficial pleasure stops dominating his desires and discipline ceases to be an exhausting struggle.
                 In stations 1-7 The Fool masters the world of form, in station 8 The Fool sets out to master non-form, from which form is shaped.`],
             },{
-                num: 9,
+                id: 9,
                 suit: `major`,
                 majorNum: `IX`,
                 title: `The Hermit`,
@@ -182,7 +182,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`In the 9th station of the major arcana The Fool takes time to rest and reflect on all that he has learned and achieved. He makes the leap from knowing to understanding, makes plans for the path ahead, and becomes a teacher for those who wish to learn.`],
             },{
-                num: 10,
+                id: 10,
                 suit: `major`,
                 majorNum: `X`,
                 title: `Wheel of Fortune`,
@@ -199,7 +199,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Fool has completed his apprenticeship, gaining independence and taking responsibility for his own fortune. He has experience on which to inform his next venture, everything he needs to be successful, and is in a position of expanded opportunity with open potential. The Fool understands that he may not always be able to control his circumstances, but remains responsible for his own choices and attitude.`],
             },{
-                num: 11,
+                id: 11,
                 suit: `major`,
                 majorNum: `XI`,
                 title: `Justice`,
@@ -216,7 +216,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Having learned inner balance during his apprenticeship The Fool is called to assist in balancing his community. Knowing right from wrong endows him with a higher level of responsibility for his choices. He practices dispelling untruth and leaving behind what does not serve, revisiting concepts of balance and mediation.`],
             },{
-                num: 12,
+                id: 12,
                 suit: `major`,
                 majorNum: `XII`,
                 title: `The Hanged Man`,
@@ -233,7 +233,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Hanged Man helps The Fool to master the concepts he learned with Justice. The Fool learns to alter his perspective, seeing things from various sides, and can no longer support injustice, even if it means upsetting things. He’s honest about his emotions, but does not allow them to rage unchecked. Guided by his high self, and knowing that discomfort and challenge may yield the greatest growth, The Fool is able to move through any situation with inner peace and grace.`],
             },{
-                num: 13,
+                id: 13,
                 suit: `major`,
                 majorNum: `XIII`,
                 title: `Death`,
@@ -250,7 +250,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`In station 13 The Fool understands that Death is transformation not ending, and understanding dispels fear. Life is precious because it is fleeting. The Fool has become like a phoenix, experiencing death as the turning of a page, and may now travel between material and spiritual worlds without losing himself.`],
             },{
-                num: 14,
+                id: 14,
                 suit: `major`,
                 majorNum: `XIV`,
                 title: `Temperance`,
@@ -267,7 +267,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Fool has achieved the balance, skill, and confidence to create whatever he conceives, birthing it perfectly into the material world with nothing lost in translation. He has mastered both form and non-form, completing a second cycle of seven. Now that The Fool holds the power and responsibility of creation he has only himself to fear.`],
             },{
-                num: 15,
+                id: 15,
                 suit: `major`,
                 majorNum: `XV`,
                 title: `The Devil`,
@@ -284,7 +284,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Fool has become a master of manifestation with the skill and power to materialize his visions and attract his desires. In station 15 The Fool is tempted to use his gifts for selfish gain or to be satisfied by superficial success.`],
             },{
-                num: 16,
+                id: 16,
                 suit: `major`,
                 majorNum: `XVI`,
                 title: `The Tower`,
@@ -301,7 +301,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Fool, who has become a master of creation, but fallen into the trap of self importance, worldly success, and small mindedness is roused from his revelries and reoriented to his higher calling.`],
             },{
-                num: 17,
+                id: 17,
                 suit: `major`,
                 majorNum: `XVII`,
                 title: `The Star`,
@@ -318,7 +318,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Star helps The Fool to come back to center, and reconnect with his true purpose following the upset of The Tower. Rejuvenated and inspired, The Fool prepares to continue his journey through the major arcana.`],
             },{
-                num: 18,
+                id: 18,
                 suit: `major`,
                 majorNum: `XVIII`,
                 title: `The Moon`,
@@ -335,7 +335,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Fool has resumed his path of development, having mastered creation and attraction, he focuses on his abilities of perception. In the shadowy land of The Moon, The Fool faces his final test of ego as he is tempted to see himself as superior to others who have not achieved his level of attainment.`],
             },{
-                num: 19,
+                id: 19,
                 suit: `major`,
                 majorNum: `XIX`,
                 title: `The Sun`,
@@ -352,7 +352,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Once The Fool has successfully navigated the realm of The Moon he steps out into the land of The Sun where everything is illuminated and life is able to thrive. He has become aligned to spirit in its highest form, and spiritual or moral practice have become automatic, no longer requiring conscious effort. The Fool has faced his fears, sees beyond death, and brought his desires in line with his ethics.`],
             },{
-                num: 20,
+                id: 20,
                 suit: `major`,
                 majorNum: `XX`,
                 title: `Judgement`,
@@ -369,7 +369,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Fool has stepped fully into the light, mastered himself, and knows the truth of his being. He sees himself as an interconnected part of nature, that spirit runs through all things, and all things are united through spirit. The Fool now works to sound a wake up call and guide others on the path.`],
             },{
-                num: 21,
+                id: 21,
                 suit: `major`,
                 majorNum: `XXI`,
                 title: `The World`,
@@ -386,7 +386,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Having successfully navigated the major arcana and contributed to the growth of his community, The Fool returns to spirit as an enlightened sage. He may choose to exit the karmic wheel and cycles of incarnation if he wishes.`],
             },{
-                num: 22,
+                id: 22,
                 suit: `wands`,
                 title: `Ace of Wands`,
                 subtitle: `Power of fire`,
@@ -402,7 +402,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Emperor`, `Strength`, `Temperance`, `The Magician`],
             },{
-                num: 23,
+                id: 23,
                 suit: `wands`,
                 title: `Two of Wands`,
                 subtitle: `Lord or Dominion`,
@@ -418,7 +418,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Emperor`, `The Tower`, `The High Priestess`],
             },{
-                num: 24,
+                id: 24,
                 suit: `wands`,
                 title: `Three of Wands`,
                 subtitle: `Lord of Established Strength`,
@@ -434,7 +434,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Emperor`, `The Sun`, `The Empress`],
             },{
-                num: 25,
+                id: 25,
                 suit: `wands`,
                 title: `Four of Wands`,
                 subtitle: `Lord of Perfected Work`,
@@ -450,7 +450,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Emperor`, `The Empress`],
             },{
-                num: 26,
+                id: 26,
                 suit: `wands`,
                 title: `Five of Wands`,
                 subtitle: `Lord of Strife`,
@@ -466,7 +466,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Strength`, `The World`, `The Hierophant`],
             },{
-                num: 27,
+                id: 27,
                 suit: `wands`,
                 title: `Six of Wands`,
                 subtitle: `Lord of Victory`,
@@ -482,7 +482,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Strength`, `The Wheel of Fortune`, `The Lovers`],
             },{
-                num: 28,
+                id: 28,
                 suit: `wands`,
                 title: `Seven of Wands`,
                 subtitle: `Lord of Valor`,
@@ -498,7 +498,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Strength`, `The Tower`, `The Chariot`],
             },{
-                num: 29,
+                id: 29,
                 suit: `wands`,
                 title: `Eight of Wands`,
                 subtitle: `Lord of Swiftness`,
@@ -514,7 +514,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Temperance`, `The Magician`, `Strength`],
             },{
-                num: 30,
+                id: 30,
                 suit: `wands`,
                 title: `Nine of Wands`,
                 subtitle: `Lord of Great Strength`,
@@ -530,7 +530,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Temperance`, `The High Priestess`, `The Hermit`],
             },{
-                num: 31,
+                id: 31,
                 suit: `wands`,
                 title: `Ten of Wands`,
                 subtitle: `Lord of Oppression`,
@@ -546,7 +546,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Temperance`, `The World`, `The Wheel of Fortune`],
             },{
-                num: 32,
+                id: 32,
                 suit: `wands`,
                 title: `Page of Wands`,
                 subtitle: `Spirit of Fire`,
@@ -562,7 +562,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Emperor`, `Strength`, `Temperance`],
             },{
-                num: 33,
+                id: 33,
                 suit: `wands`,
                 title: `Knight of Wands`,
                 subtitle: `Lord of Sagittarius`,
@@ -578,7 +578,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Temperance`, `Death`],
             },{
-                num: 34,
+                id: 34,
                 suit: `wands`,
                 title: `Queen of Wands`,
                 subtitle: `Lady of Aries`,
@@ -594,7 +594,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Emperor`, `The Moon`],
             },{
-                num: 35,
+                id: 35,
                 suit: `wands`,
                 title: `King of Wands`,
                 subtitle: `Lord of Leo`,
@@ -610,7 +610,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Strength`, `The Chariot`],
             },{
-                num: 36,
+                id: 36,
                 suit: `cups`,
                 title: `Ace of Cups`,
                 subtitle: `Power of Water`,
@@ -626,7 +626,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Chariot`, `Death`, `The Moon`],
             },{
-                num: 37,
+                id: 37,
                 suit: `cups`,
                 title: `Two of Cups`,
                 subtitle: `Lord of Love`,
@@ -642,7 +642,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Chariot`, `The Empress`, `The High Priestess`],
             },{
-                num: 38,
+                id: 38,
                 suit: `cups`,
                 title: `Three of Cups`,
                 subtitle: `Lord of Abundance`,
@@ -658,7 +658,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Chariot`, `The Magician`, `The Empress`],
             },{
-                num: 39,
+                id: 39,
                 suit: `cups`,
                 title: `Four of Cups`,
                 subtitle: `Lord of Blended Pleasure`,
@@ -674,7 +674,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Chariot`, `The High Priestess`, `The Emperor`],
             },{
-                num: 40,
+                id: 40,
                 suit: `cups`,
                 title: `Five of Cups`,
                 subtitle: `Lord of Loss of Pleasure`,
@@ -690,7 +690,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Death`, `The Tower`, `The Hierophant`],
             },{
-                num: 41,
+                id: 41,
                 suit: `cups`,
                 title: `Six of Cups`,
                 subtitle: `Lord of Pleasure`,
@@ -706,7 +706,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Death`, `The Sun`, `The Lovers`],
             },{
-                num: 42,
+                id: 42,
                 suit: `cups`,
                 title: `Seven of Cups`,
                 subtitle: `Lord of Illusionary Success`,
@@ -722,7 +722,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Death`, `The Empress`, `The Chariot`],
             },{
-                num: 43,
+                id: 43,
                 suit: `cups`,
                 title: `Eight of Cups`,
                 subtitle: `Lord of Abandoned Success`,
@@ -738,7 +738,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Moon`, `The World`, `Strength`],
             },{
-                num: 44,
+                id: 44,
                 suit: `cups`,
                 title: `Nine of Cups`,
                 subtitle: `Lord of Material Happiness`,
@@ -754,7 +754,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Moon`, `The Wheel of Fortune`, `The Hermit`],
             },{
-                num: 45,
+                id: 45,
                 suit: `cups`,
                 title: `Ten of Cups`,
                 subtitle: `Lord of Perfected Success`,
@@ -770,7 +770,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Moon`, `The Tower`, `The Wheel of Fortune`],
             },{
-                num: 46,
+                id: 46,
                 suit: `cups`,
                 title: `Page of Cups`,
                 subtitle: `Spirit of Water`,
@@ -786,7 +786,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Chariot`, `Death`, `The Moon`],
             },{
-                num: 47,
+                id: 47,
                 suit: `cups`,
                 title: `Knight of Cups`,
                 subtitle: `Lord of Pisces`,
@@ -802,7 +802,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Moon`],
             },{
-                num: 48,
+                id: 48,
                 suit: `cups`,
                 title: `Queen of Cups`,
                 subtitle: `Lady of Cancer`,
@@ -818,7 +818,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Chariot`],
             },{
-                num: 49,
+                id: 49,
                 suit: `cups`,
                 title: `King of Cups`,
                 subtitle: `Lord of Scorpio`,
@@ -834,7 +834,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Death`],
             },{
-                num: 50,
+                id: 50,
                 suit: `swords`,
                 title: `Ace of Swords`,
                 subtitle: `Power of Air`,
@@ -850,7 +850,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Justice`, `The Star`, `The Lovers`],
             },{
-                num: 51,
+                id: 51,
                 suit: `swords`,
                 title: `Two of Swords`,
                 subtitle: `Lord of Peace Restored`,
@@ -866,7 +866,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Justice`, `The High Priestess`],
             },{
-                num: 52,
+                id: 52,
                 suit: `swords`,
                 title: `Three of Swords`,
                 subtitle: `Lord of Sorrow`,
@@ -882,7 +882,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Justice`, `The World`, `The Empress`],
             },{
-                num: 53,
+                id: 53,
                 suit: `swords`,
                 title: `Four of Swords`,
                 subtitle: `Lord of Rest from Strife`,
@@ -899,7 +899,7 @@ const Update = () => {
                 major: [`Justice`, `The Wheel of Fortune`, `The Emperor`],
                 },            
                 {
-                num: 54,
+                id: 54,
                     suit: `swords`,
                 title: `Five of Swords`,
                 subtitle: `Lord of Defeat`,
@@ -915,7 +915,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Star`, `The Empress`, `The Hierophant`],
             },{
-                num: 55,
+                id: 55,
                 suit: `swords`,
                 title: `Six of Swords`,
                 subtitle: `Lord of Earned Success`,
@@ -931,7 +931,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Star`, `The Magician`, `The Lovers`],
             },{
-                num: 56,
+                id: 56,
                 suit: `swords`,
                 title: `Seven of Swords`,
                 subtitle: `Lord of Unstable Effort`,
@@ -947,7 +947,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Star`, `The High Priestess`, `The Chariot`],
             },{
-                num: 57,
+                id: 57,
                 suit: `swords`,
                 title: `Eight of Swords`,
                 subtitle: `Lord of Shortened Force`,
@@ -963,7 +963,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Lovers`, `The Wheel of Fortune`, `Strength`],
             },{
-                num: 58,
+                id: 58,
                 suit: `swords`,
                 title: `Nine of Swords`,
                 subtitle: `Lord of Despair and Cruelty`,
@@ -979,7 +979,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Lovers`, `The Tower`, `The Hermit`],
             },{
-                num: 59,
+                id: 59,
                 suit: `swords`,
                 title: `Ten of Swords`,
                 subtitle: `Lord of Ruin`,
@@ -995,7 +995,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Lovers`, `The Sun`, `The Wheel of Fortune`],
             },{
-                num: 60,
+                id: 60,
                 suit: `swords`,
                 title: `Page of Swords`,
                 subtitle: `Spirit of Air`,
@@ -1011,7 +1011,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Justice`, `The Star`, `The Lovers`],
             },{
-                num: 61,
+                id: 61,
                 suit: `swords`,
                 title: `Knight of Swords`,
                 subtitle: `Lord of Gemini`,
@@ -1027,7 +1027,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Lovers`],
             },{
-                num: 62,
+                id: 62,
                 suit: `swords`,
                 title: `Queen of Swords`,
                 subtitle: `Lady of Libra`,
@@ -1043,7 +1043,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`Justice`],
             },{
-                num: 63,
+                id: 63,
                 suit: `swords`,
                 title: `King of Swords`,
                 subtitle: `Lord of Aquarius`,
@@ -1059,7 +1059,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Star`],
             },{
-                num: 64,
+                id: 64,
                 suit: `pentacles`,
                 title: `Ace of Pentacles`,
                 subtitle: `Power of Earth`,
@@ -1075,7 +1075,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Devil`, `The Empress`, `The Hermit`, `The Magician`],
             },{
-                num: 65,
+                id: 65,
                 suit: `pentacles`,
                 title: `Two of Pentacles`,
                 subtitle: `Lord of Harmonious Change`,
@@ -1091,7 +1091,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Wheel of Fortune`, `The Devil`, `The High Priestess`],
             },{
-                num: 66,
+                id: 66,
                 suit: `pentacles`,
                 title: `Three of Pentacles`,
                 subtitle: `Lord of Material Works`,
@@ -1107,7 +1107,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Devil`, `The Tower`, `The Empress`],
             },{
-                num: 67,
+                id: 67,
                 suit: `pentacles`,
                 title: `Four of Pentacles`,
                 subtitle: `Lord of Earthly Power`,
@@ -1123,7 +1123,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Devil`, `The Sun`, `The Emperor`],
             },{
-                num: 68,
+                id: 68,
                 suit: `pentacles`,
                 title: `Five of Pentacles`,
                 subtitle: `Lord of Material Troubles`,
@@ -1139,7 +1139,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Hierophant, The Magician`],
             },{
-                num: 69,
+                id: 69,
                 suit: `pentacles`,
                 title: `Six of Pentacles`,
                 subtitle: `Lord of Material Success`,
@@ -1155,7 +1155,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Hierophant`, `The High Priestess`, `The Lovers`],
             },{
-                num: 70,
+                id: 70,
                 suit: `pentacles`,
                 title: `Seven of Pentacles`,
                 subtitle: `Lord of Success Unfulfilled`,
@@ -1171,7 +1171,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Hierophant`, `The World`, `The Chariot`],
             },{
-                num: 71,
+                id: 71,
                 suit: `pentacles`,
                 title: `Eight of Pentacles`,
                 subtitle: `Lord of Prudence`,
@@ -1187,7 +1187,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Hermit`, `The Sun`, `Strength`],
             },{
-                num: 72,
+                id: 72,
                 suit: `pentacles`,
                 title: `Nine of Pentacles`,
                 subtitle: `Lord of Material Gain`,
@@ -1203,7 +1203,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Hermit`, `The Empress`],
             },{
-                num: 73,
+                id: 73,
                 suit: `pentacles`,
                 title: `Ten of Pentacles`,
                 subtitle: `Lord of Wealth`,
@@ -1219,7 +1219,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Hermit`, `The Magician`, `The Wheel of Fortune`],
             },{
-                num: 74,
+                id: 74,
                 suit: `pentacles`,
                 title: `Page of Pentacles`,
                 subtitle: `Spirit of Earth`,
@@ -1235,7 +1235,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Devil`, `The Empress`, `The Hermit`],
             },{
-                num: 75,
+                id: 75,
                 suit: `pentacles`,
                 title: `Knight of Pentacles`,
                 subtitle: `Lord of Virgo`,
@@ -1251,7 +1251,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Hermit`],
             },{
-                num: 76,
+                id: 76,
                 suit: `pentacles`,
                 title: `Queen of Pentacles`,
                 subtitle: `Lady of Capricorn`,
@@ -1267,7 +1267,7 @@ const Update = () => {
                 revdesc: [``],
                 major: [`The Devil`],
             },{
-                num: 77,
+                id: 77,
                 suit: `pentacles`,
                 title: `King of Pentacles`,
                 subtitle: `Lord of Taurus`,
