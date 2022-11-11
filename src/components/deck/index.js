@@ -52,6 +52,7 @@ const Deck = ({deck}) => {
         const img = card.title.toLowerCase().split(' ').join('_');
         return (
             <div id={card.id} className="card dealt-card stack-deck" key={key} onClick={(e) => {selectCard(e);}}>
+            <img src='/back.jpg' alt="Star Card Back" />
             <img src={`/cards/${img}.jpg`} alt={card.title}/>
         </div>
     );
