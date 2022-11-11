@@ -1,13 +1,13 @@
 /***** Card Dimensions: 23/40 */
 .card {
     --percentage: .5;
-    height: calc(40vw * var(--percentage));
-    width: calc(23vw * var(--percentage));
+    height: calc(320px * var(--percentage));
+    width: calc(184px * var(--percentage));
     display: inline-block;
     overflow: hidden;
-    border-radius: calc(1vw * var(--percentage));
-    box-shadow: .2vw .2vw .2vw rgba(0 0 0 / 25%);
-    margin: calc(.5vw * var(--percentage));
+    border-radius: calc(8px * var(--percentage));
+    box-shadow: calc(-5px * var(--percentage)) calc(5px * var(--percentage)) calc(5px * var(--percentage)) rgba(0 0 0 / 25%);
+    margin: calc(10px * var(--percentage));
 }
 
 .card img {
