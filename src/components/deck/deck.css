@@ -1,12 +1,34 @@
+:root {
+    --percentage: .5;
+}
 .deck {
-    max-width: calc(78 * 12vw);
-    width: 400%;
+    max-width: 100vw;
+    width: 100vw;
     overflow-x: scroll;
+    position: relative;
+    height: 200px;
+    padding: 20px 0;
 }
 .cards {
-    max-width: calc(78 * 12vw);
-    width: calc(78 * 12vw);
+
+    max-width: calc(78 * 57px * var(--percentage));
+    width: calc(78 * 57px * var(--percentage));
 }
-.card + .card {
-    margin-left: -100px;
-}
+
+  .card {
+    transition: all 2s;
+  }
+
+  .stack-deck {
+    margin-right: calc(-194px * var(--percentage));
+  }
+  .splay-deck {
+    margin-right: calc(-138px * var(--percentage));;
+  }
+
+  @media only screen and (max-width: 900px) {
+    .deal-deck, .splay-deck{
+      transition: all 1.5s;
+    }
+  }
+  
