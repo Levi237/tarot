@@ -4,7 +4,7 @@ import React, { useState, useEffect }   from 'react';
 import './card.css';
 import './deck.css';
 
-const Deck = ({deck, shuffleDeck}) => {
+const Deck = ({deck}) => {
 
     ////-- pick card from shuffled deck, add to hand.
     const selectCard = (e) => {
@@ -48,16 +48,14 @@ const Deck = ({deck, shuffleDeck}) => {
         //     }, 1000);
         // };
     };
-
     const mapDeck = deck.map((card, key) => {
         const img = card.title.toLowerCase().split(' ').join('_');
         return (
             <div id={card.id} className="card dealt-card stack-deck" key={key} onClick={(e) => {selectCard(e);}}>
-                <img src={`/cards/${img}.jpg`} alt={card.title}/>
-            </div>
-        );
-    });
-
+            <img src={`/cards/${img}.jpg`} alt={card.title}/>
+        </div>
+    );
+});
     return(
         <div className="deck-container">
             <div className="deck">
@@ -65,7 +63,7 @@ const Deck = ({deck, shuffleDeck}) => {
                     {mapDeck}
                 </div>
             </div>
-        <button onClick={shuffleDeck}>shuffle deck</button>
+
         </div>
     );
 };
