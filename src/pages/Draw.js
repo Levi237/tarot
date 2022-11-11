@@ -5,39 +5,41 @@ import Deck from '../components/deck'
 
 const DrawPage = ({deck}) => {
 
-    const [deal, setDeal] = useState([])
+    const [newDeck, setNewDeck] = useState([]);
+    const [reshuffle, setReshuffle] = useState(false);
     useEffect(() => {
         // presentDeck();
     }, []);
 
     const shuffleDeck = () => {
-        console.log("click shuffle", deal);
+        console.log("click shuffle", newDeck);
         presentDeck();
         stackDeck();
         //==> reshuffle
-        if (deal.length = 0){
+        if (reshuffle){
+            //=> reshuffle
             setTimeout(() => {
                 splayDeck();
-                console.log("deal greater than 0", deal)
+            }, 2800);
+        } else {     
+            //=> first shuffle       
+            setTimeout(() => {
+                splayDeck();
+                setReshuffle(true);
             }, 0);
-        } else {            
-            //=> shuffle
-            setTimeout(() => {
-                splayDeck();
-            }, 5000);
         }
 
     }
     const presentDeck = () => {
-        let newDeck = [...deck];
+        let getDeck = [...deck];
         let shuffledDeck = [];
-        while (newDeck.length > 0) {
-            let index = Math.floor(Math.random() * newDeck.length);
-            let card = newDeck[index];
+        while (getDeck.length > 0) {
+            let index = Math.floor(Math.random() * getDeck.length);
+            let card = getDeck[index];
             shuffledDeck.push(card);
-            newDeck.splice(index, 1);
+            getDeck.splice(index, 1);
         };
-        setDeal(shuffledDeck);
+        setNewDeck(shuffledDeck);
     }
 
     const stackDeck = () => {
@@ -47,7 +49,7 @@ const DrawPage = ({deck}) => {
                 setTimeout(() => {
                     getCard[i].classList.add('stack-deck');
                     getCard[i].classList.remove('splay-deck');
-                }, i*20);
+                }, i*6);
             }, 0);
         };
     };
@@ -59,7 +61,7 @@ const DrawPage = ({deck}) => {
                 setTimeout(() => {
                     getCard[i].classList.remove('stack-deck');
                     getCard[i].classList.add('splay-deck');
-                }, i*20);
+                }, i*6);
             }, 0);
         };
     };
@@ -76,18 +78,12 @@ const DrawPage = ({deck}) => {
     // };
 
     return (
-        <>
-Draw Page Test
-<br/>
-{/* { (deal === [])
-? <Deck deck={deal} shuffleDeck={shuffleDeck}/>
-: <Deck deck={deck} shuffleDeck={shuffleDeck}/>
-} */}
-<Deck deck={(deal !== []) ? deal : deck} shuffleDeck={shuffleDeck}/>
-<Deck deck={deal} shuffleDeck={shuffleDeck}/>
-<Deck deck={deck} shuffleDeck={shuffleDeck}/>
-<button onClick={shuffleDeck}>shuffle deck</button>
-        </>
+        <div>
+            Draw Page Test
+            <br/>
+            <Deck deck={newDeck} shuffleDeck={shuffleDeck}/>
+            <button onClick={shuffleDeck}>shuffle deck</button>
+        </div>
     )
 }
 
