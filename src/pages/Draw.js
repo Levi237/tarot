@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Deck from '../components/deck'
+import Deck from '../components/deck';
+import SpreadLayout from '../components/spread/Layout';
 
 
 const DrawPage = ({deck}) => {
@@ -11,6 +12,8 @@ const DrawPage = ({deck}) => {
     const [spreadCount, setSpreadCount] = useState(3);
     //==> signal difference in splay speed (shuffle vs reshuffle)
     const [reshuffle, setReshuffle] = useState(false);
+    //==> chose layout
+    const [layout, setLayout] = useState("3 Card Spread");
 
     const shuffleDeck = () => {
         console.log("click shuffle", newDeck);
@@ -97,6 +100,7 @@ const DrawPage = ({deck}) => {
             <br/>
             <Deck deck={newDeck} shuffleDeck={shuffleDeck} selectCard={selectCard}/>
             <button onClick={shuffleDeck}>shuffle deck</button>
+            <SpreadLayout hand={hand} layout={layout}/>
         </div>
     )
 }
