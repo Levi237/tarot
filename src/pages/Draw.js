@@ -72,7 +72,6 @@ const DrawPage = ({deck}) => {
 
     ////-- pick card from shuffled deck, add to hand.
     const selectCard = (e) => {
-        console.log("selectCard => ", e);
         const _id = e.currentTarget.id;
         // ////-- increase chances of card being upright
         const upDownChance = Math.floor(Math.random(1 - 0) * 3);
