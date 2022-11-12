@@ -1,36 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import Deck from '../components/deck'
 
-//==> pass original deck and make new state of deal
 
 const DrawPage = ({deck}) => {
-
+    
+    //==> pass original deck and make new state of deal
     const [newDeck, setNewDeck] = useState([]);
+    //==> signal difference in splay speed
     const [reshuffle, setReshuffle] = useState(false);
-    useEffect(() => {
-        // presentDeck();
-    }, []);
 
     const shuffleDeck = () => {
         console.log("click shuffle", newDeck);
         presentDeck();
         stackDeck();
-        //==> reshuffle
+        //==> shuffle options (shuffle vs reshuffle)
         if (reshuffle){
-            //=> reshuffle
+            //=> reshuffle click
             setTimeout(() => {
                 splayDeck();
             }, 2800);
         } else {     
-            //=> first shuffle       
+            //=> first shuffle click     
             setTimeout(() => {
                 splayDeck();
                 setReshuffle(true);
+                const hideTopCard = document.getElementById('top-back-card');
+                if(hideTopCard){hideTopCard.style.display = 'none';}
             }, 0);
         }
 
     }
     const presentDeck = () => {
+        //==> shuffle deck and update newDeck state
         let getDeck = [...deck];
         let shuffledDeck = [];
         while (getDeck.length > 0) {
@@ -66,16 +67,6 @@ const DrawPage = ({deck}) => {
         };
     };
 
-    // const animateDeck = () => {   
-    //     let getCard = document.getElementsByClassName('dealt-card');
-    //     for (let i = 0; i < getCard.length; i++) {
-    //         setTimeout(() => {
-    //             setTimeout(() => {
-    //                 getCard[i].classList.add('splay-deck');
-    //             }, i*20);
-    //         }, 0);
-    //     };
-    // };
 
     return (
         <div>
