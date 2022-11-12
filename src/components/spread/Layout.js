@@ -8,15 +8,17 @@ const Layout = ({hand, layout}) => {
     const showHand = hand.map((h, key) => {
         const img = h.title.toLowerCase().split(' ').join('_');
         return (
-            <div key={key} onClick={() => this.onSelectCard(h)}>
+            <div key={key}>
                 <img style={{transform: `rotate(${180*h.rotation + 'deg'})`}} src={`/cards/${img}.jpg`} alt={`${h.title}`}/>
             </div>
         );
     });
 
     return(
-        <div className=""> 
-            {showHand}
+        <div className="spread-three-simple"> 
+            <section class="spread-section">
+                {showHand}
+            </section>
         </div>
     )
 };
