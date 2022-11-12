@@ -1,4 +1,11 @@
-.spread-section { display: grid;}
+.spread-section { 
+    display: grid; 
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+/*-----------------------------------------------------> CARD PLACEMENT GRID AREA */
 .spread-section > div:first-of-type { grid-area: one; }
 .spread-section > div:nth-of-type(2) { grid-area: two; }
 .spread-section > div:nth-of-type(3) { grid-area: three; }
