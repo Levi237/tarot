@@ -4,7 +4,193 @@ import SpreadLayout from '../components/spread/Layout';
 
 
 const DrawPage = ({deck}) => {
-    
+
+    //=> hardcode in layouts for now
+    const [layouts] = useState([{  
+        id: `single-card-draw`,
+        image: `./deck/back.png`,
+        cards: 1,
+        name: `Single Card Draw`,
+        note: `Helpful in understanding the general energy of a specific situation or period of time.`,
+        order: [{
+            title: `Single Card`,
+            description: `Relates to what is most present on your heart at the time of the card pull`,
+            prompt: `Is the relationship of your card to your question at once clear, or is it hidden? Sometimes the most important piece is not the most obvious. In what way does the card present a challenge? In what way is it a gift?`,
+        }]
+    },{
+        id: `spread-horseshoe`,
+        image: './spread/horseshoe-spread.png',
+        cards: 7,
+        name: `7 Card Horseshoe`,
+        note: `Perfect for clarity in decision-making`,
+        order: [{
+            title: `The Past`,
+            description: `That which lead to the present moment/ What is passing away`,
+            prompt: `What past moments, and/or feelings come to mind when looking at the card? How does that relate to the question?`,
+        },{
+            title: `Present Moment`,
+            description: `Speaks to what is happening now`,
+            prompt: `How does the energy & symbolism of the card reflect the current moment related to the question?`,
+        },{
+            title: `What may be`,
+            description: `Indicates incoming energy`,
+            prompt: `How does this card relate to the past and present? What story do they tell? What feelings arise?`,
+        },{
+            title: `The Querent`,
+            description: `You at the present moment`,
+            prompt: `What are your attitudes about the question? Are you being honest with yourself?`,
+        },{
+            title: `Influences`,
+            description: `Outside circumstances, and attitudes of those around you`,
+            prompt: `What about your circumstance comes to mind? What people, and in what way? How can this be viewed through the lens of the card?`,
+        },{
+            title: `Challenges`,
+            description: `That which stands between you, and your goals`,
+            prompt: `What are you holding that no longer serves you? Are there habits or attitudes that are standing in the way?`,
+        },{
+            title: `Outcome`,
+            description: `This card unites the spread`,
+            prompt: `How do the past, present and future, personal attitudes, outside influences, and challenges culminate in the final card? What feelings arise?`,
+        }]
+    },{           
+        id: `spread-three-simple`,            
+        cards: 3,
+        name: `Past, Present, Future`,
+        note: `Ideal for gaining perspective in a situation or relationship`,
+        order: [{
+            title: `Past`,
+            description: `This card is energy that is on the way out, or that which is at the foundation of the question`,
+            prompt: `What past moments, and/or feelings come to mind when looking at the card? How does that relate to the question?`,
+        },{
+            title: `Present`,
+            description: `This card speaks to what is happening now`,
+            prompt: `How does the energy & symbolism of the card reflect the current moment related to the question?`,
+        },{
+            title: `Future`,
+            description: `This card indicates incoming energy. (Remember: You make your own destiny! Tarot is a tool which helps us see.)`,
+            prompt: `What story do the three cards tell together? What feelings arise? Is this a path that I wish to continue on?`,
+        }]
+    },{          
+        id: `spread-three-simple-two`,            
+        cards: 3,
+        name: `Desire, Challenge, Resolution`,
+        note: `Ideal for gaining clarity when setting goals`,
+        order: [{
+            title: `Desire`,
+            description: `What you want to create or call in`,
+            prompt: `How is the card surprising or not surprising? What's at the root of the desire?`,
+        },{
+            title: `Challenge`,
+            description: `That which stands between you, and your goals`,
+            prompt: `Does the card affirm your perception, or offer a challenge of its own? How might the card be offering a new way to view the challenge? What are you holding that no longer serves you?`,
+        },{
+            title: `Resolution`,
+            description: `This is the best possible outcome`,
+            prompt: `Where is the path leading? What feelings arise when considering the spread?`,
+        }]
+    },{            
+        id: `spread-five-simple`,            
+        image: './spread/-spread.png',
+        cards: 5,
+        name: `Personal Inventory`,
+        note: `Path finding; Introspection`,
+        order: [{
+            title: `Me at this Moment`,
+            description: `This card is you in the present moment`,
+            prompt: `Who Am I now? What is my focus? Am I being honest with myself?`,
+        },{
+            title: `What Serves Me`,
+            description: `This card is what is needed now. You already have access to these strengths and tools`,
+            prompt: `What supports my highest and best good? Does the card point to an asset I have yet to realize? How do the details and imagery of the card speak to me personally?`,
+        },{
+            title: `What Serves Me Not`,
+            description: `This card is what needs releasing`,
+            prompt: `What do I hold out of stubbornness or pride? What am I chasing that drains my energy, and causes me strife? How do the details and imagery of the card speak to me personally? What thoughts and memories arise as I consider this card?`,
+        },{
+            title: `The Way Onward`,
+            description: `This card indicates choices ahead, and options available`,
+            prompt: `How does the card relate to potential actions? Are these actions overt or subtle? How will I get to where I'm going? (Consider: a reversed card in this position may emphasize the duality of the card's meaning rather than the inverse; you have choices.)`,
+        },{
+            title: `Path Ahead`,
+            description: `This card speaks to where you are headed`,
+            prompt: `Is the direction I'm going the direction I intend? How might my choices affect my outcome?`,
+        }]
+    },{            
+        id: `spread-cross`,           
+        image: './spread/-spread.png',
+        cards: 5,
+        name: `5 card Cross`,
+        note: `Decision making and goal setting`,
+        order: [{
+            title: `Present Moment`,
+            description: `The situation at hand/ state of mind`,
+            prompt: `How is my attitude reflected in the card? Does the card affirm or challenge my perception of the situation?`,
+        },{
+            title: `Crown`,
+            description: `Ultimate goal/ the highest ideal`,
+            prompt: `What am I ultimately working toward? What story does the card tell? Does the card affirm or challenge the story in my mind?`,
+        },{
+            title: `Roots`,
+            description: `The subconscious mind/ Tools at my disposal`,
+            prompt: `Is my subconscious self supportive of my conscious goals? What strengths and resources does the card call to mind?`,
+        },{
+            title: `Past`,
+            description: `That which led to the present situation`,
+            prompt: `How do my past influences, and lessons give me strength now? What thoughts and memories does the card call to mind? (Trust your gut)`,
+        },{
+            title: `Near Future`,
+            description: `Incoming energy/ Where I am headed`,
+            prompt: `Is this the future I want? How do my present choices and actions lead to this? (You are the master of your own destiny! Tarot is a tool of understanding, like a compass it indicates the direction one is headed)`,
+        }]
+    },{            
+        id: `spread-ten-celtic-cross`,
+        image: './spread/-spread.png',
+        cards: 10,
+        name: `Celtic Cross`,
+        note: `A deeper dive. Helpful for complex issues. Guidance on life changes. Overview of a period of time, such as the month to come`,
+        order: [{
+            title: `This Covers You`,
+            description: `The present moment. Indicates state of mind, perception, and influences related to the question`,
+            prompt: `What guides my present course? Am I moving with love and serenity in my purpose? Am I reacting (or frozen) in fear? Are my heart, mind, and gut in alignment?`,
+        },{
+            title: `This Crosses You`,
+            description: `The most immediate challenge or obstacle (always read as upright)`,
+            prompt: `Pushing back against resistance can strengthen the body, yet flowing like water can shape the world. Does this challenge build my strength or wear me down? How does the obstacle guide my path? Does the card encourage me to stay the course, or is a shift needed?`,
+        },{
+            title: `This Crowns You`,
+            description: `The goal/ Idealized outcome`,
+            prompt: `What am I working toward? How does the card challenge or affirm my perception of the goal?`,
+        },{
+            title: `This Supports You`,
+            description: `Subconscious/ Tools at your disposal`,
+            prompt: `Are my heart, mind, and body in harmony or conflict on this matter? What strengths, and skills do I bring to the table? Does the card highlight these or ask me to consider a different approach?`,
+        },{
+            title: `This is Behind You`,
+            description: `What led to now/ What is passing away`,
+            prompt: `What moments from the past does the card call to mind? How do these moments relate to the question? Does the card call to mind an aspect of the present that may be ending? What feelings arise?`,
+        },{
+            title: `This is Before You`,
+            description: `Near future/ Next steps`,
+            prompt: `What does the card say about the energy coming in now? Does the card encourage action, or is it a time to watch and wait? Is it time to rest? Is this work external or internal?`,
+        },{
+            title: `Guidance`,
+            description: `Advice from Spirit/ Suggested Approach`,
+            prompt: `What kind of path is the card showing me? Does the card suggest a shift in perception or a change of tactic?`,
+        },{
+            title: `Outside Influences`,
+            description: `People, energies, and events that surround the situation outside of your control`,
+            prompt: `How does this card relate to earlier cards in the spread? What story does the spread tell? Does the card challenge or confirm my perception of these influences, and in what way?`,
+        },{
+            title: `Hopes & Fears`,
+            description: `One's emotional state related to the topic.`,
+            prompt: `Hope and fear can at times be deeply interwoven. We may hope for something we fear, or fear that for which we hope. Is fear causing me to work against myself? In what ways do the meaning and imagery of the card relate to my internal dialogue?`,
+        },{
+            title: `What May Be`,
+            description: `This final card shows where the current path is leading. (Remember: You make your own destiny! Tarot is a tool which helps us see.)`,
+            prompt: `How does this final card complete the story the first nine have been telling? How does this knowledge empower me?`,
+        }]        
+    }]);
+    const [layout, setLayout] = useState("spread-three-simple");
     //==> pass original deck and make new state of deal
     const [newDeck, setNewDeck] = useState([]);
     //==> create hand from cards drawn
@@ -13,7 +199,6 @@ const DrawPage = ({deck}) => {
     //==> signal difference in splay speed (shuffle vs reshuffle)
     const [reshuffle, setReshuffle] = useState(false);
     //==> chose layout
-    const [layout, setLayout] = useState("3 Card Spread");
 
     const shuffleDeck = () => {
         console.log("click shuffle", newDeck);
@@ -33,9 +218,9 @@ const DrawPage = ({deck}) => {
                 const hideTopCard = document.getElementById('top-back-card');
                 if(hideTopCard){hideTopCard.style.display = 'none';}
             }, 0);
-        }
-
-    }
+        };
+    };
+    
     const presentDeck = () => {
         //==> shuffle deck and update newDeck state
         let getDeck = [...deck];
@@ -47,7 +232,7 @@ const DrawPage = ({deck}) => {
             getDeck.splice(index, 1);
         };
         setNewDeck(shuffledDeck);
-    }
+    };
 
     const stackDeck = () => {
         let getCard = document.getElementsByClassName('dealt-card');
@@ -102,8 +287,8 @@ const DrawPage = ({deck}) => {
             <button onClick={shuffleDeck}>shuffle deck</button>
             <SpreadLayout hand={hand} layout={layout}/>
         </div>
-    )
-}
+    );
+};
 
 
 
