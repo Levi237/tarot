@@ -15,11 +15,11 @@ const Layout = ({hand, layout}) => {
     });
 
     return(
-        <div className="spread-three-simple"> 
+        <div className={`${layout}`}> 
             <section class="spread-section">
                 {showHand}
             </section>
         </div>
-    )
+    );
 };
 export default Layout;
