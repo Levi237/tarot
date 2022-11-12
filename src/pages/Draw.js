@@ -6,7 +6,10 @@ const DrawPage = ({deck}) => {
     
     //==> pass original deck and make new state of deal
     const [newDeck, setNewDeck] = useState([]);
-    //==> signal difference in splay speed
+    //==> create hand from cards drawn
+    const [hand, setHand] = useState([]);
+    const [spreadCount, setSpreadCount] = useState(3);
+    //==> signal difference in splay speed (shuffle vs reshuffle)
     const [reshuffle, setReshuffle] = useState(false);
 
     const shuffleDeck = () => {
@@ -67,12 +70,57 @@ const DrawPage = ({deck}) => {
         };
     };
 
-
+    ////-- pick card from shuffled deck, add to hand.
+    const selectCard = (e) => {
+        console.log("selectCard => ", e);
+        // const { deck, hand, selectSpread, shuffle } = this.state;
+        const _id = e.currentTarget.id;
+        // ////-- increase chances of card being upright
+        // // const upDownChance = Math.floor(Math.random(1 - 0) * 2);
+        const upDownChance = Math.floor(Math.random(1 - 0) * 3);
+        if (hand.length < spreadCount) {
+            console.log("if true", hand.length, "deck", deck)
+            document.getElementById(_id).style.display = "none";
+            deck.filter(d => {
+                if ( _id == d.id ) {
+                    console.log("id selected", d.id, _id)
+                    let newD = d;
+                    newD.rotation = upDownChance;
+                    newD.orderNum = hand.length;
+                    // this.setState({
+                    //     hand: [...hand, newD]
+                    // });
+                    setHand([...hand, newD])
+                };
+            });
+        };
+        while (newDeck.length > 0 && hand.length === spreadCount - 1) {
+            newDeck.pop();
+        };
+        // if (hand.length === spreadCount - 1) {
+        //     document.getElementById("shuffle-nav").style.display = "none";
+        //     document.getElementById("deck-display").style.marginLeft = "-120%";
+        //     setTimeout(() => {
+        //         document.getElementById("deck-display").style.marginBottom = "-40%"; 
+        //     }, 1000);
+        // };
+        // };
+        // while (shuffle.length > 0 && hand.length === spreadCount - 1) {
+        //     shuffle.pop();
+        // };
+        // if (hand.length === spreadCount - 1) {
+        //     document.getElementById("shuffle-nav").style.display = "none";
+        //     document.getElementById("deckDisplay").style.marginLeft = "-120%";
+        //     setTimeout(() => {
+        //         document.getElementById("deckDisplay").style.marginBottom = "-40%"; 
+        //     }, 1000);
+        // };
+    };
     return (
         <div>
             Draw Page Test
             <br/>
-            <Deck deck={newDeck} shuffleDeck={shuffleDeck}/>
+            <Deck deck={newDeck} shuffleDeck={shuffleDeck} selectCard={selectCard}/>
             <button onClick={shuffleDeck}>shuffle deck</button>
         </div>
     )
