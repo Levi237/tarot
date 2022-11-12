@@ -73,49 +73,25 @@ const DrawPage = ({deck}) => {
     ////-- pick card from shuffled deck, add to hand.
     const selectCard = (e) => {
         console.log("selectCard => ", e);
-        // const { deck, hand, selectSpread, shuffle } = this.state;
         const _id = e.currentTarget.id;
         // ////-- increase chances of card being upright
-        // // const upDownChance = Math.floor(Math.random(1 - 0) * 2);
         const upDownChance = Math.floor(Math.random(1 - 0) * 3);
         if (hand.length < spreadCount) {
-            console.log("if true", hand.length, "deck", deck)
+            console.log("if true", hand.length, "deck", newDeck)
             document.getElementById(_id).style.display = "none";
-            deck.filter(d => {
-                if ( _id == d.id ) {
-                    console.log("id selected", d.id, _id)
-                    let newD = d;
-                    newD.rotation = upDownChance;
-                    newD.orderNum = hand.length;
-                    // this.setState({
-                    //     hand: [...hand, newD]
-                    // });
-                    setHand([...hand, newD])
-                };
-            });
+            newDeck.filter(card => {
+                if ( _id == card.id ) {
+                    console.log("id selected", card.id, _id)
+                    let drawnCard = card;
+                    drawnCard.rotation = upDownChance;
+                    drawnCard.orderNum = hand.length;
+                        setHand([...hand, drawnCard])
+                    };
+                });
+                newDeck.pop();
         };
-        while (newDeck.length > 0 && hand.length === spreadCount - 1) {
-            newDeck.pop();
-        };
-        // if (hand.length === spreadCount - 1) {
-        //     document.getElementById("shuffle-nav").style.display = "none";
-        //     document.getElementById("deck-display").style.marginLeft = "-120%";
-        //     setTimeout(() => {
-        //         document.getElementById("deck-display").style.marginBottom = "-40%"; 
-        //     }, 1000);
-        // };
-        // };
-        // while (shuffle.length > 0 && hand.length === spreadCount - 1) {
-        //     shuffle.pop();
-        // };
-        // if (hand.length === spreadCount - 1) {
-        //     document.getElementById("shuffle-nav").style.display = "none";
-        //     document.getElementById("deckDisplay").style.marginLeft = "-120%";
-        //     setTimeout(() => {
-        //         document.getElementById("deckDisplay").style.marginBottom = "-40%"; 
-        //     }, 1000);
-        // };
     };
+
     return (
         <div>
             Draw Page Test
