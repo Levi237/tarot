@@ -7,11 +7,9 @@ import { onAuthStateChanged }         from 'firebase/auth';
 import fs                             from './firebase/config';
 import { collection, getDocs }        from 'firebase/firestore'; 
 
-// import UpdateDeck                    from './features/admin/udpates/deck';
 import UserAuth                       from './components/authentication';
 import Account                        from './pages/Account';
 import Draw                           from './pages/Draw';
-// import Deck                           from './components/deck';
 import Home                           from './pages/Home';
 import Admin                          from './pages/Admin';
 import NavMenu                        from './components/nav';
@@ -74,7 +72,6 @@ const App = () => {
       <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
       <UserAuth user={user} clickSignOut={clickSignOut}/>
       <Routes>
-        
           <Route path={routes.DRAW} exact element={<Draw deck={deck}/>}/>
           <Route path={routes.ACCT} exact element={<Account />}/>
           <Route path={routes.ROOT} exact element={<Home />}/>
