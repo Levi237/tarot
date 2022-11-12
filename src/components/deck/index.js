@@ -8,6 +8,7 @@ const Deck = ({deck}) => {
 
     ////-- pick card from shuffled deck, add to hand.
     const selectCard = (e) => {
+        console.log("selectCard => ", e);
         // const { deck, hand, selectSpread, shuffle } = this.state;
         // const t = e.currentTarget.id;
         // ////-- increase chances of card being upright
@@ -62,6 +63,7 @@ const Deck = ({deck}) => {
             <div className="deck">
                 <div className="cards">
                     {mapDeck}
+                    <img id="top-back-card" className="card" src='/back.jpg' alt="Star Card Back" />
                 </div>
             </div>
 
