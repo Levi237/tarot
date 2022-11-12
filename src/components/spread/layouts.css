@@ -1,3 +1,20 @@
+.spread-section { display: grid;}
+.spread-section > div:first-of-type { grid-area: one; }
+.spread-section > div:nth-of-type(2) { grid-area: two; }
+.spread-section > div:nth-of-type(3) { grid-area: three; }
+.spread-section > div:nth-of-type(4) { grid-area: four; }
+.spread-section > div:nth-of-type(5) { grid-area: five; }
+.spread-section > div:nth-of-type(6) { grid-area: six; }
+.spread-section > div:nth-of-type(7) { grid-area: seven; }
+.spread-section > div:nth-of-type(8) { grid-area: eight; }
+.spread-section > div:nth-of-type(9) { grid-area: nine; }
+.spread-section > div:nth-of-type(10) { grid-area: ten; }
+.spread-section > div:nth-of-type(11) { grid-area: eleven; }
+.spread-section > div:nth-of-type(12) { grid-area: twelve; }
+.spread-section > div:nth-of-type(13) { grid-area: thirteen; }
+
+.spread-section img {width: 100%;}
+
 /*-----------------------------------------------------> SINGLE CARD */
     .random-single-card > section,
     .single-card-draw > section {
