@@ -256,15 +256,26 @@ const App = () => {
   };
 
   const selectLayout = (e) => {
-    if (e.currentTarget.value !== ""){
+    console.log("click Select Layout");
+    let _key = e.currentTarget.value;
+    let _id = e.currentTarget.id;
+    console.log(_key, "<=====key | id ========>", _id)
+    if (_id){
+      console.log("click Select Layout value", _id);
       const getData = layouts.map((data) => {
-        if (data.id === e.currentTarget.value) {
+        if (data.id === _id) {
+          setLayout(data);
+        }
+      });
+    } else if ( _key !== "" ){
+      const getData = layouts.map((data) => {
+        if (data.id === _key) {
           setLayout(data);
         }
       });
     } else {
       console.log("no value");
-      setLayout([])
+      setLayout([]);
     }
   };
 
