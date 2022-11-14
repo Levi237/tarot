@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Deck from '../components/deck';
 import SpreadLayout from '../components/spread/Layout';
-
+import Dropdown from '../components/dropdown/Dropdown';
 
 const DrawPage = ({deck, layout, layouts, selectLayout}) => {
 
@@ -92,17 +92,16 @@ const DrawPage = ({deck, layout, layouts, selectLayout}) => {
         };
     };
 
-    const makeList = layouts.map((layout, key) => {
-        const title = layout.id.toLowerCase().split('-').join(' ');
-        return (<option value={layout.id} key={key}>{title}</option>)
-    });
 
     return (
         <div>
-            <select onChange={selectLayout}>
-            <option value="">Choose a Spread</option>
-            {makeList}
-            </select>
+            <Dropdown 
+                list={layouts} 
+                defaultText={"Choose a Spread"}
+                defaultValue={""}
+                selectedData={layout}
+                selectFunction={selectLayout} 
+            />
             <br/>
             <Deck deck={newDeck} shuffleDeck={shuffleDeck} selectCard={selectCard}/>
             <button onClick={shuffleDeck}>shuffle deck</button>

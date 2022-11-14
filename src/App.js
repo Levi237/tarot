@@ -133,7 +133,7 @@ const App = () => {
       id: `spread-cross`,           
       image: './spread/-spread.png',
       cards: 5,
-      name: `5 card Cross`,
+      name: `5 Card Cross`,
       note: `Decision making and goal setting`,
       order: [{
           title: `Present Moment`,
@@ -253,11 +253,16 @@ const App = () => {
   };
 
   const selectLayout = (e) => {
-    const getData = layouts.map((data) => {
-      if (data.id === e.currentTarget.value) {
-        setLayout(data);
-      }
-    });
+    if (e.currentTarget.value !== ""){
+      const getData = layouts.map((data) => {
+        if (data.id === e.currentTarget.value) {
+          setLayout(data);
+        }
+      });
+    } else {
+      console.log("no value");
+      setLayout([])
+    }
   };
 
   return (
