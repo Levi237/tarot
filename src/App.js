@@ -8,18 +8,19 @@ import fs                             from './firebase/config';
 import { collection, getDocs }        from 'firebase/firestore'; 
 
 import UserAuth                       from './components/authentication';
+import NavMenu                        from './components/nav';
+
 import Account                        from './pages/Account';
 import Draw                           from './pages/Draw';
 import Home                           from './pages/Home';
 import Admin                          from './pages/Admin';
-import NavMenu                        from './components/nav';
 
 const App = () => {
 
   const [deck, setDeck] = useState([]);
   const [user, setUser] = useState([]);
     //=> hardcode in layouts with descriptions
-    const [layouts] = useState([{  
+  const [layouts] = useState([{  
       id: `single-card-draw`,
       type: `single-card-draw`,
       image: `./deck/back.png`,
@@ -216,10 +217,6 @@ const App = () => {
     //=> Get deck from deck collection doc
       fetchData();
   }, []);
-
-  useEffect(() => {
-    console.log("deck ==>", deck);
-  }, [deck]);
 
   const fetchData = async () => {
     //=> Get deck from deck collection doc
