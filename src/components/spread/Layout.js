@@ -15,7 +15,7 @@ const Layout = ({hand, layout}) => {
     });
 
     return(
-        <div className={`${layout.id}`}> 
+        <div className={`${layout.type}`}> 
             <section class="spread-section">
                 {showHand}
             </section>
