@@ -74,7 +74,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout}) => {
     ////-- pick card from shuffled deck, add to hand.
     const selectCard = (e) => {
         const _id = e.currentTarget.id;
-        // ////-- increase chances of card being upright
+        ////-- increase chances of card being upright
         const upDownChance = Math.floor(Math.random(1 - 0) * 3);
         if (hand.length < layout.cards) {
             document.getElementById(_id).style.display = "none";
