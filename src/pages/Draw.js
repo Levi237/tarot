@@ -77,32 +77,33 @@ const DrawPage = ({deck, layout, layouts, selectLayout}) => {
         // ////-- increase chances of card being upright
         const upDownChance = Math.floor(Math.random(1 - 0) * 3);
         if (hand.length < layout.cards) {
-            console.log("if true", hand.length, "deck", newDeck)
             document.getElementById(_id).style.display = "none";
             newDeck.filter(card => {
                 if ( _id == card.id ) {
-                    console.log("id selected", card.id, _id)
                     let drawnCard = card;
                     drawnCard.rotation = upDownChance;
                     drawnCard.orderNum = hand.length;
-                        setHand([...hand, drawnCard])
-                    };
-                });
-                newDeck.pop();
+                    setHand([...hand, drawnCard]);
+                };
+            });
+            newDeck.pop();
         };
     };
 
     return (
         <div>
-            {layout !== [] &&
-            <Dropdown 
+            {layout.id
+            ? <h3>{layout.name}</h3>
+            : <Dropdown 
                 list={layouts} 
                 defaultText={"Choose a Spread"}
                 defaultValue={""}
                 selectedData={layout}
                 selectFunction={selectLayout} 
                 defaultOption={true}
-            />}
+                />
+            }
+
             <br/>
             <Deck deck={newDeck} shuffleDeck={shuffleDeck} selectCard={selectCard}/>
             <button onClick={shuffleDeck}>shuffle deck</button>
