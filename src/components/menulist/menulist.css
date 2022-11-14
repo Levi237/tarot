@@ -1,3 +1,6 @@
 .menulist {
     text-transform: capitalize;
 }
+.menulist .active button {
+    text-decoration: underline;
+}

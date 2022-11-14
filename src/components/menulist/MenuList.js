@@ -11,19 +11,22 @@ import './menulist.css';
 //=============>> selectFucntion        function called with onchange event.
 //=============>> selectedData          pass data from selection to signal removal of default option.
 
-const MenuList = ({list, selectFunction, defaultItem, selectedData}) => {
+const MenuList = ({list, selectFunction, selectedData}) => {
+    const indexDefault = 2;
 
     const showList = list.map((item, key) => {
         return (<li 
-                    className={key === 0 && "active"}
+                    className={key === indexDefault && "active"}
                     value={item.id} 
                     key={key}>
-                    {item.name}
+                    <button value={item.id} onClick={selectFunction}>
+                        {item.name}
+                    </button>
                 </li>);
     });
 
     return (
-        <ul className="menulist" onChange={selectFunction}>
+        <ul className="menulist" >
             {showList}
         </ul>
     );
