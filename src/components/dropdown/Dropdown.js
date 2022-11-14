@@ -4,12 +4,12 @@ import './dropdown.css';
 
 //==> Flexible Options Menu
 //======>> PROPS:
-//=============>> defaultText           default option text
-//=============>> defaulValue           default option value
-//=============>> list                  list of options
-//=============>> defaultOption         Boolean to remove default option after selection
-//=============>> selectFucntion        function called with onchange event
-//=============>> selectedData          pass data from selection to signal removal of default option
+//=============>> defaultText           default option text.
+//=============>> defaulValue           default option value.
+//=============>> list                  list of options.
+//=============>> defaultOption         Boolean to remove default option after selection.
+//=============>> selectFucntion        function called with onchange event.
+//=============>> selectedData          pass data from selection to signal removal of default option.
 
 const Dropdown = ({defaultText, defaultValue, defaultOption, list, selectFunction, selectedData}) => {
 
