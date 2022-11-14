@@ -1,8 +1,8 @@
 #hamburger-container {
     position: absolute;
     z-index: 9;
-    right: 20px;
-    top: 20px;
+    right: 32px;
+    top: 16px;
 }
 #hamburger-container .hamburger-close {
     padding-top: 10px;
