@@ -101,6 +101,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout}) => {
                 defaultValue={""}
                 selectedData={layout}
                 selectFunction={selectLayout} 
+                hideDefaultOnSelect={true}
             />
             <br/>
             <Deck deck={newDeck} shuffleDeck={shuffleDeck} selectCard={selectCard}/>

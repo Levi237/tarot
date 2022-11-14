@@ -10,15 +10,16 @@ import './dropdown.css';
 //=============>> selectFucntion    function called with onchange event
 //=============>> selectedData      pass data from selection to signal removal of default option
 
-const Dropdown = ({defaultText, defaultValue, list, selectFunction, selectedData}) => {
+const Dropdown = ({defaultText, defaultValue, hideDefaultOnSelect, list, selectFunction, selectedData}) => {
 
     const showList = list.map((item, key) => {
+        console.log(selectedData.id)
         return (<option value={item.id} key={key}>{item.name}</option>)
     });
 
     return (
         <select className="dropdown" onChange={selectFunction}>
-            { selectedData && <option value={defaultValue}>{defaultText}</option> }
+            { (!selectedData.id  && hideDefaultOnSelect) && <option id="dropdown-default" value={defaultValue}>{defaultText}</option> }
             {showList}
         </select>
     );
