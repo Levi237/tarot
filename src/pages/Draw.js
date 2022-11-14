@@ -3,7 +3,7 @@ import Deck from '../components/deck';
 import Layout from '../components/spread/Layout';
 import Dropdown from '../components/dropdown/Dropdown';
 
-const DrawPage = ({deck, layout, layouts, selectLayout}) => {
+const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
     //==> pass original deck and make new state of deal
     const [newDeck, setNewDeck] = useState([]);
@@ -107,7 +107,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout}) => {
             <br/>
             <Deck deck={newDeck} shuffleDeck={shuffleDeck} selectCard={selectCard}/>
             <button onClick={shuffleDeck}>shuffle deck</button>
-            <Layout hand={hand} layout={layout}/>
+            <Layout hand={hand} layout={layout} viewCard={viewCard}/>
         </div>
     );
 };

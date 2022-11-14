@@ -14,9 +14,11 @@ import Account                        from './pages/Account';
 import Draw                           from './pages/Draw';
 import Home                           from './pages/Home';
 import Admin                          from './pages/Admin';
+import CardModal                      from './components/modals/Card';
 
 const App = () => {
 
+  const [card, setCard] = useState([]);
   const [deck, setDeck] = useState([]);
   const [user, setUser] = useState([]);
     //=> hardcode in layouts with descriptions
@@ -275,11 +277,21 @@ const App = () => {
     }
   };
 
+  const viewCard = (e, data) => {
+    setCard(data);
+  };
+  
+  const closeCardModal = (e) => {
+    e.preventDefault();
+    setCard([]);
+  }
+
   return (
     <div className="App">
       { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> }
       <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
       <UserAuth user={user} clickSignOut={clickSignOut}/>
+      { card.title && <CardModal card={card} closeCardModal={closeCardModal}/>}
       <Routes>
           <Route path={routes.DRAW} exact element={
             <Draw 
@@ -287,6 +299,7 @@ const App = () => {
               layouts={layouts}
               layout={layout}
               selectLayout={selectLayout}
+              viewCard={viewCard}
             />} />
           <Route path={routes.ACCT} exact element={<Account />}/>
           <Route path={routes.ROOT} exact element={<Home 
