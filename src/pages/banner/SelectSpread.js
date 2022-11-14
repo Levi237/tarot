@@ -1,4 +1,4 @@
-import React, {useState}  from 'react';
+import React, {useEffect, useState}  from 'react';
 import { Link } from 'react-router-dom';
 import MenuList from '../../components/menulist/MenuList';
 import * as routes from '../../constants/routes';
@@ -26,7 +26,7 @@ const SelectSpreadBanner = ({layout, layouts, selectLayout}) => {
                         selectFunction={selectLayout} 
                         defaultKeyNum={keyNum}
                     />
-                    <Link to={routes.DRAW}>DRAW</Link>
+                    <Link to={routes.DRAW} id={layouts[keyNum].id} onClick={(e) => {{!layout.id && selectLayout(e)}}}>Start Spread</Link>
                 </div>
             </div>
         </div>
