@@ -4,24 +4,32 @@ import './menulist.css';
 
 //==> Flexible Options Menu
 //======>> PROPS:
-//=============>> defaultItem           default item added with data
-//=============>> defaulValue           default option value.
+//=============>> defaultKeyNum         Marks the list item to start with as active.
 //=============>> list                  list of options.
-//=============>> defaultOption         Boolean to remove default option after selection.
 //=============>> selectFucntion        function called with onchange event.
 //=============>> selectedData          pass data from selection to signal removal of default option.
 
-const MenuList = ({list, selectFunction, selectedData}) => {
-    const indexDefault = 2;
+const MenuList = ({list, selectFunction, selectedData, defaultKeyNum}) => {
+
+    const getList = document.getElementsByClassName('menulist-item');
+    const activeClass = (e, key) => {
+        for (let i = 0; i < getList.length; i++) {
+            if (i === key) {
+                getList[i].classList.add('active');
+            } else {
+                getList[i].classList.remove('active');
+            }
+        };
+    };
 
     const showList = list.map((item, key) => {
         return (<li 
-                    className={key === indexDefault && "active"}
-                    value={item.id} 
-                    key={key}>
-                    <button value={item.id} onClick={selectFunction}>
+                    id={item.id} 
+                    key={key}
+                    className={`menulist-item ${key === defaultKeyNum && "active"}`}
+                    onClick={(e) => {selectFunction(e); activeClass(e, key)}}
+                    >
                         {item.name}
-                    </button>
                 </li>);
     });
 
