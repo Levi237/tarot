@@ -86,6 +86,7 @@
             ' . two . . seven ';
             max-width: 450px;
             margin-bottom: -10%;
+            position: relative;
     }
 
 /*-----------------------------------------------------> CELTIC CROSS SPREADS */
@@ -100,6 +101,7 @@
             ' . two . . . ';
         margin-bottom: -20%;
         width: calc(100vh - 240px);
+        position: relative;
     }
     @media only screen and (max-width: 640px) {
         .spread-thirteen-celtic-cross > section {
@@ -132,17 +134,17 @@
     }
 
     .spread-ten-celtic-cross > section > div:nth-of-type(7) {
-        transform: translateY(0);
+        transform: translateY(-48%);
     }
     .spread-ten-celtic-cross > section > div:nth-of-type(8) {
-        transform: translateY(-8%);
+        transform: translateY(-32%);
     }
     .spread-ten-celtic-cross > section > div:nth-of-type(9) {
         transform: translateY(-16%);
     }
-    .spread-ten-celtic-cross > section > div:nth-of-type(10) {
+    /* .spread-ten-celtic-cross > section > div:nth-of-type(10) {
         transform: translateY(-24%);
-    }
+    } */
 
     .spread-thirteen-celtic-cross > section > div:nth-of-type(7) {
         transform: translateY(16%);
