@@ -1,6 +1,6 @@
 #hamburger-container {
     position: absolute;
-    z-index: 9;
+    z-index: 6;
     right: 32px;
     top: 16px;
 }
