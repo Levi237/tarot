@@ -20,7 +20,7 @@ const Deck = ({deck, selectCard}) => {
             <div className="deck">
                 <div className="cards">
                     {mapDeck}
-                    <img id="top-back-card" className="card" src='/back.jpg' alt="Star Card Back" />
+                    <img id="top-back-card" className="card" src='/back.jpg' alt="Star Card Back" onClick={(e) => {selectCard(e)}}/>
                 </div>
             </div>
 

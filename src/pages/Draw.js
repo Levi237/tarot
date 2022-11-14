@@ -13,8 +13,17 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
     const [reshuffle, setReshuffle] = useState(false);
     //==> chose layout
 
+    useEffect(() => {
+        //==> spread out deck when page loads
+        presentDeck();
+        setTimeout(() => {
+            const hideTopCard = document.getElementById('top-back-card');
+            if(hideTopCard){hideTopCard.style.display = 'none';}
+            splayDeck();
+        }, 500);    
+    }, [deck]);
+
     const shuffleDeck = () => {
-        console.log("click shuffle", newDeck);
         presentDeck();
         stackDeck();
         //==> shuffle options (shuffle vs reshuffle)
@@ -28,8 +37,6 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             setTimeout(() => {
                 splayDeck();
                 setReshuffle(true);
-                const hideTopCard = document.getElementById('top-back-card');
-                if(hideTopCard){hideTopCard.style.display = 'none';}
             }, 0);
         };
     };
