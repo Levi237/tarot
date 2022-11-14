@@ -110,6 +110,4 @@ const DrawPage = ({deck, layout, layouts, selectLayout}) => {
     );
 };
 
-
-
 export default DrawPage;
