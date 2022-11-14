@@ -256,12 +256,9 @@ const App = () => {
   };
 
   const selectLayout = (e) => {
-    console.log("click Select Layout");
     let _key = e.currentTarget.value;
     let _id = e.currentTarget.id;
-    console.log(_key, "<=====key | id ========>", _id)
     if (_id){
-      console.log("click Select Layout value", _id);
       const getData = layouts.map((data) => {
         if (data.id === _id) {
           setLayout(data);
@@ -274,7 +271,6 @@ const App = () => {
         }
       });
     } else {
-      console.log("no value");
       setLayout([]);
     }
   };
