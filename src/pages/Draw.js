@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Deck from '../components/deck';
-import SpreadLayout from '../components/spread/Layout';
+import Layout from '../components/spread/Layout';
 import Dropdown from '../components/dropdown/Dropdown';
 
 const DrawPage = ({deck, layout, layouts, selectLayout}) => {
@@ -105,7 +105,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout}) => {
             <br/>
             <Deck deck={newDeck} shuffleDeck={shuffleDeck} selectCard={selectCard}/>
             <button onClick={shuffleDeck}>shuffle deck</button>
-            <SpreadLayout hand={hand} layout={layout}/>
+            <Layout hand={hand} layout={layout}/>
         </div>
     );
 };
