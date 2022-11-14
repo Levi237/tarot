@@ -18,10 +18,10 @@ const App = () => {
 
   const [deck, setDeck] = useState([]);
   const [user, setUser] = useState([]);
-  // const [signIn, setSignIn] = useState(false);
     //=> hardcode in layouts with descriptions
     const [layouts] = useState([{  
       id: `single-card-draw`,
+      type: `single-card-draw`,
       image: `./deck/back.png`,
       cards: 1,
       name: `Single Card Draw`,
@@ -33,6 +33,7 @@ const App = () => {
       }]
   },{
       id: `spread-horseshoe`,
+      type: `spread-horseshoe`,
       image: './spread/horseshoe-spread.png',
       cards: 7,
       name: `7 Card Horseshoe`,
@@ -68,6 +69,7 @@ const App = () => {
       }]
   },{           
       id: `spread-three-simple`,            
+      type: `spread-three-simple`,            
       cards: 3,
       name: `Past, Present, Future`,
       note: `Ideal for gaining perspective in a situation or relationship`,
@@ -86,6 +88,7 @@ const App = () => {
       }]
   },{          
       id: `spread-three-simple-two`,            
+      type: `spread-three-simple`,            
       cards: 3,
       name: `Desire, Challenge, Resolution`,
       note: `Ideal for gaining clarity when setting goals`,
@@ -104,6 +107,7 @@ const App = () => {
       }]
   },{            
       id: `spread-five-simple`,            
+      type: `spread-five-simple`,            
       image: './spread/-spread.png',
       cards: 5,
       name: `Personal Inventory`,
@@ -131,6 +135,7 @@ const App = () => {
       }]
   },{            
       id: `spread-cross`,           
+      type: `spread-cross`,           
       image: './spread/-spread.png',
       cards: 5,
       name: `5 Card Cross`,
@@ -158,6 +163,7 @@ const App = () => {
       }]
   },{            
       id: `spread-ten-celtic-cross`,
+      type: `spread-ten-celtic-cross`,
       image: './spread/-spread.png',
       cards: 10,
       name: `Celtic Cross`,
