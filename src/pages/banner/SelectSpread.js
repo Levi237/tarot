@@ -1,7 +1,8 @@
 import React, {useState}  from 'react';
-import { Link, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import MenuList from '../../components/menulist/MenuList';
 import * as routes from '../../constants/routes';
+
 import './spread-banner.css';
 
 const SelectSpreadBanner = ({layout, layouts, selectLayout}) => {
@@ -28,10 +29,8 @@ const SelectSpreadBanner = ({layout, layouts, selectLayout}) => {
                     <Link to={routes.DRAW}>DRAW</Link>
                 </div>
             </div>
-            </div>
-    )
-}
-
-
+        </div>
+    );
+};
 
 export default SelectSpreadBanner;
