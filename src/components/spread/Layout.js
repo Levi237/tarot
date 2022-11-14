@@ -1,5 +1,5 @@
 //=> Create Layout display
-import React, { useState, useEffect }   from 'react';
+import React from 'react';
 
 import './layouts.css';
 
@@ -15,7 +15,7 @@ const Layout = ({hand, layout}) => {
     });
 
     return(
-        <div className={`${layout}`}> 
+        <div className={`${layout.id}`}> 
             <section class="spread-section">
                 {showHand}
             </section>
