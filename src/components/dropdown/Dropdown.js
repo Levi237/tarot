@@ -15,7 +15,7 @@ const Dropdown = ({defaultText, defaultValue, defaultOption, list, selectFunctio
 
     const showList = list.map((item, key) => {
         console.log(selectedData.id)
-        return (<option value={item.id} key={key}>{item.name}</option>)
+        return (<option value={item.id} key={key}>{item.name}</option>);
     });
 
     return (
