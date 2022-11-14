@@ -28,6 +28,27 @@
     margin-bottom: 6px;
 } 
 
+.two-column-spread-preview a {
+    font-size: 21px;
+    line-height: 100%;
+    margin: 20px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 80%;
+    margin: 0 auto;
+    background-color: var(--color-darkgrey);
+    color: #fff;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    transition: .3s ease;
+}
+.two-column-spread-preview a:hover {
+    transform: trasnlate(30px, 30px);
+}
+
 .spread-preview {
     width: 220px;
     margin: 20px auto;
