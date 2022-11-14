@@ -1,6 +1,11 @@
-.menulist {
+ul.menulist {
     text-transform: capitalize;
+    list-style-type: none;
+    padding: 0;
 }
-.menulist .active button {
+.menulist:hover {
+    cursor: pointer;
+}
+.menulist .active {
     text-decoration: underline;
 }
