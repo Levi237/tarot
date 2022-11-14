@@ -13,6 +13,10 @@ code {
     monospace;
 }
 
+:root {
+  --color-darkgrey: #2e2e2e;
+}
+
 * {
   margin-block-start: 0;
   margin-block-end: 0;
@@ -25,4 +29,8 @@ code {
 
 .error {
   color: red;
+}
+
+.grid {
+  display: grid;
 }

@@ -7,5 +7,7 @@ ul.menulist {
     cursor: pointer;
 }
 .menulist .active {
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    background-color: var(--color-darkgrey);
+    color: white;
 }
