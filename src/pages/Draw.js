@@ -94,7 +94,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout}) => {
 
     return (
         <div>
-            <Dropdown 
+            {/* <Dropdown 
                 list={layouts} 
                 defaultText={"Choose a Spread"}
                 defaultValue={""}
@@ -102,7 +102,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout}) => {
                 selectFunction={selectLayout} 
                 defaultOption={true}
             />
-            <br/>
+            <br/> */}
             <Deck deck={newDeck} shuffleDeck={shuffleDeck} selectCard={selectCard}/>
             <button onClick={shuffleDeck}>shuffle deck</button>
             <Layout hand={hand} layout={layout}/>
