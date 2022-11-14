@@ -282,7 +282,12 @@ const App = () => {
               selectLayout={selectLayout}
             />} />
           <Route path={routes.ACCT} exact element={<Account />}/>
-          <Route path={routes.ROOT} exact element={<Home />}/>
+          <Route path={routes.ROOT} exact element={<Home 
+                        deck={deck}
+                        layouts={layouts}
+                        layout={layout}
+                        selectLayout={selectLayout}
+                        />}/>
           <Route path={routes.ROOT} element={<>wrong url</>}/>
         </Routes>
       { (user.uid === 'IcaB6QA5frhOaMWRf80gqxYF8Er2') && <Admin /> }
