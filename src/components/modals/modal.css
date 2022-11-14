@@ -1,0 +1,42 @@
+.modal {
+    --padding: 32px;
+    position: absolute;
+    z-index: 8;
+    width: calc(100vw - 2 * var(--padding));
+    height: calc(100vw - 2 * var(--padding));
+    padding: var(--padding);
+    background: #fff;
+}
+
+.close-modal-box {
+    position: absolute;
+    z-index: 9;
+    right: 24px;
+    top: 16px;
+    display: inline-block;
+}
+.close-modal-btn {
+    font-size: 24px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button.close-modal-btn {
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  background: red;
+  border: none;
+}
+
+.cardmodal .img-box {
+    width: 50%;
+    font-size: 0;
+}
+.cardmodal img {
+    width: 100%;
+    min-width: 240px;
+}
