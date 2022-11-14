@@ -3,13 +3,12 @@ import Deck from '../components/deck';
 import SpreadLayout from '../components/spread/Layout';
 
 
-const DrawPage = ({deck, layout, layouts}) => {
+const DrawPage = ({deck, layout, layouts, selectLayout}) => {
 
     //==> pass original deck and make new state of deal
     const [newDeck, setNewDeck] = useState([]);
     //==> create hand from cards drawn
     const [hand, setHand] = useState([]);
-    const [spreadCount, setSpreadCount] = useState(3);
     //==> signal difference in splay speed (shuffle vs reshuffle)
     const [reshuffle, setReshuffle] = useState(false);
     //==> chose layout
@@ -77,7 +76,7 @@ const DrawPage = ({deck, layout, layouts}) => {
         const _id = e.currentTarget.id;
         // ////-- increase chances of card being upright
         const upDownChance = Math.floor(Math.random(1 - 0) * 3);
-        if (hand.length < spreadCount) {
+        if (hand.length < layout.cards) {
             console.log("if true", hand.length, "deck", newDeck)
             document.getElementById(_id).style.display = "none";
             newDeck.filter(card => {
@@ -100,7 +99,8 @@ const DrawPage = ({deck, layout, layouts}) => {
 
     return (
         <div>
-            <select>
+            <select onChange={selectLayout}>
+            <option value="">Choose a Spread</option>
             {makeList}
             </select>
             <br/>

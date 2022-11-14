@@ -19,7 +19,7 @@ const App = () => {
   const [deck, setDeck] = useState([]);
   const [user, setUser] = useState([]);
   // const [signIn, setSignIn] = useState(false);
-    //=> hardcode in layouts for now
+    //=> hardcode in layouts with descriptions
     const [layouts] = useState([{  
       id: `single-card-draw`,
       image: `./deck/back.png`,
@@ -204,8 +204,8 @@ const App = () => {
           prompt: `How does this final card complete the story the first nine have been telling? How does this knowledge empower me?`,
       }]        
   }]);
-  const [layout, setLayout] = useState("spread-three-simple");
-
+  const [layout, setLayout] = useState([]);
+  
   useEffect(() => {
     //=> Get deck from deck collection doc
       fetchData();
@@ -252,13 +252,27 @@ const App = () => {
     modal.style.marginTop = '0vh';
   };
 
+  const selectLayout = (e) => {
+    const getData = layouts.map((data) => {
+      if (data.id === e.currentTarget.value) {
+        setLayout(data);
+      }
+    });
+  };
+
   return (
     <div className="App">
       { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> }
       <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
       <UserAuth user={user} clickSignOut={clickSignOut}/>
       <Routes>
-          <Route path={routes.DRAW} exact element={<Draw deck={deck} layouts={layouts} layout={layout}/>}/>
+          <Route path={routes.DRAW} exact element={
+            <Draw 
+              deck={deck}
+              layouts={layouts}
+              layout={layout}
+              selectLayout={selectLayout}
+            />} />
           <Route path={routes.ACCT} exact element={<Account />}/>
           <Route path={routes.ROOT} exact element={<Home />}/>
           <Route path={routes.ROOT} element={<>wrong url</>}/>

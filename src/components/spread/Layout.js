@@ -1,4 +1,4 @@
-//=> Create Deck to be used in Draw 23/44
+//=> Create Layout display
 import React, { useState, useEffect }   from 'react';
 
 import './layouts.css';
@@ -22,4 +22,5 @@ const Layout = ({hand, layout}) => {
         </div>
     );
 };
+
 export default Layout;
