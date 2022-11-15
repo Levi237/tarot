@@ -17,9 +17,11 @@ code {
   --color-darkgrey: #2e2e2e;
 }
 
+/*********> global overrides */
 * {
   margin-block-start: 0;
   margin-block-end: 0;
+  line-height: 100%;
 }
 
 .signout-home {
