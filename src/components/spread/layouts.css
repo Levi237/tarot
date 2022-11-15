@@ -24,7 +24,7 @@
 
 /*-----------------------------------------------------> SINGLE CARD */
     .random-single-card > section,
-    .single-card-draw > section {
+    .draw-single-card > section {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 100%;
         grid-template-areas: ' . one . ';
@@ -44,6 +44,7 @@
     }
 
 /*-----------------------------------------------------> HORSESHOE SPREAD */
+    .spread-seven-simple > section,
     .spread-horseshoe > section {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr .5fr;
@@ -52,10 +53,7 @@
             ' . two three four five six . '
             ' . . . . . . . ';
     }
-    .spread-horseshoe > section 
-        img {
-            max-width: 100%!important;
-        }
+    .spread-horseshoe > section img { max-width: 100%!important; }
         
     .spread-horseshoe > section > div:nth-of-type(2),
     .spread-horseshoe > section > div:nth-of-type(6) {
