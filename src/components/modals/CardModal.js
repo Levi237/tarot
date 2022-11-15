@@ -114,7 +114,7 @@ const CardModal = ({card, closeCardModal}) => {
           <button className="close-modal-btn" onClick={closeCardModal}>X</button>
         </div>
         <div className="grid two-column-grid forty-sixty">
-          <section style={{padding: '20px'}}>
+          <section>
             <img style={{transform: `rotate(${180*card.rotation + 'deg'})`}} src={`/cards/${img}.jpg`} alt={`${card.title}`}/>
           </section>
           <section>

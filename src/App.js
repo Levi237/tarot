@@ -14,7 +14,7 @@ import Account                        from './pages/Account';
 import Draw                           from './pages/Draw';
 import Home                           from './pages/Home';
 import Admin                          from './pages/Admin';
-import CardModal                      from './components/modals/Card';
+import CardModal                      from './components/modals/CardModal';
 
 const App = () => {
 
