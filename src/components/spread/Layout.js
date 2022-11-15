@@ -16,7 +16,7 @@ const Layout = ({hand, layout, viewCard}) => {
 
     return(<>     
         <div className={`${layout.type}`}> 
-            <section class="spread-section">
+            <section className="spread-section">
                 {showHand}
             </section>
         </div>
