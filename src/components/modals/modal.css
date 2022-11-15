@@ -40,3 +40,13 @@ button.close-modal-btn {
     width: 100%;
     min-width: 240px;
 }
+
+.cardmodal .grid {
+    max-width: 900px;
+    margin: 40px auto;
+    max-height: 100vh;
+    overflow: scroll;
+}
+.cardmodal .grid > section:last-of-type {
+    padding-left: 40px;
+}

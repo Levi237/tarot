@@ -11,12 +11,13 @@ const CardModal = ({card, closeCardModal}) => {
         <div className="close-modal-box">
           <button className="close-modal-btn" onClick={closeCardModal}>X</button>
         </div>
-        <div className="two-column-grid">
-          <section>
+        <div className="grid two-column-grid forty-sixty">
+          <section style={{padding: '20px;'}}>
             <img style={{transform: `rotate(${180*card.rotation + 'deg'})`}} src={`/cards/${img}.jpg`} alt={`${card.title}`}/>
           </section>
           <section>
-              Card Modal {card.title}
+              <h1>{card.title}</h1>
+              <h3>{}</h3>
           </section>
         </div>
       </div>  
