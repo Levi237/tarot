@@ -5,26 +5,108 @@ import React from 'react';
 
 import './modal.css'
 const CardModal = ({card, closeCardModal}) => {
+
     const img = card.title.toLowerCase().split(' ').join('_');
 
-    const mapAstro = card.astro.map((item, k) => {
-      return (<span key={k}>{item}</span>)
+    const mapAstro = card.astro.map((item, i) => {
+      const length = card.astro.length;
+      
+      // if there is only one, return item.
+      if ( length === 1 ){
+        return (<span key={i}>{item}</span>)
+      }
+      //==> add "," and "&" to multiple
+      if ( length > 1 ) { 
+        if ( i < length - 1 ){
+          return (<span key={i}>{item}, </span>)
+        }
+        if ( i === length - 1 ){
+          return (<span key={i}>{item} & </span>)
+        }
+        if ( i === length ){
+          return (<span key={i}>{item}</span>)
+        }
+      }
+
     });
-    const mapSubastro = card.subastro.map((item, k) => {
-      return (<span key={k}>{item}</span>)
+
+    const mapElement = card.element.map((item, i) => {
+      const length = card.element.length;
+      
+      // if there is only one, return item.
+      if ( length === 1 ){
+        return (<span key={i}>{item}</span>)
+      }
+      //==> add "," and "&" to multiple
+      if ( length > 1 ) { 
+        if ( i < length - 1 ){
+          return (<span key={i}>{item}, </span>)
+        }
+        if ( i === length - 1 ){
+          return (<span key={i}>{item} & </span>)
+        }
+        if ( i === length ){
+          return (<span key={i}>{item}</span>)
+        }
+      }
     });
-    const mapKeys = card.keys.map((item, k) => {
-      return (<li key={k}>{item}</li>)
+
+    const mapSubElement = card.subelem.map((item, i) => {
+      const length = card.subelem.length;
+      
+      // if there is only one, return item.
+      if ( length === 1 ){
+        return (<span key={i}>{item}</span>)
+      }
+      //==> add "," and "&" to multiple
+      if ( length > 1 ) { 
+        if ( i < length - 1 ){
+          return (<span key={i}>{item}, </span>)
+        }
+        if ( i === length - 1 ){
+          return (<span key={i}>{item} & </span>)
+        }
+        if ( i === length ){
+          return (<span key={i}>{item}</span>)
+        }
+      }
     });
-    const mapRevKeys = card.revkeys.map((item, k) => {
-      return (<li key={k}>{item}</li>)
+    const mapMajor = card.major.map((item, i) => {
+      const length = card.major.length;
+      
+      // if there is only one, return item.
+      if ( length === 1 ){
+        return (<span key={i}>{item}</span>)
+      }
+      //==> add "," and "&" to multiple
+      if ( length > 1 ) { 
+        if ( i < length - 2 ){
+          return (<span key={i}>{item}, </span>)
+        }
+        if ( i === length - 2 ){
+          return (<span key={i}>{item} & </span>)
+        }
+        if ( i === length - 1 ){
+          return (<span key={i}>{item}</span>)
+        }
+      }
+
     });
-    const mapDesc = card.desc.map((item, k) => {
-      return (<p key={k}>{item}</p>)
+
+    const mapSubastro = card.subastro.map((item, i) => {
+      return (<span key={i}>{item}</span>)
     });
-    const mapRevDesc = card.revdesc.map((item, k) => {
-      console.log("revdesc", card.revdesc)
-      return (<p key={k}>{item}</p>)
+    const mapKeys = card.keys.map((item, i) => {
+      return (<li key={i}>{item}</li>)
+    });
+    const mapRevKeys = card.revkeys.map((item, i) => {
+      return (<li key={i}>{item}</li>)
+    });
+    const mapDesc = card.desc.map((item, i) => {
+      return (<p key={i}>{item}</p>)
+    });
+    const mapRevDesc = card.revdesc.map((item, i) => {
+      return (<p key={i}>{item}</p>)
     });
     return(
       <div className="cardmodal modal">
@@ -39,10 +121,10 @@ const CardModal = ({card, closeCardModal}) => {
                 
                 { card.title.length > 0 && <h1>{card.title}</h1> }
                 { card.subtitle.length > 0 && <h3>{card.subtitle}</h3> }
-                { card.element.length > 0 && <p>{card.element}</p> }
-                { card.subelem.length > 0  && <p>{card.subelem} subelem</p> }
-                { card.major.length > 0 && <p>{card.major}</p> }
-                { card.astro.length > 0 && <section>Ruled by {card.astro}</section>}
+                { card.element.length > 0 && <p>{mapElement}</p> }
+                { card.subelem.length > 0  && <p>{mapSubElement}</p> }
+                { card.major.length > 0 && <p>{mapMajor}</p> }
+                { card.astro.length > 0 && <p className="astro-p">Ruled by {mapAstro}</p>}
                 { card.subastro.length > 0 && <ul>{mapSubastro}</ul> }
               <br/>
               { card.keys.length > 0 &&
