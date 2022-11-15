@@ -105,8 +105,8 @@ const hideModal = () => {
                     <>
                       uh oh!&nbsp;
                       {/* Sign In Error Messages */}
-                      {( errorCode === 'auth/wrong-password' || errorCode === 'auth/user-not-found' ) && 'incorrect email/password' }
-                      {( errorCode === 'auth/internal-error' && password === '' || errorCode === 'auth/invalid-email' && email === '' ) && 'needs email/password' }
+                      {/* {( errorCode === 'auth/wrong-password' || errorCode === 'auth/user-not-found' ) && 'incorrect email/password' } */}
+                      {/* {( errorCode === 'auth/internal-error' && password === '' || errorCode === 'auth/invalid-email' && email === '' ) && 'needs email/password' } */}
                       {/* Create Account Error Messages */}
                       {( errorCode === 'auth/weak-password' ) && 'use stronger password' }
                       {( errorCode === 'email-already-in-use' ) && 'email already in use' }
