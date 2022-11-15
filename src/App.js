@@ -23,8 +23,8 @@ const App = () => {
   const [user, setUser] = useState([]);
     //=> hardcode in layouts with descriptions
   const [layouts] = useState([{  
-      id: `single-card-draw`,
-      type: `single-card-draw`,
+      id: `draw-single-card`,
+      type: `draw-single-card`,
       image: `./deck/back.png`,
       cards: 1,
       name: `Single Card Draw`,
@@ -225,7 +225,9 @@ const App = () => {
       const getDeck = collection(fs, 'deck');
       const docSnap = await getDocs(getDeck);
       docSnap.forEach((doc) => {
+        if (doc.id === 'Ud5G1N1BhX1T8wBA7oe9'){
           setDeck(doc.data().deck);
+        }
       });
   };
 
