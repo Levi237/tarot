@@ -61,3 +61,15 @@ button.close-modal-btn {
         column-gap: 32px;
     }
   }
+
+
+  /* .cardmodal .astro-p > span.more:last-of-type::before {
+    content: '&';
+  } */
+
+  .cardmodal h3 {
+    margin-top: 10px;
+  }
+  .cardmodal p {
+    margin-top: 10px;
+  }
