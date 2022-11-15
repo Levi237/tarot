@@ -68,8 +68,14 @@ button.close-modal-btn {
   } */
 
   .cardmodal h3 {
-    margin-top: 10px;
+    margin-top: 4px;
+    margin-bottom: 36px;
+    line-height: 100%;
   }
   .cardmodal p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .cardmodal ul {
     margin-top: 10px;
   }
