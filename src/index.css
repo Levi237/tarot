@@ -34,3 +34,7 @@ code {
 .grid {
   display: grid;
 }
+
+.two-column-grid.fifty-fifty { grid-template-columns: 1fr 1fr; }
+.two-column-grid.sixty-forty { grid-template-columns: 60% 40%; }
+.two-column-grid.forty-sixty { grid-template-columns: 40% 60%; }
