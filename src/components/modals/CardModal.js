@@ -117,10 +117,10 @@ const CardModal = ({card, closeCardModal}) => {
           <section>
             <img style={{transform: `rotate(${180*card.rotation + 'deg'})`}} src={`/cards/${img}.jpg`} alt={`${card.title}`}/>
           </section>
-          <section>
+          <section className="card-info">
                 
                 { card.title.length > 0 && <h1>{card.title}</h1> }
-                { card.subtitle.length > 0 && <h3>{card.subtitle}</h3> }
+                { card.subtitle.length > 0 && <h2>{card.subtitle}</h2> }
                 { card.element.length > 0 && <p>{mapElement}</p> }
                 { card.subelem.length > 0  && <p>{mapSubElement}</p> }
                 { card.major.length > 0 && <p>{mapMajor}</p> }
