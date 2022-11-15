@@ -50,3 +50,14 @@ button.close-modal-btn {
 .cardmodal .grid > section:last-of-type {
     padding-left: 40px;
 }
+
+@media only screen and (min-width: 780px) {
+    .cardmodal ul.two-col-ul {
+        -moz-column-count: 2;
+        -moz-column-gap: 32px;
+        -webkit-column-count: 2;
+        -webkit-column-gap: 32px;
+        column-count: 2;
+        column-gap: 32px;
+    }
+  }
