@@ -66,21 +66,29 @@ button.close-modal-btn {
   /* .cardmodal .astro-p > span.more:last-of-type::before {
     content: '&';
   } */
-
+  .cardmodal h1 {
+    font-size: 32px;
+    font-weight: 800;
+  }
   .cardmodal h2 {
+    font-size: 24px;
     margin-top: 4px;
+    font-weight: 300;
   }
   .cardmodal h3 {
     margin-top: 10px;
+    font-weight: 600;
   }
-  .cardmodal p {
-    margin-top: 10px;
-    font-size: 16px;
-  }
+  .cardmodal p,
   .cardmodal ul {
     margin-top: 10px;
+    font-size: 16px;
+    font-weight: 300;
   }
-
+  .cardmodal li {
+    margin-top: 4px;
+    /* font-size: 16px; */
+  }
   .cardmodal .card-info p:first-of-type {
     margin-top: 36px;
     text-transform: uppercase;
