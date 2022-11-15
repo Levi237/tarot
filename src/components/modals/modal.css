@@ -28,7 +28,7 @@ button.close-modal-btn {
   padding: 0;
   margin: 0;
   line-height: 0;
-  background: red;
+  background: transparent;
   border: none;
 }
 
@@ -67,10 +67,11 @@ button.close-modal-btn {
     content: '&';
   } */
 
-  .cardmodal h3 {
+  .cardmodal h2 {
     margin-top: 4px;
-    margin-bottom: 36px;
-    line-height: 100%;
+  }
+  .cardmodal h3 {
+    margin-top: 10px;
   }
   .cardmodal p {
     margin-top: 10px;
@@ -78,4 +79,9 @@ button.close-modal-btn {
   }
   .cardmodal ul {
     margin-top: 10px;
+  }
+
+  .cardmodal .card-info p:first-of-type {
+    margin-top: 36px;
+    text-transform: uppercase;
   }
