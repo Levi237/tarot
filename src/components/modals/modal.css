@@ -5,7 +5,11 @@
     width: calc(100vw - 2 * var(--padding));
     height: calc(100vw - 2 * var(--padding));
     padding: var(--padding);
-    background: #fff;
+    /* background: #fff; */
+}
+
+.modal-container {
+  background: white;
 }
 
 .close-modal-box {
@@ -62,10 +66,6 @@ button.close-modal-btn {
     }
   }
 
-
-  /* .cardmodal .astro-p > span.more:last-of-type::before {
-    content: '&';
-  } */
   .cardmodal h1 {
     font-size: 32px;
     font-weight: 800;
@@ -87,9 +87,22 @@ button.close-modal-btn {
   }
   .cardmodal li {
     margin-top: 4px;
-    /* font-size: 16px; */
   }
   .cardmodal .card-info p:first-of-type {
     margin-top: 36px;
     text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .cardmodal #earth::after {
+    content: ' 🌎';
+  }
+  .cardmodal #fire::after {
+    content: '🔥';
+  }
+  .cardmodal #water::after {
+    content: ' 💧';
+  }
+  .cardmodal #air::after {
+    content: ' 🫧';
   }
