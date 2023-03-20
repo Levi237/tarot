@@ -290,9 +290,9 @@ const App = () => {
 
   return (
     <div className="App">
-      { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> }
-      <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
-      <UserAuth user={user} clickSignOut={clickSignOut}/>
+      {/* { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> } */}
+      {/* <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/> */}
+      {/* <UserAuth user={user} clickSignOut={clickSignOut}/> */}
       { card.title && <CardModal card={card} closeCardModal={closeCardModal}/>}
       <Routes>
           <Route path={routes.DRAW} exact element={

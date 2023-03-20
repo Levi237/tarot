@@ -6,7 +6,6 @@ const HomePage = ({layout, layouts, selectLayout}) => {
 
     return (
         <div>
-            Home Page Test
             <SelectSpreadBanner 
                 layouts={layouts} 
                 layout={layout}

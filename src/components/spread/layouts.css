@@ -2,7 +2,7 @@
     display: grid; 
     max-width: 1200px;
     margin: 0 auto;
-    gap: 10px;
+    gap: 6px;
 }
 
 /*-----------------------------------------------------> CARD PLACEMENT GRID AREA */
@@ -114,6 +114,7 @@
         top: -200%;
         width: 100%;
         transform: rotate(90deg);
+        z-index: 5;
     }
 
     .spread-ten-celtic-cross > section > div:nth-of-type(7),
