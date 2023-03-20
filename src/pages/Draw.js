@@ -20,6 +20,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             const hideTopCard = document.getElementById('top-back-card');
             if(hideTopCard){hideTopCard.style.display = 'none';}
             splayDeck();
+            setReshuffle(true);
         }, 500);    
     }, [deck]);
 
@@ -39,6 +40,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 setReshuffle(true);
             }, 0);
         };
+        console.log("successful shuffleDeck funtion");
     };
 
     const presentDeck = () => {

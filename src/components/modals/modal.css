@@ -1,15 +1,18 @@
 .modal {
-    --padding: 32px;
     position: absolute;
     z-index: 8;
-    width: calc(100vw - 2 * var(--padding));
-    height: calc(100vw - 2 * var(--padding));
-    padding: var(--padding);
-    /* background: #fff; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-container {
   background: white;
+  display: inline-block;
+  padding: 32px;
+  box-shadow: 10px 9px 20px rgb(0 0 0 / 50%);
 }
 
 .close-modal-box {
@@ -52,7 +55,8 @@ button.close-modal-btn {
     overflow: scroll;
 }
 .cardmodal .grid > section:last-of-type {
-    padding-left: 40px;
+  padding-left: 40px;
+  padding-right: 20px;
 }
 
 @media only screen and (min-width: 780px) {
@@ -88,8 +92,11 @@ button.close-modal-btn {
   .cardmodal li {
     margin-top: 4px;
   }
-  .cardmodal .card-info p:first-of-type {
-    margin-top: 36px;
+
+  .card-info .header {
+    margin-bottom: 42px;
+  }
+  .cardmodal .card-info .element {
     text-transform: uppercase;
     font-weight: 600;
   }
@@ -106,3 +113,4 @@ button.close-modal-btn {
   .cardmodal #air::after {
     content: ' 🫧';
   }
+

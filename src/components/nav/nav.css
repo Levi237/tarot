@@ -36,7 +36,9 @@
     /* font-size: 18px; */
     margin-bottom: 20px;
 }
-
+#nav-menu a.active{
+    text-decoration: underline;
+}
 #nav-menu > div {
     width: 100%;
     padding: 120px 60px;
