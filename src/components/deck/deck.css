@@ -3,6 +3,10 @@
     --hover-percentage: .5;
     --card-height: 320px;
     --card-width: 184px;
+    --deck-count: 78;
+}
+#deck-container {
+  max-height: calc(var(--card-height) * var(--hover-percentage));
 }
 .deck {
     max-width: 100vw;
@@ -14,8 +18,8 @@
 .cards {
     display: flex;
     align-items: center;
-    max-width: calc(78 * 57px * var(--percentage));
-    width: calc(78 * 57px * var(--percentage));
+    max-width: calc(var(--deck-count) * 57px * var(--percentage));
+    width: calc(var(--deck-count) * 57px * var(--percentage));
     height: calc(var(--card-height) * var(--hover-percentage));
 }
  

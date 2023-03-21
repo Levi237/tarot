@@ -2,6 +2,7 @@ header {
     /* background: blue; */
     height: auto;
     display: grid;
+    padding: 12px 40px;
     grid-template-columns: 1fr 600px 1fr;
 }
 
@@ -10,9 +11,6 @@ header > section {
     align-items: center;
     justify-content: center;
 }
-.deck-container {
-    transition: .3s ease;
-}
-.deck-container.hidden {
-    max-height: 0;
+#deck-container {
+    transition: all .3s ease;
 }

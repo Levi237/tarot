@@ -16,7 +16,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
     useEffect(() => {
         //==> spread out deck when page loads
-        presentDeck();
+        shuffleDeck();
         setTimeout(() => {
             const hideTopCard = document.getElementById('top-back-card');
             if(hideTopCard){hideTopCard.style.display = 'none';}
@@ -25,13 +25,13 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         }, 500);    
     }, [deck]);
 
-    const shuffleDeck = () => {
-        presentDeck();
+    const shuffleBtn = () => {
+        shuffleDeck();
         stackDeck();
         //==> shuffle options (shuffle vs reshuffle)
         
 
-        if (reshuffle){
+        if (reshuffle === true){
             //=> reshuffle click
             setTimeout(() => {
                 splayDeck();
@@ -45,7 +45,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         };
     };
 
-    const presentDeck = () => {
+    const shuffleDeck = () => {
         //==> shuffle deck and update newDeck state
         let getDeck = [...deck];
         let shuffledDeck = [];
@@ -99,15 +99,20 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             });
             newDeck.pop();
 
+            console.log(layout.cards, "layout, hand", hand.length);
+            if (layout.cards - 1 === hand.length){
+                document.getElementById('shuffle-btn').style.display = 'none';
+                setTimeout(() => {
+                    
+                    setReshuffle(false);
+                    stackDeck();
+                    console.log(layout.cards, "layout, hand", hand.length);
+                    document.getElementById('deck-container').style.maxHeight = '0px';
+                    document.getElementById('deck-container').style.overflow = 'hidden';
+                }, 1000);
+            }
+            // if layout length equals drawn cards length, setReshuffle(false)
 
-        // if (layout.cards === hand.length){
-        //     setReshuffle(false);
-        //     stackDeck();
-        //     console.log(layout.cards, "layout, hand", hand.length)
-        // }
-        // console.log("successful shuffleDeck funtion");
-        // if layout length equals drawn cards length, setReshuffle(false)
-        
         };
     };
 
@@ -128,13 +133,13 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             }
             </section>
             <section>
-                <button onClick={shuffleDeck}>shuffle deck</button>
+                <button id="shuffle-btn" onClick={shuffleBtn}>shuffle deck</button>
             </section>
             <section>
 
             </section>
             </header>
-            <div id="deck-container"><Deck deck={newDeck} shuffleDeck={shuffleDeck} selectCard={selectCard}/></div>
+            <div id="deck-container"><Deck deck={newDeck} shuffleBtn={shuffleBtn} selectCard={selectCard}/></div>
             <Layout hand={hand} layout={layout} viewCard={viewCard}/>
         </div>
     );
