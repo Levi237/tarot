@@ -54,11 +54,12 @@
   .card {
     transition: all 2s;
   }
-\
+  /* Hide the whole card */
   .stack-deck {
     margin-right: calc(-194px * var(--percentage));
     transition: all 2s;
   }
+  /* Show some of the card */
   .splay-deck {
     margin-right: calc(-138px * var(--percentage));
     transition: all .4s ease;

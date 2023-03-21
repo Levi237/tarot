@@ -140,7 +140,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 <button id="shuffle-btn" onClick={shuffleBtn}>shuffle deck</button>
             </section>
             <section>
-
+                <button className="invisible-btn">X</button>
             </section>
             </header>
             <div id="deck-container"><Deck deck={newDeck} shuffleBtn={shuffleBtn} selectCard={selectCard}/></div>

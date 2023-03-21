@@ -38,10 +38,7 @@ select,
   color: var(--color-darkgrey);
   text-transform: uppercase;
 }
-button,
-.btn {
-  padding: 12px 36px;
-}
+
 button,
 input[type=select],
 input[type=option],
@@ -54,6 +51,21 @@ input[type=password],
 input[type=number] {
   cursor: text;
 }
+
+button,
+.btn {
+  padding: 12px 36px;
+}
+button.invisible-btn,
+.btn.invisible-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  width: auto;
+}
+
 .signout-home {
   position: absolute;
   z-index: 3;
