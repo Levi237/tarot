@@ -42,7 +42,18 @@ button,
 .btn {
   padding: 12px 36px;
 }
-
+button,
+input[type=select],
+input[type=option],
+select,
+.btn {
+cursor: pointer;
+}
+input[type=text],
+input[type=password],
+input[type=number] {
+  cursor: text;
+}
 .signout-home {
   position: absolute;
   z-index: 3;

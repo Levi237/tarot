@@ -38,6 +38,7 @@
   .card:hover {
     --percentage: var(--hover-percentage);
     z-index: 8;
+    cursor: pointer;
   }
   
   .card img {
@@ -53,6 +54,7 @@
   .card {
     transition: all 2s;
   }
+\
   .stack-deck {
     margin-right: calc(-194px * var(--percentage));
     transition: all 2s;
