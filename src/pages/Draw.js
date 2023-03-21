@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Deck from '../components/deck';
 import Layout from '../components/spread/Layout';
 import Dropdown from '../components/dropdown/Dropdown';
+import './draw.css'
 
 const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
@@ -28,6 +29,8 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         presentDeck();
         stackDeck();
         //==> shuffle options (shuffle vs reshuffle)
+        
+
         if (reshuffle){
             //=> reshuffle click
             setTimeout(() => {
@@ -40,7 +43,6 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 setReshuffle(true);
             }, 0);
         };
-        console.log("successful shuffleDeck funtion");
     };
 
     const presentDeck = () => {
@@ -96,11 +98,23 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 };
             });
             newDeck.pop();
+
+
+        // if (layout.cards === hand.length){
+        //     setReshuffle(false);
+        //     stackDeck();
+        //     console.log(layout.cards, "layout, hand", hand.length)
+        // }
+        // console.log("successful shuffleDeck funtion");
+        // if layout length equals drawn cards length, setReshuffle(false)
+        
         };
     };
 
     return (
         <div>
+            <header>
+            <section>
             {layout.id
             ? <h3>{layout.name}</h3>
             : <Dropdown 
@@ -112,10 +126,15 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 defaultOption={true}
                 />
             }
+            </section>
+            <section>
+                <button onClick={shuffleDeck}>shuffle deck</button>
+            </section>
+            <section>
 
-            <br/>
-            <Deck deck={newDeck} shuffleDeck={shuffleDeck} selectCard={selectCard}/>
-            <button onClick={shuffleDeck}>shuffle deck</button>
+            </section>
+            </header>
+            <div id="deck-container"><Deck deck={newDeck} shuffleDeck={shuffleDeck} selectCard={selectCard}/></div>
             <Layout hand={hand} layout={layout} viewCard={viewCard}/>
         </div>
     );
