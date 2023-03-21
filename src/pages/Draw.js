@@ -63,13 +63,17 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         for (let i = 0; i < getCard.length; i++) {
             setTimeout(() => {
                 setTimeout(() => {
-                    getCard[i].classList.add('stack-deck');
-                    getCard[i].classList.remove('splay-deck');
-                }, i*6);
+                    //==> Check to see if card was drawn during stack
+                    if(getCard[i]){
+                        getCard[i].classList.add('stack-deck');
+                        getCard[i].classList.remove('splay-deck');
+                    }
+                    }, i*6);
             }, 0);
         };
     };
 
+    //==> Spread deck out
     const splayDeck = () => {
         let getCard = document.getElementsByClassName('dealt-card');
         for (let i = 0; i < getCard.length; i++) {
@@ -82,10 +86,10 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         };
     };
 
-    ////-- pick card from shuffled deck, add to hand.
+    //==> pick card from shuffled deck, add to hand.
     const selectCard = (e) => {
         const _id = e.currentTarget.id;
-        ////-- increase chances of card being upright
+        //==> increase chances of card being upright
         const upDownChance = Math.floor(Math.random(1 - 0) * 3);
         if (hand.length < layout.cards) {
             document.getElementById(_id).style.display = "none";
