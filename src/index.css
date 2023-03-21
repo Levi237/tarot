@@ -25,6 +25,24 @@ code {
   line-height: 100%;
 }
 
+
+
+button,
+input,
+select,
+.btn {
+  border: 1px solid var(--color-darkgrey);
+  background: transparent;
+  padding: 12px;
+  font-size: 16px;
+  color: var(--color-darkgrey);
+  text-transform: uppercase;
+}
+button,
+.btn {
+  padding: 12px 36px;
+}
+
 .signout-home {
   position: absolute;
   z-index: 3;
