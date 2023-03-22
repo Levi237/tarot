@@ -11,6 +11,6 @@ header > section {
     align-items: center;
     justify-content: center;
 }
-#deck-container {
+.deck-container {
     transition: all .3s ease;
 }

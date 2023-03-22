@@ -1,8 +1,8 @@
 import React, {}  from 'react';
 import SelectSpreadBanner from './banner/SelectSpread';
-import svgTest from '../tests/bag'
+import Deck from '../components/deck';
 
-const HomePage = ({layout, layouts, selectLayout}) => {
+const HomePage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
     return (
         <div>
@@ -10,6 +10,7 @@ const HomePage = ({layout, layouts, selectLayout}) => {
                 layouts={layouts} 
                 layout={layout}
                 selectLayout={selectLayout} />
+            <Deck deck={deck} styleId='index-deck' viewCard={viewCard}/>
         </div>
     );
 };

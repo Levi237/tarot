@@ -310,6 +310,7 @@ const App = () => {
               layouts={layouts}
               layout={layout}
               selectLayout={selectLayout}
+              viewCard={viewCard}
             />
             }/>
           <Route path={routes.ROOT} element={<>wrong url</>}/>

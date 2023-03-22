@@ -168,7 +168,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 <button onClick={goBack} className="invisible-btn">X</button>
             </section>
             </header>
-            <div id="deck-container"><Deck deck={newDeck} shuffleBtn={shuffleBtn} selectCard={selectCard}/></div>
+            <Deck deck={newDeck} shuffleBtn={shuffleBtn} selectCard={selectCard} styleId='deal-deck'/>
             <Layout hand={hand} layout={layout} viewCard={viewCard}/>
         </div>
     );
