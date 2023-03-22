@@ -55,8 +55,8 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             splayDeck();
         }, 2800);
         document.getElementById('shuffle-btn').style.display = 'inline-block';
-        document.getElementById('deck-container').style.maxHeight = '600px';
-        document.getElementById('deck-container').style.overflow = 'hidden';
+        document.getElementById('deal-deck').style.maxHeight = '600px';
+        document.getElementById('deal-deck').style.overflow = 'hidden';
         // need to refresh dropdown
     }
     const shuffleDeck = () => {
@@ -125,8 +125,8 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                     setReshuffle(false);
                     stackDeck();
                     // console.log(layout.cards, "layout, hand", hand.length);
-                    document.getElementById('deck-container').style.maxHeight = '0px';
-                    document.getElementById('deck-container').style.overflow = 'hidden';
+                    document.getElementById('deal-deck').style.maxHeight = '0px';
+                    document.getElementById('deal-deck').style.overflow = 'hidden';
                 }, 1000);
             }
             // if layout length equals drawn cards length, setReshuffle(false)

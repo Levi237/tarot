@@ -4,7 +4,7 @@
 import React from 'react';
 
 import './modal.css'
-const CardModal = ({card, closeCardModal}) => {
+const CardModal = ({card, closeCardModal, layoutInfo}) => {
 
     const img = card.title.toLowerCase().split(' ').join('_');
 
@@ -139,7 +139,9 @@ const CardModal = ({card, closeCardModal}) => {
                 { card.revdesc.length > 0 && <section>{mapRevDesc}</section> }
             </section>
           </div>
+          {layoutInfo && 
           <h1>Add Card Description for Layout Position</h1>
+          }
         </div>
       </div>  
     );
