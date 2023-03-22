@@ -111,26 +111,27 @@ const CardModal = ({card, closeCardModal}) => {
               <img style={{transform: `rotate(${180*card.rotation + 'deg'})`}} src={`/cards/${img}.jpg`} alt={`${card.title}`}/>
             </section>
             <section className="card-info">
+             
                   <div className="header">
                   { card.title.length > 0 && <h1>{card.title}</h1> }
                   { card.subtitle.length > 0 && <h2>{card.subtitle}</h2> }
                   </div>
                   { card.element.length > 0 && <p className="element">{mapElement}</p> }
-                  { card.subelem.length > 0  && <p>{mapSubElement}</p> }
-                  { card.major.length > 0 && <p>{mapMajor}</p> }
+                  { card.subelem.length > 0  && <p className="subelements">{mapSubElement}</p> }
+                  { card.major.length > 0 && <p className="major-arcana">{mapMajor}</p> }
                   { card.astro.length > 0 && <p className="astro-p">Ruled by {mapAstro}</p>}
                   { card.subastro.length > 0 && <ul>{mapSubastro}</ul> }
                 <br/>
                 { card.keys.length > 0 &&
                   <>
-                    <h3>Key Notes Upright</h3>
+                    <h3>Upright Attributes</h3>
                     <ul className="two-col-ul">{mapKeys}</ul>
                   </>
                 }
                 <br/>
                 { card.revkeys.length > 0 &&
                   <>
-                    <h3>Key Notes Upside Down</h3>
+                    <h3>Reversed Attributes</h3>
                     <ul className="two-col-ul">{mapRevKeys}</ul>
                   </>
                 }
@@ -138,6 +139,7 @@ const CardModal = ({card, closeCardModal}) => {
                 { card.revdesc.length > 0 && <section>{mapRevDesc}</section> }
             </section>
           </div>
+          <h1>Add Card Description for Layout Position</h1>
         </div>
       </div>  
     );

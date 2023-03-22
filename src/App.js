@@ -34,42 +34,6 @@ const App = () => {
           description: `Relates to what is most present on your heart at the time of the card pull`,
           prompt: `Is the relationship of your card to your question at once clear, or is it hidden? Sometimes the most important piece is not the most obvious. In what way does the card present a challenge? In what way is it a gift?`,
       }]
-  },{
-      id: `spread-horseshoe`,
-      type: `spread-horseshoe`,
-      image: './spread/horseshoe-spread.png',
-      cards: 7,
-      name: `7 Card Horseshoe`,
-      note: `Perfect for clarity in decision-making`,
-      order: [{
-          title: `The Past`,
-          description: `That which lead to the present moment/ What is passing away`,
-          prompt: `What past moments, and/or feelings come to mind when looking at the card? How does that relate to the question?`,
-      },{
-          title: `Present Moment`,
-          description: `Speaks to what is happening now`,
-          prompt: `How does the energy & symbolism of the card reflect the current moment related to the question?`,
-      },{
-          title: `What may be`,
-          description: `Indicates incoming energy`,
-          prompt: `How does this card relate to the past and present? What story do they tell? What feelings arise?`,
-      },{
-          title: `The Querent`,
-          description: `You at the present moment`,
-          prompt: `What are your attitudes about the question? Are you being honest with yourself?`,
-      },{
-          title: `Influences`,
-          description: `Outside circumstances, and attitudes of those around you`,
-          prompt: `What about your circumstance comes to mind? What people, and in what way? How can this be viewed through the lens of the card?`,
-      },{
-          title: `Challenges`,
-          description: `That which stands between you, and your goals`,
-          prompt: `What are you holding that no longer serves you? Are there habits or attitudes that are standing in the way?`,
-      },{
-          title: `Outcome`,
-          description: `This card unites the spread`,
-          prompt: `How do the past, present and future, personal attitudes, outside influences, and challenges culminate in the final card? What feelings arise?`,
-      }]
   },{           
       id: `spread-three-simple`,            
       type: `spread-three-simple`,            
@@ -163,6 +127,42 @@ const App = () => {
           title: `Near Future`,
           description: `Incoming energy/ Where I am headed`,
           prompt: `Is this the future I want? How do my present choices and actions lead to this? (You are the master of your own destiny! Tarot is a tool of understanding, like a compass it indicates the direction one is headed)`,
+      }]
+    },{
+      id: `spread-horseshoe`,
+      type: `spread-horseshoe`,
+      image: './spread/horseshoe-spread.png',
+      cards: 7,
+      name: `7 Card Horseshoe`,
+      note: `Perfect for clarity in decision-making`,
+      order: [{
+          title: `The Past`,
+          description: `That which lead to the present moment/ What is passing away`,
+          prompt: `What past moments, and/or feelings come to mind when looking at the card? How does that relate to the question?`,
+      },{
+          title: `Present Moment`,
+          description: `Speaks to what is happening now`,
+          prompt: `How does the energy & symbolism of the card reflect the current moment related to the question?`,
+      },{
+          title: `What may be`,
+          description: `Indicates incoming energy`,
+          prompt: `How does this card relate to the past and present? What story do they tell? What feelings arise?`,
+      },{
+          title: `The Querent`,
+          description: `You at the present moment`,
+          prompt: `What are your attitudes about the question? Are you being honest with yourself?`,
+      },{
+          title: `Influences`,
+          description: `Outside circumstances, and attitudes of those around you`,
+          prompt: `What about your circumstance comes to mind? What people, and in what way? How can this be viewed through the lens of the card?`,
+      },{
+          title: `Challenges`,
+          description: `That which stands between you, and your goals`,
+          prompt: `What are you holding that no longer serves you? Are there habits or attitudes that are standing in the way?`,
+      },{
+          title: `Outcome`,
+          description: `This card unites the spread`,
+          prompt: `How do the past, present and future, personal attitudes, outside influences, and challenges culminate in the final card? What feelings arise?`,
       }]
   },{            
       id: `spread-ten-celtic-cross`,

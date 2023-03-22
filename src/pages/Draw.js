@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Deck from '../components/deck';
 import Layout from '../components/spread/Layout';
 import Dropdown from '../components/dropdown/Dropdown';
@@ -45,6 +46,19 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         };
     };
 
+    const refreshDeck = () => {
+        setNewDeck(deck);
+        setHand([]);
+        shuffleDeck();
+        stackDeck();
+        setTimeout(() => {
+            splayDeck();
+        }, 2800);
+        document.getElementById('shuffle-btn').style.display = 'inline-block';
+        document.getElementById('deck-container').style.maxHeight = '600px';
+        document.getElementById('deck-container').style.overflow = 'hidden';
+        // need to refresh dropdown
+    }
     const shuffleDeck = () => {
         //==> shuffle deck and update newDeck state
         let getDeck = [...deck];
@@ -110,7 +124,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                     
                     setReshuffle(false);
                     stackDeck();
-                    console.log(layout.cards, "layout, hand", hand.length);
+                    // console.log(layout.cards, "layout, hand", hand.length);
                     document.getElementById('deck-container').style.maxHeight = '0px';
                     document.getElementById('deck-container').style.overflow = 'hidden';
                 }, 1000);
@@ -120,6 +134,15 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         };
     };
 
+    //==> Back button to return user to previous page
+	const navigate = useNavigate();
+	const goBack = () => {
+        navigate(-1);
+	}
+
+    const showReverse = () => {
+        console.log("make a reverse toggle for the spreads");
+    }
     return (
         <div>
             <header>
@@ -140,7 +163,9 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 <button id="shuffle-btn" onClick={shuffleBtn}>shuffle deck</button>
             </section>
             <section>
-                <button className="invisible-btn">X</button>
+            <button onClick={showReverse} className="invisible-btn">SHOW REVERSE</button>
+                <button onClick={refreshDeck} className="invisible-btn">REFRESH</button>
+                <button onClick={goBack} className="invisible-btn">X</button>
             </section>
             </header>
             <div id="deck-container"><Deck deck={newDeck} shuffleBtn={shuffleBtn} selectCard={selectCard}/></div>
