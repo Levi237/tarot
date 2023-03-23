@@ -163,7 +163,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 <button id="shuffle-btn" onClick={shuffleBtn}>shuffle deck</button>
             </section>
             <section>
-            <button onClick={showReverse} className="invisible-btn">SHOW REVERSE</button>
+            <button onClick={showReverse} className="invisible-btn">UPRIGHT CARDS ONLY</button>
                 <button onClick={refreshDeck} className="invisible-btn">REFRESH</button>
                 <button onClick={goBack} className="invisible-btn">X</button>
             </section>
