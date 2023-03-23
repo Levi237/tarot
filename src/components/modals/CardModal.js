@@ -87,6 +87,9 @@ const CardModal = ({card, closeCardModal, layoutInfo}) => {
     const mapSubastro = card.subastro.map((item, i) => {
       return (<span key={i}>{item}</span>);
     });
+    // const mapSeph = card.seph.map((item, i) => {
+    //   return (<span key={i}>{item}</span>);
+    // });
     const mapKeys = card.keys.map((item, i) => {
       return (<li key={i}>{item}</li>);
     });
@@ -119,6 +122,7 @@ const CardModal = ({card, closeCardModal, layoutInfo}) => {
                   { card.element.length > 0 && <p className="element">{mapElement}</p> }
                   { card.subelem.length > 0  && <p className="subelements">{mapSubElement}</p> }
                   { card.major.length > 0 && <p className="major-arcana">{mapMajor}</p> }
+                  { card.seph.length > 0 && <p className="seph">{card.seph}</p> }
                   { card.astro.length > 0 && <p className="astro-p">Ruled by {mapAstro}</p>}
                   { card.subastro.length > 0 && <ul>{mapSubastro}</ul> }
                 <br/>
