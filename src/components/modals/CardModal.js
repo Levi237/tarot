@@ -111,7 +111,7 @@ const CardModal = ({card, closeCardModal, layoutInfo}) => {
           </div>
           <div className="grid two-column-grid forty-sixty">
             <section>
-              <img style={{transform: `rotate(${180*card.rotation + 'deg'})`}} src={`/cards/${img}.jpg`} alt={`${card.title}`}/>
+              <img src={`/cards/${img}.jpg`} alt={`${card.title}`}/>
             </section>
             <section className="card-info">
              

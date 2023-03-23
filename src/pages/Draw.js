@@ -142,6 +142,8 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
     const showReverse = () => {
         console.log("make a reverse toggle for the spreads");
+        document.querySelector('.spread-section').classList.toggle('show-reverse-onclick');
+        document.getElementById('reverse-btn').classList.toggle('toggle-reverse-btn');
     }
     return (
         <div>
@@ -163,9 +165,9 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 <button id="shuffle-btn" onClick={shuffleBtn}>shuffle deck</button>
             </section>
             <section>
-            <button onClick={showReverse} className="invisible-btn">UPRIGHT CARDS ONLY</button>
-                <button onClick={refreshDeck} className="invisible-btn">REFRESH</button>
-                <button onClick={goBack} className="invisible-btn">X</button>
+            <button id="reverse-btn" onClick={showReverse} className="toggle-reverse-btn invisible-btn----">UPRIGHT CARDS ONLY</button>
+                <button onClick={refreshDeck} className="invisible-btn----">REFRESH</button>
+                <button onClick={goBack} className="invisible-btn----">BACK</button>
             </section>
             </header>
             <Deck deck={newDeck} shuffleBtn={shuffleBtn} selectCard={selectCard} styleId='deal-deck'/>

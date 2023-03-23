@@ -76,3 +76,6 @@
     }
   }
  
+  .toggle-reverse-btn {
+    opacity: .5;
+  }
