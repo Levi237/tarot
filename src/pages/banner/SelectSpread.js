@@ -11,7 +11,7 @@ const SelectSpreadBanner = ({layout, layouts, selectLayout}) => {
 
     return (
         <div className="two-column-spread-preview-wrapper">
-            <div className="grid two-column-spread-preview">
+            <div className="grid two-column-spread-preview body-width">
                 <div className="info-window">
                     <h2>{layout.name ? layout.name : layouts[keyNum].name}</h2>
                     <p>{layout.note ? layout.note : layouts[keyNum].note}</p>

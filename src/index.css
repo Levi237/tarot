@@ -66,6 +66,13 @@ button.invisible-btn,
   width: auto;
 }
 
+h1.title {
+  text-align: center;
+  padding: 20px 0;
+  color: var(--color-darkgrey);
+}
+
+
 .signout-home {
   position: absolute;
   z-index: 3;
@@ -74,6 +81,14 @@ button.invisible-btn,
 .error {
   color: red;
 }
+
+#index-deck,
+.body-width {
+    max-width: 1000px;
+    height: 480px;
+    margin: 0 auto;
+}
+
 
 .grid {
   display: grid;

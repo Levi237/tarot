@@ -5,6 +5,14 @@
     --card-width: 184px;
     --deck-count: 78;
 }
+
+#index-deck {
+  --percentage: .7;
+}
+#index-dec .cards {
+  text-align: center;
+}
+
 #deal-deck {
   max-height: calc(var(--card-height) * var(--hover-percentage));
 }
