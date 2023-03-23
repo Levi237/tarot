@@ -225,7 +225,7 @@ const App = () => {
       const getDeck = collection(fs, 'deck');
       const docSnap = await getDocs(getDeck);
       docSnap.forEach((doc) => {
-        if (doc.id === 'Ud5G1N1BhX1T8wBA7oe9'){
+        if (doc.id === 'iymsYXSnDc6LZ6cwxeWn'){
           setDeck(doc.data().deck);
         }
       });
