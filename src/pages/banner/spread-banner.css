@@ -14,6 +14,7 @@
     box-shadow: 5px 5px 40px rgba(0 0 0 / 25%);
     
 }
+
 .two-column-spread-preview > div {
     background-color: white;
 }
@@ -82,4 +83,16 @@
     align-items: center;
     border-bottom: 1px solid black;
     padding-left: 20px;
+}
+
+@media (orientation: portrait) and (max-width: 680px) {
+    .two-column-spread-preview {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        height: auto;
+        padding: 0 0 40px;
+    }
+    .two-column-spread-preview > div:last-of-type {
+        border-left: none;
+    }
 }

@@ -93,8 +93,10 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         for (let i = 0; i < getCard.length; i++) {
             setTimeout(() => {
                 setTimeout(() => {
-                    getCard[i].classList.remove('stack-deck');
-                    getCard[i].classList.add('splay-deck');
+                    if(getCard[i]){
+                        getCard[i].classList.remove('stack-deck');
+                        getCard[i].classList.add('splay-deck');
+                    }
                 }, i*6);
             }, 0);
         };

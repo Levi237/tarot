@@ -7,7 +7,7 @@ import './spread-banner.css';
 
 const SelectSpreadBanner = ({layout, layouts, selectLayout}) => {
 
-   const [keyNum, setKeyNum] = useState(3)
+   const [keyNum, setKeyNum] = useState(3);
 
     return (
         <div className="two-column-spread-preview-wrapper">

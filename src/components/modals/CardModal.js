@@ -2,9 +2,10 @@
 //========> Allow scroll to view all information
 
 import React from 'react';
+import Hamburger from '../nav/hamburger';
 
 import './modal.css'
-const CardModal = ({card, closeCardModal, layoutInfo}) => {
+const CardModal = ({card, closeCardModal, layoutInfo, placement}) => {
 
     const img = card.title.toLowerCase().split(' ').join('_');
 
@@ -106,10 +107,13 @@ const CardModal = ({card, closeCardModal, layoutInfo}) => {
     return(
       <div className="cardmodal modal">
         <div className="modal-container">
-          <div className="close-modal-box">
-            <button className="close-modal-btn" onClick={closeCardModal}>X</button>
-          </div>
+
           <div className="grid two-column-grid forty-sixty">
+          <div className="close-modal-box">
+            {/* <button className="close-modal-btn" onClick={closeCardModal}> */}
+              <Hamburger hamburgerFunction={closeCardModal} hamburgerStyle='hamburger-close'/>
+              {/* </button> */}
+          </div>
             <section>
               <img src={`/cards/${img}.jpg`} alt={`${card.title}`}/>
             </section>
@@ -143,8 +147,12 @@ const CardModal = ({card, closeCardModal, layoutInfo}) => {
                 { card.revdesc.length > 0 && <section>{mapRevDesc}</section> }
             </section>
           </div>
-          {layoutInfo && 
-          <h1>Add Card Description for Layout Position</h1>
+          { placement && 
+            <div>
+              <h3>Card Position: <span>{placement.title}</span></h3>
+              <p>{placement.description}</p>
+              <p>{placement.prompt}</p>
+            </div>
           }
         </div>
       </div>  

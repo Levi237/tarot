@@ -2,11 +2,11 @@ import React from 'react';
 
 import './hamburger.css';
 
-const Hamburger = ({toggleNavMenu}) => {
+const Hamburger = ({hamburgerFunction, hamburgerStyle}) => {
 
     return(
-        <div id="hamburger-container" name="toggleMenu" onClick={(e) => {toggleNavMenu(e); }}>
-            <nav id="hamburger-btn" className="">
+        <div id="hamburger-container" name="toggleMenu" onClick={(e) => {hamburgerFunction(e); }}>
+            <nav id="hamburger-btn" className={`${hamburgerStyle}`}>
                 <section></section>
                 <section></section>	
             </nav>

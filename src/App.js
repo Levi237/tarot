@@ -19,6 +19,7 @@ import CardModal                      from './components/modals/CardModal';
 const App = () => {
 
   const [card, setCard] = useState([]);
+  const [placement, setPlacement] = useState([]);
   const [deck, setDeck] = useState([]);
   const [user, setUser] = useState([]);
     //=> hardcode in layouts with descriptions
@@ -279,8 +280,13 @@ const App = () => {
     }
   };
 
-  const viewCard = (e, data) => {
+  const viewCard = (e, data, layout) => {
+
     setCard(data);
+    setPlacement(layout);
+    // include layout in data
+    // setSearches(searches => [...searches, query])
+    console.log(e.currentTarget.id, "viewcard id", layout, data)
   };
   
   const closeCardModal = (e) => {
@@ -293,7 +299,7 @@ const App = () => {
       {/* { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> } */}
       {/* <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/> */}
       {/* <UserAuth user={user} clickSignOut={clickSignOut}/> */}
-      { card.title && <CardModal card={card} closeCardModal={closeCardModal}/>}
+      { card.title && <CardModal card={card} placement={placement} closeCardModal={closeCardModal}/>}
       <Routes>
           <Route path={routes.DRAW} exact element={
             <Draw 

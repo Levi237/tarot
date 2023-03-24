@@ -14,7 +14,7 @@ const NavMenu = ({user, clickSignOut, openSignIn}) => {
         document.getElementById('hamburger-btn').classList.toggle('hamburger-close');
     }
 return (<>
-    <Hamburger toggleNavMenu={toggleNavMenu}/>
+    <Hamburger hamburgerFunction={toggleNavMenu}/>
     <div id="nav-menu" className="hide-menu">
         <div>
             <NavLink exact to={routes.ROOT} onClick={toggleNavMenu}>HOME</NavLink>
