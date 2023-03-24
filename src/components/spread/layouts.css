@@ -1,3 +1,11 @@
+#show-layout-container {
+    padding: 24px;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 .spread-section { 
     display: grid; 
     max-width: 1200px;
@@ -142,12 +150,12 @@
     .spread-thirteen-celtic-cross > section > div:nth-of-type(10) {
         width: 90%;
     }
-    .spread-thirteen-celtic-cross > section > div:nth-of-type(11),
+    /* .spread-thirteen-celtic-cross > section > div:nth-of-type(11),
     .spread-thirteen-celtic-cross > section > div:nth-of-type(12),
     .spread-thirteen-celtic-cross > section > div:nth-of-type(13) {
         width: 80%!important;
         margin-top: 20%;
-    }
+    } */
 
     .spread-ten-celtic-cross > section > div:nth-of-type(7) {
         transform: translateY(-48%);
@@ -158,9 +166,9 @@
     .spread-ten-celtic-cross > section > div:nth-of-type(9) {
         transform: translateY(-16%);
     }
-    /* .spread-ten-celtic-cross > section > div:nth-of-type(10) {
-        transform: translateY(-24%);
-    } */
+    .spread-ten-celtic-cross > section > div:nth-of-type(10) {
+        transform: translateY(0%);
+    }
 
     .spread-thirteen-celtic-cross > section > div:nth-of-type(7) {
         transform: translateY(16%);

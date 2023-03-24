@@ -15,13 +15,15 @@ const Layout = ({hand, layout, viewCard}) => {
         );
     });
 
-    return(<>     
+    return(
+    <div id="show-layout-container">     
         <div className={`${layout.type}`}> 
             <section className="spread-section">
                 {showHand}
             </section>
         </div>
-    </>);
+    </div>
+    );
 };
 
 export default Layout;

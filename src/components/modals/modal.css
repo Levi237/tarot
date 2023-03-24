@@ -57,6 +57,18 @@ button.close-modal-btn {
   background: transparent;
   border: none;
 }
+@media (max-width: 740px) {
+  .modal-container {
+    margin: 0;
+    padding: 12px;
+    width: 100%;
+    height: calc(100vh - 0px);
+  }
+  .close-modal-box {
+    right: 0px;
+    top: 0px;
+  }
+}
 
 .cardmodal .img-box {
     width: 50%;
@@ -110,7 +122,7 @@ button.close-modal-btn {
 
   .cardmodal ul {
     margin-top: 6px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 300;
   }
   .cardmodal li {
