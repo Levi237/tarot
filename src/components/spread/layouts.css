@@ -5,12 +5,16 @@
     height: calc(100dvh - 66px);
     /* margin-top: 66px; */
 }
-
+@media (orientation: portrait) and (max-width: 1200px) {
+    #show-layout-container {
+        height: auto;
+    } 
+}
 .spread-section { 
     display: grid; 
     max-width: 1200px;
     margin: 0 auto;
-    gap: 6px;
+    gap: 10px;
 }
 .spread-section > div {
     border-radius: 5px;
@@ -90,13 +94,14 @@
 
 /*-----------------------------------------------------> CROSS SPREAD */
     .spread-cross > section {
-        max-width: 450px;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        /* max-width: 450px; */
+        width: 33vw;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas: 
-            ' . . two . . '
-            ' . four one five . '
-            ' . . three . . ';
+            ' . two . '
+            ' four one five '
+            ' . three . ';
     }
 
     .spread-ten-celtic-cross > section {
@@ -140,7 +145,7 @@
         z-index: 5;
     }
 
-    .spread-ten-celtic-cross > section > div:nth-of-type(7),
+    /* .spread-ten-celtic-cross > section > div:nth-of-type(7),
     .spread-ten-celtic-cross > section > div:nth-of-type(8),
     .spread-ten-celtic-cross > section > div:nth-of-type(9),
     .spread-ten-celtic-cross > section > div:nth-of-type(10),
@@ -149,7 +154,7 @@
     .spread-thirteen-celtic-cross > section > div:nth-of-type(9),
     .spread-thirteen-celtic-cross > section > div:nth-of-type(10) {
         width: 90%;
-    }
+    } */
     /* .spread-thirteen-celtic-cross > section > div:nth-of-type(11),
     .spread-thirteen-celtic-cross > section > div:nth-of-type(12),
     .spread-thirteen-celtic-cross > section > div:nth-of-type(13) {
@@ -157,7 +162,7 @@
         margin-top: 20%;
     } */
 
-    .spread-ten-celtic-cross > section > div:nth-of-type(7) {
+    /* .spread-ten-celtic-cross > section > div:nth-of-type(7) {
         transform: translateY(-48%);
     }
     .spread-ten-celtic-cross > section > div:nth-of-type(8) {
@@ -168,9 +173,9 @@
     }
     .spread-ten-celtic-cross > section > div:nth-of-type(10) {
         transform: translateY(0%);
-    }
+    } */
 
-    .spread-thirteen-celtic-cross > section > div:nth-of-type(7) {
+    /* .spread-thirteen-celtic-cross > section > div:nth-of-type(7) {
         transform: translateY(16%);
     }   
     .spread-thirteen-celtic-cross > section > div:nth-of-type(8) {
@@ -188,4 +193,4 @@
     }
     .spread-thirteen-celtic-cross > section > div:nth-of-type(13) {
         transform: translateX(-48%);
-    }
+    } */

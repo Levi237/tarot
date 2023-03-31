@@ -15,7 +15,7 @@
 
 #deal-deck {
   max-height: calc(var(--card-height) * var(--hover-percentage));
-  position: absolute;
+  /* position: absolute; */
 }
 #deal-deck .deck {
     max-width: 100vw;

@@ -5,7 +5,7 @@ import React from 'react';
 import Hamburger from '../nav/hamburger';
 
 import './modal.css'
-const CardModal = ({card, closeCardModal, layoutInfo, placement}) => {
+const CardModal = ({card, closeCardModal, placement}) => {
 
     const img = card.title.toLowerCase().split(' ').join('_');
 

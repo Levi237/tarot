@@ -147,6 +147,25 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         document.querySelector('.spread-section').classList.toggle('show-reverse-onclick');
         document.getElementById('reverse-btn').classList.toggle('toggle-reverse-btn');
     }
+
+    const handText = hand.map((card, key) => {
+        const startThis = layout.order.map((position, k) => {
+            if (key === k){
+                return (<>
+                <h3>{position.title}</h3>
+                <p>{position.description}</p>
+                </>);
+                // console.log(position, key, k)
+            }
+        });
+        return (
+            <div>
+                <h5>Card Position: {++key}</h5>
+                <h1>{card.title}</h1>
+                <p>{startThis}</p>
+            </div>
+        );
+    });
     return (
         <div>
             <header>
@@ -173,7 +192,16 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             </section>
             </header>
             <Deck deck={newDeck} shuffleBtn={shuffleBtn} selectCard={selectCard} styleId='deal-deck'/>
-            <Layout hand={hand} layout={layout} viewCard={viewCard}/>
+            <div className='reading-window'>
+                <section className="layout-section">
+                    <Layout hand={hand} layout={layout} viewCard={viewCard}/>
+                </section>
+                <section className="text-section">
+                    <div>
+                        {handText}
+                    </div>
+                </section>
+            </div>
         </div>
     );
 };
