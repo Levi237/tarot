@@ -308,7 +308,8 @@ const App = () => {
               layout={layout}
               selectLayout={selectLayout}
               viewCard={viewCard}
-            />} />
+            />
+            } />
           <Route path={routes.ACCT} exact element={<Account />}/>
           <Route path={routes.ROOT} exact element={
             <Home 
