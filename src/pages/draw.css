@@ -4,6 +4,7 @@ header {
     padding: 12px 40px;
     overflow: scroll;
     grid-template-columns: auto auto auto;
+    grid-template-areas: 'title shuffle buttons';
 }
 @media (max-width: 750px) {
     header {
@@ -15,16 +16,18 @@ header {
 header > section {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 header > section:first-of-type {
     grid-area: title;
+    justify-content: left;
 }
 header > section:nth-of-type(2) {
     grid-area: shuffle;
+    justify-content: center;
 }
 header > section:nth-of-type(3) {
     grid-area: buttons;
+    justify-content: right;
 }
 .deck-container {
     transition: all .3s ease;
@@ -52,4 +55,27 @@ header > section:nth-of-type(3) {
         grid-template-columns: 100%;
         width: 100%;
     }
+}
+
+.reading-window .suit-text span {
+    text-transform: capitalize;
+}
+
+.reading-window ul {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    font-size: 12px;
+}
+.reading-window .reverse-hide {
+    display: none;
+}
+.reading-window .upright-hide {
+    display: none;
+}
+.reading-window .reverse.hide {
+    display: none;
+}
+.reading-window .upright-hide.show {
+    display: block;
 }

@@ -143,26 +143,49 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 	}
 
     const showReverse = () => {
-        console.log("make a reverse toggle for the spreads");
         document.querySelector('.spread-section').classList.toggle('show-reverse-onclick');
         document.getElementById('reverse-btn').classList.toggle('toggle-reverse-btn');
+        document.querySelector('.reverse').classList.toggle('hide');
+        document.querySelector('.upright-hide').classList.toggle('show');
     }
 
     const handText = hand.map((card, key) => {
-        const startThis = layout.order.map((position, k) => {
+        const layoutOrder = layout.order.map((position, k) => {
             if (key === k){
                 return (<>
-                <h3>{position.title}</h3>
+                <h3>{++k}.  {position.title}</h3>
                 <p>{position.description}</p>
+                <p>{position.prompt}</p>
                 </>);
-                // console.log(position, key, k)
             }
         });
+        const mapKeys = card.keys.map((item, i) => {
+            return (<li key={i}>{item}</li>);
+          });
+          const mapRevKeys = card.revkeys.map((item, i) => {
+            return (<li key={i}>{item}</li>);
+          });
         return (
             <div>
                 <h5>Card Position: {++key}</h5>
                 <h1>{card.title}</h1>
-                <p>{startThis}</p>
+                {card.subtitle && <h4>{card.subtitle}</h4>}
+                {/* {(card.suit === 'swords' || card.suit === 'cups' || card.suit === 'pentacles' || card.suit === 'wands') ? <p className="suit-text">Suit: <span>{card.suit}</span></p> : <p className="suit-text"><span>{card.suit} Arcana</span></p>} */}
+                <br/>
+
+                <div className={(card.rotation === 2 || card.rotation === 0) ? 'upright' : 'upright upright-hide'}>
+                    <h4>Upright Keys</h4>
+                    <ul>{mapKeys}</ul>
+                </div>
+
+                <div className={(card.rotation === 1) ? 'reverse' : 'reverse-hide'}>
+                    <h4>Reverse Keys</h4>
+                    <ul>{mapRevKeys}</ul>
+                </div>
+
+                <br/>
+                <p>{layoutOrder}</p>
+                <br/>
             </div>
         );
     });
@@ -186,9 +209,9 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 <button id="shuffle-btn" onClick={shuffleBtn}>shuffle deck</button>
             </section>
             <section>
-            <button id="reverse-btn" onClick={showReverse} className="toggle-reverse-btn invisible-btn----">Upright All Cards</button>
-                <button onClick={refreshDeck} className="invisible-btn----">REFRESH</button>
-                <button onClick={goBack} className="invisible-btn----">BACK</button>
+                <button id="reverse-btn" onClick={showReverse} className="toggle-reverse-btn invisible-btn---- small btn">Upright All Cards</button>
+                <button onClick={refreshDeck} className="invisible-btn---- small btn">REFRESH</button>
+                <button onClick={goBack} className="invisible-btn---- small btn">BACK</button>
             </section>
             </header>
             <Deck deck={newDeck} shuffleBtn={shuffleBtn} selectCard={selectCard} styleId='deal-deck'/>

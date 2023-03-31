@@ -55,6 +55,12 @@ input[type=number] {
 button,
 .btn {
   padding: 12px 36px;
+  border-radius: 100px;
+}
+.small.btn {
+  font-size: 12px;
+  padding: 8px 24px;
+  margin: 4px;
 }
 button.invisible-btn,
 .btn.invisible-btn {

@@ -145,15 +145,18 @@ const CardModal = ({card, closeCardModal, placement}) => {
                 }
                 { card.desc.length > 0 && <section>{mapDesc}</section> }
                 { card.revdesc.length > 0 && <section>{mapRevDesc}</section> }
+                { placement && 
+                  <div>
+                    <br/><br/>
+                    <h3>Card Position: <span>{placement.title}</span></h3>
+                    <p>{placement.description}</p>
+                    <p>{placement.prompt}</p>
+                  </div>
+                }
             </section>
+
           </div>
-          { placement && 
-            <div>
-              <h3>Card Position: <span>{placement.title}</span></h3>
-              <p>{placement.description}</p>
-              <p>{placement.prompt}</p>
-            </div>
-          }
+
         </div>
       </div>  
     );
