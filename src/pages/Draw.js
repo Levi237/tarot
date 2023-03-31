@@ -153,7 +153,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         const layoutOrder = layout.order.map((position, k) => {
             if (key === k){
                 return (<>
-                <h3>{++k}.  {position.title}</h3>
+                <h4>{++k}.  {position.title}</h4>
                 <p>{position.description}</p>
                 <p>{position.prompt}</p>
                 </>);
@@ -168,11 +168,9 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         return (
             <div>
                 <h5>Card Position: {++key}</h5>
-                <h1>{card.title}</h1>
-                {card.subtitle && <h4>{card.subtitle}</h4>}
+                <h1>{(card.majorNum) && <span>{card.majorNum}. </span>}{card.title}</h1>
+                {card.subtitle && <h3>{card.subtitle}</h3>}
                 {/* {(card.suit === 'swords' || card.suit === 'cups' || card.suit === 'pentacles' || card.suit === 'wands') ? <p className="suit-text">Suit: <span>{card.suit}</span></p> : <p className="suit-text"><span>{card.suit} Arcana</span></p>} */}
-                <br/>
-
                 <div className={(card.rotation === 2 || card.rotation === 0) ? 'upright' : 'upright upright-hide'}>
                     <h4>Upright Keys</h4>
                     <ul>{mapKeys}</ul>
@@ -184,7 +182,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 </div>
 
                 <br/>
-                <p>{layoutOrder}</p>
+                {layoutOrder}
                 <br/>
             </div>
         );
