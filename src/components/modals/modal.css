@@ -30,13 +30,14 @@
   box-shadow: 10px 9px 20px rgb(0 0 0 / 50%);
   width: calc(100vw - 80px);
   /* height: calc(100vh - 80px); */
+}
+.cardmodal .modal-container {
   max-height: 680px;
   height: 90vw;
   margin: 40px;
   overflow: hidden;
   height: 66vw;
 }
-
 .close-modal-box {
   position: fixed;
   z-index: 9;
