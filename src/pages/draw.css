@@ -36,14 +36,19 @@ header > section:nth-of-type(3) {
 .reading-window {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
     width: 100%;
     height: calc(100vh - 80px);
     max-width: 1200px;
     margin: 0 auto;
 }
-
-
-
+z
+.reading-window .layout-section {
+    height: 100%;
+}
+.reading-window > section.text-section {
+    overflow: scroll;
+}
 .reading-window > section.text-section > div {
     padding: 20px;
 }
