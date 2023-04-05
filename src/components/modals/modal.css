@@ -29,9 +29,12 @@
   padding: 32px;
   box-shadow: 10px 9px 20px rgb(0 0 0 / 50%);
   width: calc(100vw - 80px);
-  height: calc(100vh - 80px);
+  /* height: calc(100vh - 80px); */
+  max-height: 680px;
+  height: 90vw;
   margin: 40px;
-  overflow: scroll;
+  overflow: hidden;
+  height: 66vw;
 }
 
 .close-modal-box {
@@ -80,9 +83,10 @@ button.close-modal-btn {
 }
 
 .cardmodal .grid {
-    max-width: 900px;
+    /* max-width: 900px; */
     margin: 40px auto;
-    max-height: 100vh;
+    max-height: 680px;
+    height: 100%;
 }
 .cardmodal .grid > section:last-of-type {
   padding-left: 40px;

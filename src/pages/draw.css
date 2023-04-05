@@ -37,8 +37,15 @@ header > section:nth-of-type(3) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
+    height: calc(100vh - 80px);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.modal-container .card-info {
+    overflow: scroll;
+    padding-bottom: 80px;
+}
 
 .reading-window > section.text-section > div {
     padding: 20px;
