@@ -42,10 +42,7 @@ header > section:nth-of-type(3) {
     margin: 0 auto;
 }
 
-.modal-container .card-info {
-    overflow: scroll;
-    padding-bottom: 80px;
-}
+
 
 .reading-window > section.text-section > div {
     padding: 20px;

@@ -1,3 +1,4 @@
+Auth Modal
 .modal-window {
   --width: 320px;
 }
@@ -13,6 +14,8 @@
   justify-content: center;
   align-items: center;
 }
+
+/* Card Modal */
 .modal {
     position: fixed;
     z-index: 8;
@@ -32,17 +35,20 @@
   /* height: calc(100vh - 80px); */
 }
 .cardmodal .modal-container {
-  max-height: 680px;
-  height: 90vw;
+  height: calc(100vh - 144px);
   margin: 40px;
   overflow: hidden;
-  height: 66vw;
 }
+.cardmodal .modal-container .card-info {
+  overflow: scroll;
+  padding-bottom: 80px;
+}
+
 .close-modal-box {
   position: fixed;
   z-index: 9;
-  right: 64px;
-  top: 24px;
+  right: 36px;
+  top: 42px;
   display: inline-block;
 }
 .close-modal-btn {
@@ -78,9 +84,14 @@ button.close-modal-btn {
     width: 50%;
     font-size: 0;
 }
+.cardmodal .grid > section:first-of-type {
+  height: 77vh;
+  width: 100%;
+}
 .cardmodal img {
-    width: 100%;
-    min-width: 240px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .cardmodal .grid {
