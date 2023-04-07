@@ -23,6 +23,8 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             if(hideTopCard){hideTopCard.style.display = 'none';}
             splayDeck();
             setReshuffle(true);
+            document.querySelector('.reading-window').style.height ='calc(100dvh - 240px)';
+
         }, 500);    
     }, [deck]);
 
@@ -57,6 +59,8 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         document.getElementById('shuffle-btn').style.display = 'inline-block';
         document.getElementById('deal-deck').style.maxHeight = '600px';
         document.getElementById('deal-deck').style.overflow = 'hidden';
+        document.querySelector('.reading-window').style.height ='calc(100dvh - var(--height-desktop-draw))';
+
         // need to refresh dropdown
     }
     const shuffleDeck = () => {
@@ -119,7 +123,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             });
             newDeck.pop();
 
-            console.log(layout.cards, "layout, hand", hand.length);
+            // console.log(layout.cards, "layout, hand", hand.length);
             if (layout.cards - 1 === hand.length){
                 document.getElementById('shuffle-btn').style.display = 'none';
                 setTimeout(() => {
@@ -128,6 +132,8 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                     stackDeck();
                     // console.log(layout.cards, "layout, hand", hand.length);
                     document.getElementById('deal-deck').style.maxHeight = '0px';
+                    document.querySelector('.reading-window').style.height ='calc(100dvh - 60px)';
+
                     document.getElementById('deal-deck').style.overflow = 'hidden';
                 }, 1000);
             }
@@ -150,6 +156,20 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
     }
 
     const handText = hand.map((card, key) => {
+          // Scroll into function
+  // When user clicks on new card for reading, 
+  // the new information presents itself at the top of the window 
+  // with the ability to scroll window intact
+    const cardData = document.getElementsByClassName('card-reading-info');
+        if(cardData.length > 0){
+            Array.prototype.slice.call(cardData).map((e, k) => {
+                if( key + 1 === cardData.length){
+                    console.log(cardData, "card data", cardData.length);
+                    e.scrollIntoView({behavior: 'smooth'});
+                }
+            });
+        }
+//   mapCardData();
         const layoutOrder = layout.order.map((position, k) => {
             if (key === k){
                 return (<>
@@ -165,9 +185,9 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
           const mapRevKeys = card.revkeys.map((item, i) => {
             return (<li key={i}>{item}</li>);
           });
-        return (
-            <div>
-                <h5>Card Position: {++key}</h5>
+        return (<>
+            <div className="" key={key} >
+                <h5>Card Position: {key + 1}</h5>
                 <h1>{(card.majorNum) && <span>{card.majorNum}. </span>}{card.title}</h1>
                 {card.subtitle && <h3>{card.subtitle}</h3>}
                 {/* {(card.suit === 'swords' || card.suit === 'cups' || card.suit === 'pentacles' || card.suit === 'wands') ? <p className="suit-text">Suit: <span>{card.suit}</span></p> : <p className="suit-text"><span>{card.suit} Arcana</span></p>} */}
@@ -184,11 +204,14 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 <br/>
                 {layoutOrder}
                 <br/>
+                
+            <div className="card-reading-info"></div>
             </div>
+            </>
         );
     });
     return (
-        <div>
+        <div className="draw-display">
             <header>
             <section>
             {layout.id
