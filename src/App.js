@@ -293,7 +293,8 @@ const App = () => {
     e.preventDefault();
     setCard([]);
   }
-  
+
+
 
   return (
     <div className="App">

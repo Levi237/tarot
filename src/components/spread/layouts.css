@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     /* align-items: start; */
-    height: calc(100dvh - 66px);
+    height: calc(100dvh - 240px);
     /* margin-top: 66px; */
 }
 @media (orientation: portrait) and (max-width: 1200px) {
@@ -135,7 +135,7 @@
             ' . four . . seven '
             ' . two . . . ';
         margin-bottom: -20%;
-        width: calc(100vh - 240px);
+        width: calc(100dvh - 240px);
         position: relative;
     }
     @media only screen and (max-width: 640px) {

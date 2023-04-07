@@ -35,7 +35,7 @@ Auth Modal
   /* height: calc(100vh - 80px); */
 }
 .cardmodal .modal-container {
-  height: calc(100vh - 144px);
+  height: calc(100dvh - 144px);
   margin: 40px;
   overflow: hidden;
 }
@@ -72,7 +72,7 @@ button.close-modal-btn {
     margin: 0;
     padding: 12px;
     width: 100%;
-    height: calc(100vh - 0px);
+    height: calc(100dvh - 0px);
   }
   .close-modal-box {
     right: 0px;
