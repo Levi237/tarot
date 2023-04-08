@@ -22,7 +22,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             const hideTopCard = document.getElementById('top-back-card');
             if(hideTopCard){hideTopCard.style.display = 'none';}
             
-            splayDeck();
+            displayDeck();
 
             setReshuffle(true);
             document.getElementById('reading-window_id').classList.add('draw-height');
@@ -42,7 +42,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             //=> reshuffle click, delay until stack is complete
             setTimeout(() => {
                 
-                // splayDeck();
+                // displayDeck();
                 toggleDisplay();
 
             }, 2800);
@@ -50,7 +50,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             //=> first shuffle click     
             setTimeout(() => {
                 
-                // splayDeck();
+                // displayDeck();
                 toggleDisplay();
 
                 setReshuffle(true);
@@ -63,12 +63,16 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         setHand([]);
 
         shuffleBtn();
+        displayDeck();
+        setReshuffle(true);
+
         //condense below code to shuffleBtn()
         // shuffleDeck();
         // stackDeck();
         // setTimeout(() => {
-        // splayDeck();
+        // displayDeck();
         // }, 2800);
+        toggleDisplay();
 
         document.getElementById('shuffle-btn').style.display = 'inline-block';
         document.getElementById('deal-deck').style.maxHeight = '600px';
@@ -108,7 +112,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
     // };
 
     //==> Spread deck out first time for animation
-    const splayDeck = () => {
+    const displayDeck = () => {
         let getCard = document.getElementsByClassName('dealt-card');
         for (let i = 0; i < getCard.length; i++) {
             setTimeout(() => {
@@ -159,7 +163,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 document.getElementById('shuffle-btn').style.display = 'none';
                 setTimeout(() => {
                     
-                    setReshuffle(false);
+                    // setReshuffle(false);
                     
                     // stackDeck();
                     toggleDisplay();
@@ -182,7 +186,8 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         navigate(-1);
 	}
 
-    const showReverse = () => {
+    //endable upright only
+    const toggleUprightOnly = () => {
         document.querySelector('.spread-section').classList.toggle('show-reverse-onclick');
         document.getElementById('reverse-btn').classList.toggle('toggle-reverse-btn');
         document.querySelector('.reverse').classList.toggle('hide');
@@ -203,7 +208,6 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 }
             });
         }
-//   mapCardData();
         const layoutOrder = layout.order.map((position, k) => {
             if (key === k){
                 return (<>
@@ -244,6 +248,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             </>
         );
     });
+    
     return (
         <div className="draw-display">
             <header>
@@ -264,7 +269,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 <button id="shuffle-btn" onClick={shuffleBtn}>shuffle deck</button>
             </section>
             <section>
-                <button id="reverse-btn" onClick={showReverse} className="toggle-reverse-btn invisible-btn---- small btn">Upright All Cards</button>
+                <button id="reverse-btn" onClick={toggleUprightOnly} className="toggle-reverse-btn invisible-btn---- small btn">Upright All Cards</button>
                 <button onClick={refreshDeck} className="invisible-btn---- small btn">REFRESH</button>
                 <button onClick={goBack} className="invisible-btn---- small btn">BACK</button>
             </section>
