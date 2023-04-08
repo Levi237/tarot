@@ -23,19 +23,19 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             if(hideTopCard){hideTopCard.style.display = 'none';}
             splayDeck();
             setReshuffle(true);
-            document.querySelector('.reading-window').style.height ='calc(100dvh - 240px)';
-
+            document.getElementById('reading-window_id').classList.add('draw-height');
+            document.getElementById('reading-window_id').classList.remove('header-height');
         }, 500);    
     }, [deck]);
 
     const shuffleBtn = () => {
         shuffleDeck();
         stackDeck();
-        //==> shuffle options (shuffle vs reshuffle)
+        //==> shuffle options (shuffle vs reshuffle) for timing of display
         
 
         if (reshuffle === true){
-            //=> reshuffle click
+            //=> reshuffle click, delay until stack is complete
             setTimeout(() => {
                 splayDeck();
             }, 2800);
@@ -59,7 +59,9 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         document.getElementById('shuffle-btn').style.display = 'inline-block';
         document.getElementById('deal-deck').style.maxHeight = '600px';
         document.getElementById('deal-deck').style.overflow = 'hidden';
-        document.querySelector('.reading-window').style.height ='calc(100dvh - var(--height-desktop-draw))';
+        // document.getElementById('reading-window_id').classList ='calc(100dvh - var(--height-desktop-draw))';
+        document.getElementById('reading-window_id').classList.remove('draw-height');
+        document.getElementById('reading-window_id').classList.add('draw-height');
 
         // need to refresh dropdown
     }
@@ -132,7 +134,8 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                     stackDeck();
                     // console.log(layout.cards, "layout, hand", hand.length);
                     document.getElementById('deal-deck').style.maxHeight = '0px';
-                    document.querySelector('.reading-window').style.height ='calc(100dvh - 60px)';
+                    document.getElementById('reading-window_id').classList.remove('draw-height');
+                    document.getElementById('reading-window_id').classList.add('header-height');
 
                     document.getElementById('deal-deck').style.overflow = 'hidden';
                 }, 1000);
@@ -156,10 +159,10 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
     }
 
     const handText = hand.map((card, key) => {
-          // Scroll into function
-  // When user clicks on new card for reading, 
-  // the new information presents itself at the top of the window 
-  // with the ability to scroll window intact
+    // Scroll into function
+    // When user clicks on new card for reading, 
+    // the new information presents itself at the top of the window 
+    // with the ability to scroll window intact
     const cardData = document.getElementsByClassName('card-reading-info');
         if(cardData.length > 0){
             Array.prototype.slice.call(cardData).map((e, k) => {
@@ -236,7 +239,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             </section>
             </header>
             <Deck deck={newDeck} shuffleBtn={shuffleBtn} selectCard={selectCard} styleId='deal-deck'/>
-            <div className='reading-window'>
+            <div id="reading-window_id" className='reading-window'>
                 <section className="layout-section">
                     <Layout hand={hand} layout={layout} viewCard={viewCard}/>
                 </section>

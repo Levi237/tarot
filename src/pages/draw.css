@@ -3,6 +3,19 @@
     --height-desktop-header: 60px;
 }
 
+.draw-height {
+    height: calc(100dvh - var(--height-desktop-draw));
+}
+.header-height {
+    height: calc(100dvh - var(--height-desktop-header));
+}
+@media only screen and (max-width: 749px){
+    .draw-height,
+    .header-height {
+        height: auto;
+    }
+}
+
 header {
     height: auto;
     display: grid;
@@ -43,7 +56,7 @@ header > section:nth-of-type(3) {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     width: 100%;
-    height: calc(100dvh - 240px);
+    /* height: calc(100dvh - 240px); */
     max-width: 1200px;
     margin: 0 auto;
 }
