@@ -133,16 +133,10 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             if (layout.cards - 1 === hand.length){
                 document.getElementById('shuffle-btn').style.display = 'none';
                 setTimeout(() => {
-                    
-                    // setReshuffle(false);
-                    
-                    // stackDeck();
                     toggleDisplay();
-                    // console.log(layout.cards, "layout, hand", hand.length);
                     document.getElementById('deal-deck').style.maxHeight = '0px';
                     document.getElementById('reading-window_id').classList.remove('draw-height');
                     document.getElementById('reading-window_id').classList.add('header-height');
-
                     document.getElementById('deal-deck').style.overflow = 'hidden';
                 }, 1000);
             }
