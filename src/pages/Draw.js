@@ -21,7 +21,9 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         setTimeout(() => {
             const hideTopCard = document.getElementById('top-back-card');
             if(hideTopCard){hideTopCard.style.display = 'none';}
+            
             splayDeck();
+
             setReshuffle(true);
             document.getElementById('reading-window_id').classList.add('draw-height');
             document.getElementById('reading-window_id').classList.remove('header-height');
@@ -30,19 +32,27 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
     const shuffleBtn = () => {
         shuffleDeck();
-        stackDeck();
+        
+        // stackDeck();
+        toggleDisplay();
         //==> shuffle options (shuffle vs reshuffle) for timing of display
         
 
         if (reshuffle === true){
             //=> reshuffle click, delay until stack is complete
             setTimeout(() => {
-                splayDeck();
+                
+                // splayDeck();
+                toggleDisplay();
+
             }, 2800);
         } else {     
             //=> first shuffle click     
             setTimeout(() => {
-                splayDeck();
+                
+                // splayDeck();
+                toggleDisplay();
+
                 setReshuffle(true);
             }, 0);
         };
@@ -51,11 +61,15 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
     const refreshDeck = () => {
         setNewDeck(deck);
         setHand([]);
-        shuffleDeck();
-        stackDeck();
-        setTimeout(() => {
-            splayDeck();
-        }, 2800);
+
+        shuffleBtn();
+        //condense below code to shuffleBtn()
+        // shuffleDeck();
+        // stackDeck();
+        // setTimeout(() => {
+        // splayDeck();
+        // }, 2800);
+
         document.getElementById('shuffle-btn').style.display = 'inline-block';
         document.getElementById('deal-deck').style.maxHeight = '600px';
         document.getElementById('deal-deck').style.overflow = 'hidden';
@@ -78,20 +92,20 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         setNewDeck(shuffledDeck);
     };
 
-    const stackDeck = () => {
-        let getCard = document.getElementsByClassName('dealt-card');
-        for (let i = 0; i < getCard.length; i++) {
-            setTimeout(() => {
-                setTimeout(() => {
-                    //==> Check to see if card was drawn during stack
-                    if(getCard[i]){
-                        getCard[i].classList.add('stack-deck');
-                        getCard[i].classList.remove('splay-deck');
-                    }
-                    }, i*6);
-            }, 0);
-        };
-    };
+    // const stackDeck = () => {
+    //     let getCard = document.getElementsByClassName('dealt-card');
+    //     for (let i = 0; i < getCard.length; i++) {
+    //         setTimeout(() => {
+    //             setTimeout(() => {
+    //                 //==> Check to see if card was drawn during stack
+    //                 if(getCard[i]){
+    //                     getCard[i].classList.add('stack-deck');
+    //                     getCard[i].classList.remove('splay-deck');
+    //                 }
+    //                 }, i*6);
+    //         }, 0);
+    //     };
+    // };
 
     //==> Spread deck out
     const splayDeck = () => {
@@ -102,6 +116,21 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                     if(getCard[i]){
                         getCard[i].classList.remove('stack-deck');
                         getCard[i].classList.add('splay-deck');
+                    }
+                }, i*6);
+            }, 0);
+        };
+    };
+
+    //==> Spread deck out
+    const toggleDisplay = () => {
+        let getCard = document.getElementsByClassName('dealt-card');
+        for (let i = 0; i < getCard.length; i++) {
+            setTimeout(() => {
+                setTimeout(() => {
+                    if(getCard[i]){
+                        getCard[i].classList.toggle('stack-deck');
+                        getCard[i].classList.toggle('splay-deck');
                     }
                 }, i*6);
             }, 0);
@@ -131,7 +160,9 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 setTimeout(() => {
                     
                     setReshuffle(false);
-                    stackDeck();
+                    
+                    // stackDeck();
+toggleDisplay();
                     // console.log(layout.cards, "layout, hand", hand.length);
                     document.getElementById('deal-deck').style.maxHeight = '0px';
                     document.getElementById('reading-window_id').classList.remove('draw-height');
