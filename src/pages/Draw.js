@@ -107,7 +107,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
     //     };
     // };
 
-    //==> Spread deck out
+    //==> Spread deck out first time for animation
     const splayDeck = () => {
         let getCard = document.getElementsByClassName('dealt-card');
         for (let i = 0; i < getCard.length; i++) {
