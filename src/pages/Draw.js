@@ -20,7 +20,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         shuffleDeck();
         setTimeout(() => {
             const hideTopCard = document.getElementById('top-back-card');
-            if(hideTopCard){hideTopCard.style.display = 'none';}
+            if(hideTopCard){ hideTopCard.style.display = 'none'; }
             
             displayDeck();
 
@@ -32,8 +32,6 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
     const shuffleBtn = () => {
         shuffleDeck();
-        
-        // stackDeck();
         toggleDisplay();
         //==> shuffle options (shuffle vs reshuffle) for timing of display
         
@@ -41,18 +39,12 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         if (reshuffle === true){
             //=> reshuffle click, delay until stack is complete
             setTimeout(() => {
-                
-                // displayDeck();
                 toggleDisplay();
-
             }, 2800);
         } else {     
             //=> first shuffle click     
             setTimeout(() => {
-                
-                // displayDeck();
                 toggleDisplay();
-
                 setReshuffle(true);
             }, 0);
         };
@@ -65,13 +57,6 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         shuffleBtn();
         displayDeck();
         setReshuffle(true);
-
-        //condense below code to shuffleBtn()
-        // shuffleDeck();
-        // stackDeck();
-        // setTimeout(() => {
-        // displayDeck();
-        // }, 2800);
         toggleDisplay();
 
         document.getElementById('shuffle-btn').style.display = 'inline-block';
@@ -96,20 +81,6 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         setNewDeck(shuffledDeck);
     };
 
-    // const stackDeck = () => {
-    //     let getCard = document.getElementsByClassName('dealt-card');
-    //     for (let i = 0; i < getCard.length; i++) {
-    //         setTimeout(() => {
-    //             setTimeout(() => {
-    //                 //==> Check to see if card was drawn during stack
-    //                 if(getCard[i]){
-    //                     getCard[i].classList.add('stack-deck');
-    //                     getCard[i].classList.remove('splay-deck');
-    //                 }
-    //                 }, i*6);
-    //         }, 0);
-    //     };
-    // };
 
     //==> Spread deck out first time for animation
     const displayDeck = () => {
@@ -248,7 +219,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             </>
         );
     });
-    
+
     return (
         <div className="draw-display">
             <header>
