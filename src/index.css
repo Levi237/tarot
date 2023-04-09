@@ -58,7 +58,7 @@ button,
   border-radius: 100px;
 }
 .small.btn {
-  font-size: 12px;
+  font-size: 10px;
   padding: 8px 24px;
   margin: 4px;
 }
@@ -117,4 +117,30 @@ h1.title {
     max-height: inherit!important;
   }
 }
-
+h1 {
+  font-size: 48px;
+}
+h2 {
+  font-size: 36px;
+}
+h3 {
+font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+  /* font-weight: 100; */
+}
+@media only screen and (max-width: 749px){
+  h1 {
+    font-size: clamp(32px, 12vw, 48px);
+  }
+  h2 {
+    font-size: clamp(24px, 9vw, 36px);
+  }
+  h3 {
+    font-size: clamp(19px, 6vw, 24px);
+  }
+  h4 {
+    font-size: clamp(14px, 4vw, 18px);
+  }
+}

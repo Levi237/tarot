@@ -60,8 +60,8 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         toggleDisplay();
 
         document.getElementById('shuffle-btn').style.display = 'inline-block';
-        document.getElementById('deal-deck').style.maxHeight = '600px';
-        document.getElementById('deal-deck').style.overflow = 'hidden';
+        // document.getElementById('deal-deck').style.maxHeight = '600px';
+        // document.getElementById('deal-deck').style.overflow = 'hidden';
         // document.getElementById('reading-window_id').classList ='calc(100dvh - var(--height-desktop-draw))';
         document.getElementById('reading-window_id').classList.remove('draw-height');
         document.getElementById('reading-window_id').classList.add('draw-height');
@@ -134,10 +134,10 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 document.getElementById('shuffle-btn').style.display = 'none';
                 setTimeout(() => {
                     toggleDisplay();
-                    document.getElementById('deal-deck').style.maxHeight = '0px';
+                    // document.getElementById('deal-deck').style.maxHeight = '0px';
                     document.getElementById('reading-window_id').classList.remove('draw-height');
                     document.getElementById('reading-window_id').classList.add('header-height');
-                    document.getElementById('deal-deck').style.overflow = 'hidden';
+                    // document.getElementById('deal-deck').style.overflow = 'hidden';
                 }, 1000);
             }
             // if layout length equals drawn cards length, setReshuffle(false)
@@ -160,11 +160,11 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
     }
 
     const handText = hand.map((card, key) => {
-    // Scroll into function
-    // When user clicks on new card for reading, 
-    // the new information presents itself at the top of the window 
-    // with the ability to scroll window intact
-    const cardData = document.getElementsByClassName('card-reading-info');
+        // Scroll into function
+        // When user clicks on new card for reading, 
+        // the new information presents itself at the top of the window 
+        // with the ability to scroll window intact
+        const cardData = document.getElementsByClassName('card-reading-info');
         if(cardData.length > 0){
             Array.prototype.slice.call(cardData).map((e, k) => {
                 if( key + 1 === cardData.length){
@@ -173,6 +173,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 }
             });
         }
+        // print layout text
         const layoutOrder = layout.order.map((position, k) => {
             if (key === k){
                 return (<>
@@ -184,10 +185,11 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         });
         const mapKeys = card.keys.map((item, i) => {
             return (<li key={i}>{item}</li>);
-          });
-          const mapRevKeys = card.revkeys.map((item, i) => {
+        });
+        const mapRevKeys = card.revkeys.map((item, i) => {
             return (<li key={i}>{item}</li>);
-          });
+        });
+
         return (<>
             <div className="" key={key} >
                 <h5>Card Position: {key + 1}</h5>
@@ -208,10 +210,9 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 {layoutOrder}
                 <br/>
                 
-            <div className="card-reading-info"></div>
+                <div className="card-reading-info"></div>
             </div>
-            </>
-        );
+        </> );
     });
 
     return (
@@ -219,7 +220,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             <header>
             <section>
             {layout.id
-            ? <h3>{layout.name}</h3>
+            ? <h4>{layout.name}</h4>
             : <Dropdown 
                 list={layouts} 
                 defaultText={"Choose a Spread"}
@@ -234,7 +235,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 <button id="shuffle-btn" onClick={shuffleBtn}>shuffle deck</button>
             </section>
             <section>
-                <button id="reverse-btn" onClick={toggleUprightOnly} className="toggle-reverse-btn invisible-btn---- small btn">Upright All Cards</button>
+                <button id="reverse-btn" onClick={toggleUprightOnly} className="toggle-reverse-btn invisible-btn---- small btn">Upright Cards</button>
                 <button onClick={refreshDeck} className="invisible-btn---- small btn">REFRESH</button>
                 <button onClick={goBack} className="invisible-btn---- small btn">BACK</button>
             </section>

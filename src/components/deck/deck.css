@@ -1,9 +1,19 @@
 :root {
-    --percentage: .35;
-    --hover-percentage: .5;
-    --card-height: 320px;
-    --card-width: 184px;
+    --percentage: .3425;
+    --hover-percentage: .38;
+    --card-height: 300px;
+    --card-width: 172px;
+    --adjustment: 44px;
     --deck-count: 78;
+
+    --var-test-num: 172px;
+    --var-test-percent: .25;
+    --text-calc: calc(var(--text-num) * var(--text-percent));
+
+    /* #deal-deck .cards { */
+    /* max-width: calc(var(--deck-count) * var(--test-calc) * var(--percentage)); */
+    /* width: calc(var(--deck-count) * var(--test-calc) * var(--percentage)); */
+    /* } */
 }
 
 #index-deck {
@@ -15,7 +25,8 @@
 
 #deal-deck {
   max-height: calc(var(--card-height) * var(--hover-percentage));
-  /* position: absolute; */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 #deal-deck .deck {
     max-width: 100vw;
@@ -28,8 +39,10 @@
 #deal-deck .cards {
     display: flex;
     align-items: center;
-    max-width: calc(var(--deck-count) * 57px * var(--percentage));
-    width: calc(var(--deck-count) * 57px * var(--percentage));
+    max-width: calc(var(--deck-count) * var(--test-calc) * var(--percentage));
+    width: calc(var(--deck-count) * var(--test-calc) * var(--percentage));
+    /* max-width: calc(var(--deck-count) * var(--adjustment) * var(--percentage));
+    width: calc(var(--deck-count) * var(--adjustment) * var(--percentage)); */
     height: calc(var(--card-height) * var(--hover-percentage));
 }
  
@@ -40,8 +53,8 @@
     display: inline-block;
     overflow: hidden;
     border-radius: calc(9px * var(--percentage));
-    box-shadow: calc(-5px * var(--percentage)) calc(5px * var(--percentage)) calc(5px * var(--percentage)) rgba(0 0 0 / 25%);
-    margin: calc(10px * var(--percentage));
+    /* box-shadow: calc(-5px * var(--percentage)) calc(5px * var(--percentage)) calc(5px * var(--percentage)) rgba(0 0 0 / 25%); */
+    /* margin: calc(10px * var(--percentage)); */
     position: relative;
     transition: .1s ease;
   }
@@ -70,12 +83,12 @@
   }
   /* Hide the whole card */
   #deal-deck .stack-deck {
-    margin-right: calc(-194px * var(--percentage));
+    margin-right: calc(-172px * var(--percentage));
     transition: all 2s;
   }
   /* Show some of the card */
   #deal-deck .splay-deck {
-    margin-right: calc(-138px * var(--percentage));
+    margin-right: calc(-129px * var(--percentage));
     transition: all .4s ease;
   }
 
