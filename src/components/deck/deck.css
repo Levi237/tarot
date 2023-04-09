@@ -1,19 +1,14 @@
 :root {
-    --percentage: .3425;
-    --hover-percentage: .38;
+    --percentage: .345;
+    --hover-percentage: calc(var(--percentage) * 1.1);
     --card-height: 300px;
     --card-width: 172px;
     --adjustment: 44px;
     --deck-count: 78;
 
-    --var-test-num: 172px;
-    --var-test-percent: .25;
-    --text-calc: calc(var(--text-num) * var(--text-percent));
-
-    /* #deal-deck .cards { */
-    /* max-width: calc(var(--deck-count) * var(--test-calc) * var(--percentage)); */
-    /* width: calc(var(--deck-count) * var(--test-calc) * var(--percentage)); */
-    /* } */
+    --test-num: 172px;
+    --test-percent: .25;
+    --test-calc: calc(var(--test-num) * var(--test-percent));
 }
 
 #index-deck {
@@ -39,8 +34,8 @@
 #deal-deck .cards {
     display: flex;
     align-items: center;
-    max-width: calc(var(--deck-count) * var(--test-calc) * var(--percentage));
-    width: calc(var(--deck-count) * var(--test-calc) * var(--percentage));
+    /* max-width: calc(var(--deck-count) * var(--test-calc) * var(--percentage));
+    width: calc(var(--deck-count) * var(--test-calc) * var(--percentage)); */
     /* max-width: calc(var(--deck-count) * var(--adjustment) * var(--percentage));
     width: calc(var(--deck-count) * var(--adjustment) * var(--percentage)); */
     height: calc(var(--card-height) * var(--hover-percentage));
@@ -53,7 +48,7 @@
     display: inline-block;
     overflow: hidden;
     border-radius: calc(9px * var(--percentage));
-    /* box-shadow: calc(-5px * var(--percentage)) calc(5px * var(--percentage)) calc(5px * var(--percentage)) rgba(0 0 0 / 25%); */
+    box-shadow: calc(-5px * var(--percentage)) calc(5px * var(--percentage)) calc(5px * var(--percentage)) rgba(0 0 0 / 12.5%);
     /* margin: calc(10px * var(--percentage)); */
     position: relative;
     transition: .1s ease;
@@ -83,7 +78,7 @@
   }
   /* Hide the whole card */
   #deal-deck .stack-deck {
-    margin-right: calc(-172px * var(--percentage));
+    margin-right: calc(-1 * var(--card-width) * var(--percentage));
     transition: all 2s;
   }
   /* Show some of the card */

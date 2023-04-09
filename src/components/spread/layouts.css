@@ -100,7 +100,8 @@
     .spread-cross > section {
         /* max-width: 450px; */
         /* width: 33vw; */
-        width: calc(62dvh - 62px);
+        /* width: calc(62dvh - 62px); */
+        width: calc(52dvh - 62px);
         max-width: 50vw;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
@@ -111,7 +112,8 @@
     }
 
     .spread-ten-celtic-cross > section {
-        width: calc(62dvh - 62px);
+        /* width: calc(62dvh - 62px); */
+        width: calc(52dvh - 62px);
         max-width: 50vw;
         grid-template-columns: 3fr 3fr 3fr 1fr 3fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;

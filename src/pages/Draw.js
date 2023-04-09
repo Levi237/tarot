@@ -132,13 +132,13 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             // console.log(layout.cards, "layout, hand", hand.length);
             if (layout.cards - 1 === hand.length){
                 document.getElementById('shuffle-btn').style.display = 'none';
-                setTimeout(() => {
-                    toggleDisplay();
-                    // document.getElementById('deal-deck').style.maxHeight = '0px';
-                    document.getElementById('reading-window_id').classList.remove('draw-height');
-                    document.getElementById('reading-window_id').classList.add('header-height');
-                    // document.getElementById('deal-deck').style.overflow = 'hidden';
-                }, 1000);
+                // setTimeout(() => {
+                //     toggleDisplay();
+                //     // document.getElementById('deal-deck').style.maxHeight = '0px';
+                //     document.getElementById('reading-window_id').classList.remove('draw-height');
+                //     document.getElementById('reading-window_id').classList.add('header-height');
+                //     // document.getElementById('deal-deck').style.overflow = 'hidden';
+                // }, 1000);
             }
             // if layout length equals drawn cards length, setReshuffle(false)
 

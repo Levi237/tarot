@@ -19,10 +19,11 @@
 header {
     height: 46px;
     display: grid;
-    padding: 12px 40px;
+    padding: 6px 40px;
     overflow: scroll;
     grid-template-columns: 1fr 240px 1fr;
     grid-template-areas: 'title shuffle buttons';
+    border-bottom: 1px solid hsla(0, 0%, 83%, 0.4);
 }
 @media (max-width: 750px) {
     header {
@@ -57,7 +58,8 @@ header > section:nth-of-type(3) {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     width: 100%;
-    height: calc(100dvh - 240px);
+    /* height: calc(100dvh - 240px); */
+    height: calc(100dvh - 174px);
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -67,6 +69,8 @@ z
 }
 .reading-window > section.text-section {
     overflow: scroll;
+    background-color:hsla(0, 0%, 83%, 0.125);
+    margin-top: 10px;
 }
 .reading-window > section.text-section > div {
     padding: 20px;
