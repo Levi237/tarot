@@ -6,10 +6,21 @@
     --adjustment: 44px;
     --deck-count: 78;
 
-    --test-num: 172px;
+    /* --test-num: 172px;
     --test-percent: .25;
-    --test-calc: calc(var(--test-num) * var(--test-percent));
+    --test-calc: calc(var(--test-num) * var(--test-percent)); */
 }
+@media only screen and (max-width: 749px) {
+  :root {
+    --percentage: .2;
+    --hover-percentage: calc(var(--percentage) * 1.1);
+    --card-height: 300px;
+    --card-width: 172px;
+    --adjustment: 60px;
+  }
+
+}
+
 
 #index-deck {
   --percentage: .7;
@@ -87,10 +98,10 @@
     transition: all .4s ease;
   }
 
-  @media only screen and (max-width: 900px) {
-    .deal-deck, .splay-deck{
+  @media only screen and (max-width: 749px) {
+    /* .deal-deck, .splay-deck{
       transition: all 1.5s;
-    }
+    } */
   }
  
   .toggle-reverse-btn {
