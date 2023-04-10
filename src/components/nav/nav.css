@@ -16,6 +16,8 @@
 .hide-menu {
     width: 100%;
     max-width: 0;
+    max-height: 0;
+    overflow: hidden;
 }
 
 #nav-menu a,
@@ -44,3 +46,19 @@
     padding: 120px 60px;
 }
 
+/* #ham-menu.view-menu {
+    width: 100%;
+    max-width: 480px;
+    position: absolute;
+    top: 0;
+    background: white;
+    height: 207px;
+    min-height: 300px;
+    width: 200px;
+    z-index: 6;
+    padding: 80px;
+}
+
+#ham-menu.view-menu button {
+    display: block;
+} */
