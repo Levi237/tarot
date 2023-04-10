@@ -1,13 +1,13 @@
 #auth-container {
     transition: opacity 1s ease;
 }
-.modal-container {
+/* .modal-container {
     background-color: pink;
     min-height: 20px;
     width: var(--width);
     padding: 60px 0 20px;
     position: relative;
-}
+} */
 
 #auth-container h1 {
     padding: 0 20px 10px;

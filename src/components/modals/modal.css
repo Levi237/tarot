@@ -18,7 +18,7 @@ Auth Modal
 /* Card Modal */
 .modal {
     position: fixed;
-    z-index: 8;
+    z-index: 20;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -29,21 +29,32 @@ Auth Modal
 .modal-container {
   background: white;
   display: inline-block;
-  padding: 32px;
+  /* padding: 32px; */
   box-shadow: 10px 9px 20px rgb(0 0 0 / 50%);
-  width: calc(100vw - 80px);
+  width: calc(100vw - 40px);
   /* height: calc(100vh - 80px); */
 }
 .cardmodal .modal-container {
-  height: calc(100dvh - 144px);
-  margin: 40px;
+  height: calc(100dvh - 40px);
+  width: calc(100vw - 40px);
+  margin: 20px;
   overflow: hidden;
 }
+
 .cardmodal .modal-container .card-info {
   overflow: scroll;
   padding-bottom: 80px;
 }
-
+@media (max-width: 749px) {
+  .cardmodal .modal-container {
+    overflow: scroll;
+  }
+  .cardmodal .modal-container .card-info {
+    overflow: inherit;
+    padding-bottom: 80px;
+    height: auto;
+  }
+}
 .close-modal-box {
   position: fixed;
   z-index: 9;
@@ -67,7 +78,7 @@ button.close-modal-btn {
   background: transparent;
   border: none;
 }
-@media (max-width: 740px) {
+@media (max-width: 749px) {
   .modal-container {
     margin: 0;
     padding: 12px;
@@ -105,7 +116,7 @@ button.close-modal-btn {
   padding-right: 20px;
 }
 
-@media only screen and (min-width: 780px) {
+@media only screen and (min-width: 750px) {
     .cardmodal ul.two-col-ul {
         -moz-column-count: 2;
         -moz-column-gap: 32px;
@@ -115,7 +126,16 @@ button.close-modal-btn {
         column-gap: 32px;
     }
   }
-
+  @media only screen and (max-width: 749px) {
+    .cardmodal .grid > section:first-of-type {
+        height: auto;
+        padding-bottom: 40px;
+    }
+    .cardmodal .grid > section:last-of-type {
+      padding-left: 0px;
+      padding-right: 0px;
+  }
+  }
   .cardmodal h1 {
     font-size: 32px;
     font-weight: 800;

@@ -20,8 +20,30 @@
 
 #hamburger-btn > section {
   margin: 6px 0;
-  width: 35px;
-  height: 4px;
+  width: 30px;
+  height: 3px;
   background-color: #000;
   transition: all .3s ease;
 }
+
+
+
+
+#hamburger-btn.hamburger-close > section  {
+  width: 20px;
+  margin: 0px 0!important;
+}
+
+#hamburger-btn.hamburger-close {
+  /* padding-top: 10px;
+  margin-top: -30px; */
+}
+
+#hamburger-btn.hamburger-close > section:first-of-type {
+  transform: rotate(45deg)!important;
+  margin-top: -1px!important;
+}
+#hamburger-btn.hamburger-close > section:last-of-type {
+  transform: rotate(-45deg)!important;
+  margin-top: 9px!important;
+}  

@@ -9,12 +9,11 @@ import './nav.css';
 const HamMenu = (props) => {
     const toggleHamMenu = () => {
         const menu = document.getElementById('ham-menu');
-        menu.classList.toggle('view-menu');
         menu.classList.toggle('hide-menu');
         document.getElementById('hamburger-btn').classList.toggle('hamburger-close');
     }
 return (<>
-    <Hamburger hamburgerFunction={toggleHamMenu}/>
+    <Hamburger hamburgerFunction={toggleHamMenu} hamburgerStyle='draw-menu-style'/>
     <div id="ham-menu" className="hide-menu">
         <div>
             {props.children}       

@@ -24,7 +24,7 @@
     grid-template-columns: 1fr 240px 1fr;
     grid-template-areas: 'title shuffle buttons';
 }
-@media (max-width: 750px) {
+@media (max-width: 749px) {
     .draw-display header {
         height: auto;
         padding: 16px 16px 10px;
@@ -49,8 +49,9 @@
 .draw-display header > section:nth-of-type(3) {
     grid-area: buttons;
     justify-content: right;
+    overflow: hidden;
 }
-@media (max-width: 750px) {
+@media (max-width: 749px) {
     .draw-display header h4 {
         padding-bottom: 8px;
     }
@@ -78,6 +79,12 @@ z
     background-color:hsla(0, 0%, 83%, 0.125);
     margin-top: 10px;
 }
+/* stop scroll of text information about card */
+/* @media (max-width: 749px) {
+    .reading-window > section.text-section {
+        overflow: inherit;
+    }
+} */
 .reading-window > section.text-section > div {
     padding: 20px;
 }
