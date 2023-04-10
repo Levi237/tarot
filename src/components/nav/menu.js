@@ -17,8 +17,10 @@ return (<>
     <Hamburger hamburgerFunction={toggleHamMenu}/>
     <div id="ham-menu" className="hide-menu">
         <div>
-{props.children}       </div>
-    </div></>)
+            {props.children}       
+        </div>
+    </div>
+    </>)
 }
 
 export default HamMenu
