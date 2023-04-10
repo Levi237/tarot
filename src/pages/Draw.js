@@ -60,9 +60,6 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         toggleDisplay();
 
         document.getElementById('shuffle-btn').style.display = 'inline-block';
-        // document.getElementById('deal-deck').style.maxHeight = '600px';
-        // document.getElementById('deal-deck').style.overflow = 'hidden';
-        // document.getElementById('reading-window_id').classList ='calc(100dvh - var(--height-desktop-draw))';
         document.getElementById('reading-window_id').classList.remove('draw-height');
         document.getElementById('reading-window_id').classList.add('draw-height');
 
@@ -132,16 +129,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             // console.log(layout.cards, "layout, hand", hand.length);
             if (layout.cards - 1 === hand.length){
                 document.getElementById('shuffle-btn').style.display = 'none';
-                // setTimeout(() => {
-                //     toggleDisplay();
-                //     // document.getElementById('deal-deck').style.maxHeight = '0px';
-                //     document.getElementById('reading-window_id').classList.remove('draw-height');
-                //     document.getElementById('reading-window_id').classList.add('header-height');
-                //     // document.getElementById('deal-deck').style.overflow = 'hidden';
-                // }, 1000);
             }
-            // if layout length equals drawn cards length, setReshuffle(false)
-
         };
     };
 
@@ -153,10 +141,16 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
     //endable upright only
     const toggleUprightOnly = () => {
-        document.querySelector('.spread-section').classList.toggle('show-reverse-onclick');
         document.getElementById('reverse-btn').classList.toggle('toggle-reverse-btn');
-        document.querySelector('.reverse').classList.toggle('hide');
-        document.querySelector('.upright-hide').classList.toggle('show');
+        if(document.querySelector('.spread-section')){
+            document.querySelector('.spread-section').classList.toggle('show-reverse-onclick');
+        }
+        if(document.querySelector('.reverse')){
+            document.querySelector('.reverse').classList.toggle('hide');
+        }
+        if(document.querySelector('.upright-hide')){
+            document.querySelector('.upright-hide').classList.toggle('show');
+        }
     }
 
     const handText = hand.map((card, key) => {
@@ -166,9 +160,8 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         // with the ability to scroll window intact
         const cardData = document.getElementsByClassName('card-reading-info');
         if(cardData.length > 0){
-            Array.prototype.slice.call(cardData).map((e, k) => {
+            Array.prototype.slice.call(cardData).map((e) => {
                 if( key + 1 === cardData.length){
-                    console.log(cardData, "card data", cardData.length);
                     e.scrollIntoView({behavior: 'smooth'});
                 }
             });
@@ -176,11 +169,11 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         // print layout text
         const layoutOrder = layout.order.map((position, k) => {
             if (key === k){
-                return (<>
+                return (<div key={k}>
                 <h4>{++k}.  {position.title}</h4>
                 <p>{position.description}</p>
                 <p>{position.prompt}</p>
-                </>);
+                </div>);
             }
         });
         const mapKeys = card.keys.map((item, i) => {
@@ -195,7 +188,6 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 <h5>Card Position: {key + 1}</h5>
                 <h1>{(card.majorNum) && <span>{card.majorNum}. </span>}{card.title}</h1>
                 {card.subtitle && <h3>{card.subtitle}</h3>}
-                {/* {(card.suit === 'swords' || card.suit === 'cups' || card.suit === 'pentacles' || card.suit === 'wands') ? <p className="suit-text">Suit: <span>{card.suit}</span></p> : <p className="suit-text"><span>{card.suit} Arcana</span></p>} */}
                 <div className={(card.rotation === 2 || card.rotation === 0) ? 'upright' : 'upright upright-hide'}>
                     <h4>Upright Keys</h4>
                     <ul>{mapKeys}</ul>
