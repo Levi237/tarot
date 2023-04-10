@@ -3,20 +3,16 @@
     --hover-percentage: calc(var(--percentage) * 1.1);
     --card-height: 300px;
     --card-width: 172px;
+    --card-shadow: 5px;
     --adjustment: 44px;
+    --card-margin: calc(var(--card-width) - var(--adjustment));
     --deck-count: 78;
-
-    /* --test-num: 172px;
-    --test-percent: .25;
-    --test-calc: calc(var(--test-num) * var(--test-percent)); */
 }
 @media only screen and (max-width: 749px) {
   :root {
     --percentage: .2;
-    --hover-percentage: calc(var(--percentage) * 1.1);
-    --card-height: 300px;
-    --card-width: 172px;
-    --adjustment: 60px;
+    --hover-percentage: calc(var(--percentage) * 1.2);
+    --adjustment: 72px;
   }
 
 }
@@ -40,18 +36,17 @@
     overflow-x: scroll;
     position: relative;
     height: calc(var(--card-height) * var(--hover-percentage));
+    padding-bottom: calc(15px * var(--hover-percentage));
 }
 
 #deal-deck .cards {
     display: flex;
     align-items: center;
-    /* max-width: calc(var(--deck-count) * var(--test-calc) * var(--percentage));
-    width: calc(var(--deck-count) * var(--test-calc) * var(--percentage)); */
-    /* max-width: calc(var(--deck-count) * var(--adjustment) * var(--percentage));
-    width: calc(var(--deck-count) * var(--adjustment) * var(--percentage)); */
+    flex-shrink: 0;
+    width: calc(var(--deck-count) * var(--adjustment) * var(--percentage));
     height: calc(var(--card-height) * var(--hover-percentage));
+    padding-bottom: calc(15px * var(--hover-percentage));
 }
- 
   /***** Card Dimensions: 23/40 */
   .card {
     height: calc(var(--card-height) * var(--percentage));
@@ -60,7 +55,6 @@
     overflow: hidden;
     border-radius: calc(9px * var(--percentage));
     box-shadow: calc(-5px * var(--percentage)) calc(5px * var(--percentage)) calc(5px * var(--percentage)) rgba(0 0 0 / 12.5%);
-    /* margin: calc(10px * var(--percentage)); */
     position: relative;
     transition: .1s ease;
   }
@@ -94,16 +88,10 @@
   }
   /* Show some of the card */
   #deal-deck .splay-deck {
-    margin-right: calc(-129px * var(--percentage));
+    margin-right: calc(-1 * var(--card-margin) * var(--percentage));
     transition: all .4s ease;
   }
 
   @media only screen and (max-width: 749px) {
-    /* .deal-deck, .splay-deck{
-      transition: all 1.5s;
-    } */
-  }
- 
-  .toggle-reverse-btn {
-    opacity: .5;
+
   }
