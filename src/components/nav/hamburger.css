@@ -8,7 +8,7 @@
   padding-top: 10px;
 }
 #hamburger-container .hamburger-close > section {
-  margin: 8px 0!important;
+  margin: 9px 0!important;
 }
 #hamburger-container .hamburger-close > section:first-of-type {
   transform: rotate(45deg)!important;
@@ -29,21 +29,21 @@
 
 
 
-#hamburger-btn.hamburger-close > section  {
+.draw-display #hamburger-btn.hamburger-close > section  {
   width: 20px;
   margin: 0px 0!important;
 }
 
-#hamburger-btn.hamburger-close {
+.draw-display #hamburger-btn.hamburger-close {
   /* padding-top: 10px;
   margin-top: -30px; */
 }
 
-#hamburger-btn.hamburger-close > section:first-of-type {
+.draw-display #hamburger-btn.hamburger-close > section:first-of-type {
   transform: rotate(45deg)!important;
-  margin-top: -1px!important;
+  margin-top: -3px!important;
 }
-#hamburger-btn.hamburger-close > section:last-of-type {
+.draw-display #hamburger-btn.hamburger-close > section:last-of-type {
   transform: rotate(-45deg)!important;
   margin-top: 9px!important;
 }  

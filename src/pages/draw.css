@@ -1,6 +1,7 @@
 .draw-display {
     --height-desktop-draw: 240px;
     --height-desktop-header: 60px;
+    position: fixed;
 }
 
 .draw-height {
@@ -66,7 +67,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     width: 100%;
-    height: calc(100dvh - 174px);
+    height: calc(100dvh - 200px);
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -156,6 +157,24 @@ z
     text-transform: capitalize;
 }
 
+
+/* Menu for Draw Page */
+#ham-menu {
+    padding-right: 24px;
+    overflow: hidden;
+  
+    transform: translate(0%, 0%);
+    opacity: 1;
+    transition: all 1s ease;
+  }
+  
+  #ham-menu.hide-menu {
+    transform: translate(100%, -0%);
+    opacity: 0;
+    transition: transform .3 ease;
+  }
+
 .toggle-reverse-btn {
     opacity: .5;
   }
+
