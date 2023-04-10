@@ -27,8 +27,8 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
             displayDeck();
 
             setReshuffle(true);
-            document.getElementById('reading-window_id').classList.add('draw-height');
-            document.getElementById('reading-window_id').classList.remove('header-height');
+            // document.getElementById('reading-window_id').classList.add('draw-height');
+            // document.getElementById('reading-window_id').classList.remove('header-height');
         }, 500);    
     }, [deck]);
 
@@ -62,8 +62,8 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         toggleDisplay();
 
         document.getElementById('shuffle-btn').style.display = 'inline-block';
-        document.getElementById('reading-window_id').classList.remove('draw-height');
-        document.getElementById('reading-window_id').classList.add('draw-height');
+        // document.getElementById('reading-window_id').classList.remove('draw-height');
+        // document.getElementById('reading-window_id').classList.add('draw-height');
 
         // need to refresh dropdown
     }
