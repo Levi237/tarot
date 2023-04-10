@@ -1,6 +1,7 @@
 import React, {}  from 'react';
 import SelectSpreadBanner from './banner/SelectSpread';
 import Deck from '../components/deck';
+import DailyCard from './banner/DailyCard';
 
 const HomePage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
@@ -13,7 +14,11 @@ const HomePage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 refresh state each day?
                 
             */}
-            
+            <DailyCard 
+                deck={deck} 
+                layouts={layouts}
+                viewCard={viewCard}
+                />
             <SelectSpreadBanner 
                 layouts={layouts} 
                 layout={layout}
