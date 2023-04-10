@@ -26,7 +26,7 @@ const SelectSpreadBanner = ({layout, layouts, selectLayout}) => {
                         selectFunction={selectLayout} 
                         defaultKeyNum={keyNum}
                     />
-                    <Link to={routes.DRAW} id={layouts[keyNum].id} onClick={(e) => {{!layout.id && selectLayout(e)}}}>Start Spread</Link>
+                    <Link className="btn dark-style" to={routes.DRAW} id={layouts[keyNum].id} onClick={(e) => {{!layout.id && selectLayout(e)}}}>Start Spread</Link>
                 </div>
             </div>
         </div>
