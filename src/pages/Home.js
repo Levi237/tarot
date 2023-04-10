@@ -8,6 +8,12 @@ const HomePage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         <div>
             <h3>Welcome to Tarofied Beta</h3>
             <p>This website is best viewed on Desktop</p>
+            {/* ADD BANNER COMPONENT FOR CARD OF THE DAY - 
+                save card of the day on local browser
+                refresh state each day?
+                
+            */}
+            
             <SelectSpreadBanner 
                 layouts={layouts} 
                 layout={layout}
