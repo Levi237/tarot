@@ -6,8 +6,8 @@ const HomePage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
     return (
         <div>
-            <h1>Welcome to Tarofied Beta</h1>
-            <h4>This website is best viewed on Desktop</h4>
+            <h3>Welcome to Tarofied Beta</h3>
+            <p>This website is best viewed on Desktop</p>
             <SelectSpreadBanner 
                 layouts={layouts} 
                 layout={layout}
