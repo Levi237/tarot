@@ -18,12 +18,6 @@
 }
 
 
-#index-deck {
-  --percentage: .7;
-}
-#index-dec .cards {
-  text-align: center;
-}
 
 #deal-deck {
   max-height: calc(var(--card-height) * var(--hover-percentage));
@@ -94,4 +88,18 @@
 
   @media only screen and (max-width: 749px) {
 
+  }
+  #index-deck {
+    --percentage: .7;
+  }
+  #index-deck .cards {
+    text-align: center;
+  }
+  #index-deck .card {
+    margin: 3px;
+    box-shadow: calc(0px * var(--percentage)) calc(0px * var(--percentage)) calc(0px * var(--percentage)) rgba(0 0 0 / 0%);
+  }
+  #index-deck .card:hover {
+    cursor: pointer;
+    box-shadow: calc(-5px * var(--percentage)) calc(5px * var(--percentage)) calc(5px * var(--percentage)) rgba(0 0 0 / 12.5%);
   }
