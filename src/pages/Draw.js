@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Deck from '../components/deck';
 import Layout from '../components/spread/Layout';
 import Dropdown from '../components/dropdown/Dropdown';
+
+import HamMenu from '../components/nav/menu';
 import './draw.css'
 
 const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
@@ -227,9 +229,11 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 <button id="shuffle-btn" onClick={shuffleBtn}>shuffle deck</button>
             </section>
             <section>
-                <button id="reverse-btn" onClick={toggleUprightOnly} className="toggle-reverse-btn invisible-btn---- small btn">Upright Cards</button>
-                <button onClick={refreshDeck} className="invisible-btn---- small btn">REFRESH</button>
-                <button onClick={goBack} className="invisible-btn---- small btn">BACK</button>
+                <HamMenu>
+                    <button id="reverse-btn" onClick={toggleUprightOnly} className="toggle-reverse-btn invisible-btn---- small btn">Upright Cards</button>
+                    <button onClick={refreshDeck} className="invisible-btn---- small btn">REFRESH</button>
+                    <button onClick={goBack} className="invisible-btn---- small btn">BACK</button>
+                </HamMenu>
             </section>
             </header>
             <Deck deck={newDeck} shuffleBtn={shuffleBtn} selectCard={selectCard} styleId='deal-deck'/>

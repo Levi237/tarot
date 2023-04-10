@@ -16,7 +16,7 @@
     }
 }
 
-header {
+.draw-display header {
     height: 46px;
     padding: 6px 40px;
     border-bottom: 1px solid hsla(0, 0%, 83%, 0.4);
@@ -25,7 +25,7 @@ header {
     grid-template-areas: 'title shuffle buttons';
 }
 @media (max-width: 750px) {
-    header {
+    .draw-display header {
         height: auto;
         padding: 16px 16px 10px;
         grid-template-columns: 100%;
@@ -33,25 +33,25 @@ header {
         grid-template-areas: 'title' 'buttons' 'shuffle';
     }
 }
-header > section {
+.draw-display header > section {
     height: auto;
     display: flex;
     align-items: center;
 }
-header > section:first-of-type {
+.draw-display header > section:first-of-type {
     grid-area: title;
     justify-content: left;
 }
-header > section:nth-of-type(2) {
+.draw-display header > section:nth-of-type(2) {
     grid-area: shuffle;
     justify-content: center;
 }
-header > section:nth-of-type(3) {
+.draw-display header > section:nth-of-type(3) {
     grid-area: buttons;
     justify-content: right;
 }
 @media (max-width: 750px) {
-    header h4 {
+    .draw-display header h4 {
         padding-bottom: 8px;
     }
 }
