@@ -31,7 +31,7 @@
     transform-style: preserve-3d;
   }
   
-  .flip-card:hover .flip-card-inner {
+  .flip-card.show-card .flip-card-inner {
     transform: rotateY(180deg);
   }
   
@@ -54,4 +54,9 @@
   .flip-card-face {
     color: white;
     transform: rotateY(180deg);
+  }
+
+  .dailycard-container {
+    max-width: 1200px;
+    margin: 0 auto;
   }
