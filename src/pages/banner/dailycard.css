@@ -57,6 +57,19 @@
   }
 
   .dailycard-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
   }
+
+  .dailycard-container > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dailycard-container ul {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    padding-inline-start: 25px;
+}

@@ -39,21 +39,51 @@ const DailyCard = ({deck, layouts, viewCard}) => {
                 getDeck.splice(index, 1);
             };
             setHand(shuffledDeck[0]);
-            // e.target.disabled = true;
             document.getElementById('dailycard_id').classList.add('show-card');
         }
     }
 
+    const mapKeys = hand.keys.map((item, i) => {
+        return (<li key={i}>{item}</li>);
+    });
+    const mapRevKeys = hand.revkeys.map((item, i) => {
+        return (<li key={i}>{item}</li>);
+    });
+    
+
+    
     return (
-        <div className="dailycard-container">
-            <div id="dailycard_id" className="dailycard flip-card">
-                <div className="flip-card-inner" onClick={e => pickRandomCard(e)}>
-                    <div className="flip-card-back">
-                        <img src="./back.jpg" alt="back of card"/>
+        <div className="dailycard-container grid two-column-grid forty-sixty">
+            <div>
+                <div id="dailycard_id" className="dailycard flip-card">
+                    <div className="flip-card-inner" onClick={e => pickRandomCard(e)}>
+                        <div className="flip-card-back">
+                            <img src="./back.jpg" alt="back of card"/>
+                        </div>
+                        <div className="flip-card-face">
+                            <img src={`/cards/${hand.title.toLowerCase().split(' ').join('_')}.jpg`} alt={`${hand.title}`}/>
+                        </div>
                     </div>
-                    <div className="flip-card-face">
-                        <img src={`/cards/${hand.title.toLowerCase().split(' ').join('_')}.jpg`} alt={`${hand.title}`}/>
+                </div>
+            </div>
+            <div>
+                <div className="">
+                    <h1>{(hand.majorNum) && <span>{hand.majorNum}. </span>}{hand.title}</h1>
+                    {hand.subtitle && <h3>{hand.subtitle}</h3>}
+                    <div>
+                        <h4>Upright Keys</h4>
+                        <ul>{mapKeys}</ul>
                     </div>
+
+                    <div>
+                        <h4>Reverse Keys</h4>
+                        <ul>{mapRevKeys}</ul>
+                    </div>
+
+                    <br/>
+
+                    
+                    <div className="card-reading-info"></div>
                 </div>
             </div>
         </div>
