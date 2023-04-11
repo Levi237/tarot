@@ -294,8 +294,6 @@ const App = () => {
     setCard([]);
   }
 
-
-
   return (
     <div className="App">
       {/* { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> } */}
