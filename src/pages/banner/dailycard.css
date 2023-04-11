@@ -61,12 +61,16 @@
     margin: 40px auto;
   }
 
-  .dailycard-container > div {
+  .dailycard-container > div:first-of-type {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
+  .dailycard-container > div:last-of-type {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+  }
   .dailycard-container ul {
     -webkit-column-count: 3;
     -moz-column-count: 3;

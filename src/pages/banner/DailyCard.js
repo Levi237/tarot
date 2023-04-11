@@ -157,28 +157,29 @@ const DailyCard = ({deck, layouts, viewCard}) => {
                 <>Tap for your daily card</>
                 :
                 <div className="">
+                    <p>This is your card of the day.  What message does this card hold for you?  How does it reflect your attitude or circumstance right now.</p>
                     <h2>{(hand.majorNum) && <span>{hand.majorNum}. </span>}{hand.title}</h2>
                     { hand.subtitle && <h3>{hand.subtitle}</h3> }
                     { hand.element.length > 0 && <p className="element">{mapElement}</p> }
-                    { hand.subelem.length > 0  && <p className="subelements">{mapSubElement}</p> }
-                    { hand.major.length > 0 && <p className="major-arcana">{mapMajor}</p> }
-                    { hand.seph.length > 0 && <p className="seph">{hand.seph}</p> }
+                    {/* { hand.subelem.length > 0  && <p className="subelements">{mapSubElement}</p> } */}
+                    {/* { hand.major.length > 0 && <p className="major-arcana">{mapMajor}</p> } */}
+                    {/* { hand.seph.length > 0 && <p className="seph">{hand.seph}</p> } */}
                     { hand.astro.length > 0 && <p className="astro-p">Ruled by {mapAstro}</p>}
-                    { hand.subastro.length > 0 && <ul>{mapSubastro}</ul> }
-                <br/>
-                    <div>
+                    {/* { hand.subastro.length > 0 && <ul>{mapSubastro}</ul> } */}
+                {/* <br/> */}
+                    {/* <div>
                         <h4>Upright Keys</h4>
                         <ul>{mapKeys}</ul>
-                    </div>
+                    </div> */}
 {/* 
                     <div>
                         <h4>Reverse Keys</h4>
                         <ul>{mapRevKeys}</ul>
                     </div> */}
-                    <div>
+                    {/* <div>
                     { hand.desc.length > 0 && <section>{mapDesc}</section> }
                     { hand.revdesc.length > 0 && <section>{mapRevDesc}</section> }
-                </div>
+                </div> */}
                     <br/>
 
                 </div>
