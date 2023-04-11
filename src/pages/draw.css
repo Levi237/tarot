@@ -19,17 +19,14 @@
 } */
 
 .draw-display header {
-    height: 46px;
-    padding: 6px 40px;
-    border-bottom: 1px solid hsla(0, 0%, 83%, 0.4);
     display: grid;
     grid-template-columns: 1fr 240px 1fr;
     grid-template-areas: 'title shuffle buttons';
 }
 @media (max-width: 749px) {
     .draw-display header {
-        height: auto;
-        padding: 16px 16px 10px;
+        /* height: auto; */
+        /* padding: 16px 16px 10px; */
         grid-template-columns: 100%;
         grid-template-rows: auto 10px 38px;
         grid-template-areas: 'title' 'buttons' 'shuffle';

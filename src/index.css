@@ -86,6 +86,28 @@ button.invisible-btn,
   width: auto;
 }
 
+header {
+  height: 46px;
+  padding: 6px 40px;
+  border-bottom: 1px solid hsla(0, 0%, 83%, 0.4);
+}
+@media (max-width: 749px) {
+  header {
+    height: auto;
+    padding: 16px 16px 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 h1.title {
   text-align: center;
   padding: 20px 0;

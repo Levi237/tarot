@@ -232,7 +232,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 <HamMenu>
                     <button id="reverse-btn" onClick={toggleUprightOnly} className="toggle-reverse-btn invisible-btn---- small btn">Upright Cards</button>
                     <button onClick={refreshDeck} className="invisible-btn---- small btn">REFRESH</button>
-                    <button onClick={goBack} className="invisible-btn---- small btn">BACK</button>
+                    <button onClick={goBack} className="invisible-btn---- small btn">HOME</button>
                 </HamMenu>
             </section>
             </header>
