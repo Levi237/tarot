@@ -88,11 +88,11 @@ z
     margin-top: 10px;
 }
 /* stop scroll of text information about card */
-/* @media (max-width: 749px) {
+@media (max-width: 749px) {
     .reading-window > section.text-section {
         overflow: inherit;
     }
-} */
+}
 .reading-window > section.text-section > div {
     padding: 20px;
 }

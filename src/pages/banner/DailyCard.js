@@ -9,21 +9,21 @@ const DailyCard = ({deck, layouts, viewCard}) => {
     const [hand, setHand] = useState({
         default: true,
         id: 0,
-        suit: `major`,
-        majorNum: `0`,
-        title: `The Fool`,
-        subtitle: `Power of Potential`,
+        suit: ``,
+        majorNum: ``,
+        title: ``,
+        subtitle: ``,
         element: [],
         subelem: [],
-        astro: [`Uranus`],
-        subastro: [`Uranus rules the sign of Aquarius`],
-        seph: `The Fool walks the first Tree of Life pathway, connecting Kether with Chokmah`,
+        astro: [],
+        subastro: [],
+        seph: ``,
         role: ``,
-        keys: [`innocence`, `inexperience`, `seeking experience`, `openness`, `lacking guile`, `pure potential`, `travel`, `apprenticeship`, `a life altering journey`, `school of life`, `learning through experience`, `coming into adulthood`],
-        revkeys: [`ignorance`, `willful blindness`, `misplaced trust`, `limited potential`, `inexperience`, `failure to learn lessons`, `resistance to change`, `choice or failure to heed warnings`, `canceled or delayed travel plans`],           
+        keys: [],
+        revkeys: [],           
         desc: [],
         revdesc: [],
-        major: [`The Fool represents each soul's journey through the world over multiple lifetimes. The Fool sets out to sacrifice his innocence through experience in search of wisdom. If The Fool can successfully navigate the 21 stations of the major arcana he will return to spirit as an enlightened sage or ascended master.`],
+        major: [],
     });
 
     //-- need to add show-card className 
@@ -135,7 +135,11 @@ const DailyCard = ({deck, layouts, viewCard}) => {
         return (<p key={i}>{item}</p>);
       });
     
-    return (
+    return (<>
+          <div className="mobile-only">
+                      <h3>Welcome to Tarofied Beta</h3>
+                <p>This website is best viewed on Desktop</p>
+                </div>
         <div className="dailycard-container grid two-column-grid forty-sixty">
             <div>
                 <div id="dailycard_id" className="dailycard flip-card">
@@ -151,15 +155,18 @@ const DailyCard = ({deck, layouts, viewCard}) => {
             </div>
             <div>
             <div>
+              <div className="desktop-only"> 
             <h3>Welcome to Tarofied Beta</h3>
                 <p>This website is best viewed on Desktop</p>
+                </div>
+                <br/><br/>
                 { hand.default ?
                 <>Tap for your daily card</>
                 :
                 <div className="">
-                    <p>This is your card of the day.  What message does this card hold for you?  How does it reflect your attitude or circumstance right now.</p>
-                    <h2>{(hand.majorNum) && <span>{hand.majorNum}. </span>}{hand.title}</h2>
-                    { hand.subtitle && <h3>{hand.subtitle}</h3> }
+                   
+                    <h4>{(hand.majorNum) && <span>{hand.majorNum}. </span>}<span>{hand.title}</span>{ hand.subtitle && <span>: {hand.subtitle}</span> }</h4>
+                    
                     { hand.element.length > 0 && <p className="element">{mapElement}</p> }
                     {/* { hand.subelem.length > 0  && <p className="subelements">{mapSubElement}</p> } */}
                     {/* { hand.major.length > 0 && <p className="major-arcana">{mapMajor}</p> } */}
@@ -181,13 +188,13 @@ const DailyCard = ({deck, layouts, viewCard}) => {
                     { hand.revdesc.length > 0 && <section>{mapRevDesc}</section> }
                 </div> */}
                     <br/>
-
+                    <p>This is your card of the day.  What message does this card hold for you?  How does it reflect your attitude or circumstance right now.</p>
                 </div>
                 }
                 </div>
             </div>
         </div>
-    );
+      </>);
 };
 
 export default DailyCard;

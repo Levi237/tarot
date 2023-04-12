@@ -34,7 +34,7 @@ const CardModal = ({card, closeCardModal, placement}) => {
     const mapElement = card.element.map((item, i) => {
       const length = card.element.length;
       //==> add "|" to following items
-
+      // element emojis in modal.css content
         if ( i === 0 ){
           return (<span key={i} id={`${item}`}>{item}</span>);
         }

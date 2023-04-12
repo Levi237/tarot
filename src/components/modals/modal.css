@@ -169,21 +169,9 @@ button.close-modal-btn {
     margin-bottom: 24px;
   }
   .cardmodal .card-info .element {
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
   /* .cardmodal .card-info .major-arcana {
     font-style: italic;
   } */
-  .cardmodal #earth::after {
-    content: ' 🌎';
-  }
-  .cardmodal #fire::after {
-    content: '🔥';
-  }
-  .cardmodal #water::after {
-    content: ' 💧';
-  }
-  .cardmodal #air::after {
-    content: ' 🫧';
-  }
 
