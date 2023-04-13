@@ -15,6 +15,7 @@ import Draw                           from './pages/Draw';
 import Home                           from './pages/Home';
 import Admin                          from './pages/Admin';
 import CardModal                      from './components/modals/CardModal';
+import Hamburger from './components/nav/hamburger';
 
 const App = () => {
 
@@ -297,12 +298,18 @@ const App = () => {
   return (
     <div className="App">
       {/* { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> } */}
-      {/* <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/> */}
+      
       {/* <UserAuth user={user} clickSignOut={clickSignOut}/> */}
       { card.title && <CardModal card={card} placement={placement} closeCardModal={closeCardModal}/>}
-      {/* <header>
-        Header goes here
-      </header> */}
+      <header>
+        <section>Header goes here?</section>
+        <section>
+
+        </section>
+        <section>
+        <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
+        </section>
+      </header>
       <Routes>
           <Route path={routes.DRAW} exact element={
             <Draw 
