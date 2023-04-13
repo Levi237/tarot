@@ -300,9 +300,9 @@ const App = () => {
       {/* <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/> */}
       {/* <UserAuth user={user} clickSignOut={clickSignOut}/> */}
       { card.title && <CardModal card={card} placement={placement} closeCardModal={closeCardModal}/>}
-      <header>
+      {/* <header>
         Header goes here
-      </header>
+      </header> */}
       <Routes>
           <Route path={routes.DRAW} exact element={
             <Draw 

@@ -9,6 +9,9 @@ const HomePage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
     return (
         <div id="home-page_id">
+                  <header>
+        Header goes here
+      </header>
             {/* ADD BANNER COMPONENT FOR CARD OF THE DAY - 
                 save card of the day on local browser
                 refresh state each day?

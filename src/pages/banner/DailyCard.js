@@ -135,11 +135,12 @@ const DailyCard = ({deck, layouts, viewCard}) => {
         return (<p key={i}>{item}</p>);
       });
     
-    return (<>
-          <div className="mobile-only">
-                      <h3>Welcome to Tarofied Beta</h3>
-                <p>This website is best viewed on Desktop</p>
-                </div>
+    return (<div className="dailycard-wrapper">
+
+        <div className="mobile-only">
+          <h3>Welcome to Tarofied Beta</h3>
+          <p>This website is best viewed on Desktop</p>
+        </div>
         <div className="dailycard-container grid two-column-grid forty-sixty">
             <div>
                 <div id="dailycard_id" className="dailycard flip-card">
@@ -169,24 +170,22 @@ const DailyCard = ({deck, layouts, viewCard}) => {
                     
                     { hand.element.length > 0 && <p className="element">{mapElement}</p> }
                     {/* { hand.subelem.length > 0  && <p className="subelements">{mapSubElement}</p> } */}
-                    {/* { hand.major.length > 0 && <p className="major-arcana">{mapMajor}</p> } */}
+                    { hand.major.length > 0 && <p className="major-arcana">{mapMajor}</p> }
                     {/* { hand.seph.length > 0 && <p className="seph">{hand.seph}</p> } */}
                     { hand.astro.length > 0 && <p className="astro-p">Ruled by {mapAstro}</p>}
                     {/* { hand.subastro.length > 0 && <ul>{mapSubastro}</ul> } */}
-                {/* <br/> */}
                     {/* <div>
-                        <h4>Upright Keys</h4>
-                        <ul>{mapKeys}</ul>
-                    </div> */}
-{/* 
-                    <div>
-                        <h4>Reverse Keys</h4>
-                        <ul>{mapRevKeys}</ul>
+                      <h4>Upright Keys</h4>
+                      <ul>{mapKeys}</ul>
                     </div> */}
                     {/* <div>
-                    { hand.desc.length > 0 && <section>{mapDesc}</section> }
-                    { hand.revdesc.length > 0 && <section>{mapRevDesc}</section> }
-                </div> */}
+                      <h4>Reverse Keys</h4>
+                      <ul>{mapRevKeys}</ul>
+                    </div> */}
+                    {/* <div>
+                      { hand.desc.length > 0 && <section>{mapDesc}</section> }
+                      { hand.revdesc.length > 0 && <section>{mapRevDesc}</section> }
+                    </div> */}
                     <br/>
                     <p>This is your card of the day.  What message does this card hold for you?  How does it reflect your attitude or circumstance right now.</p>
                 </div>
@@ -194,7 +193,7 @@ const DailyCard = ({deck, layouts, viewCard}) => {
                 </div>
             </div>
         </div>
-      </>);
+      </div>);
 };
 
 export default DailyCard;

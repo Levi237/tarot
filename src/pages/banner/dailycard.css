@@ -77,3 +77,9 @@
     column-count: 3;
     padding-inline-start: 25px;
 }
+
+@media only screen and (max-width: 749px){
+  .dailycard-wrapper {
+    padding: 20px;
+  }
+}
