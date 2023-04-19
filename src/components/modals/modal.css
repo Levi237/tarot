@@ -113,7 +113,7 @@ button.close-modal-btn {
 }
 .cardmodal .grid > section:last-of-type {
   padding-left: 40px;
-  padding-right: 20px;
+  padding-right: 40px;
 }
 
 @media only screen and (min-width: 750px) {
@@ -123,6 +123,16 @@ button.close-modal-btn {
         -webkit-column-count: 2;
         -webkit-column-gap: 32px;
         column-count: 2;
+        column-gap: 32px;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    .cardmodal ul.two-col-ul {
+        -moz-column-count: 3;
+        -moz-column-gap: 32px;
+        -webkit-column-count: 3;
+        -webkit-column-gap: 32px;
+        column-count: 3;
         column-gap: 32px;
     }
   }
@@ -163,6 +173,7 @@ button.close-modal-btn {
   }
   .cardmodal li {
     margin-top: 4px;
+    /* list-style-position: inside; */
   }
 
   .card-info .header {

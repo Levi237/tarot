@@ -213,7 +213,7 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
         <div className="draw-display">
             <header>
             <section>
-            {layout.id
+            { layout.id
             ? <h4>{layout.name}</h4>
             : <Dropdown 
                 list={layouts} 

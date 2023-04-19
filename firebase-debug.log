@@ -1,0 +1,61 @@
+[debug] [2023-04-19T01:21:29.118Z] ----------------------------------------------------------------------
+[debug] [2023-04-19T01:21:29.125Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-04-19T01:21:29.126Z] CLI Version:   11.15.0
+[debug] [2023-04-19T01:21:29.126Z] Platform:      darwin
+[debug] [2023-04-19T01:21:29.126Z] Node Version:  v14.18.0
+[debug] [2023-04-19T01:21:29.143Z] Time:          Tue Apr 18 2023 18:21:29 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-04-19T01:21:29.143Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-19T01:21:29.160Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-04-19T01:21:29.404Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-19T01:21:29.406Z] > authorizing via signed-in user (levieiko@gmail.com)
+[debug] [2023-04-19T01:21:29.407Z] [iam] checking project tarot-app-2022 for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2023-04-19T01:21:29.410Z] > refreshing access token with scopes: []
+[debug] [2023-04-19T01:21:29.412Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-04-19T01:21:29.412Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-04-19T01:21:29.663Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-04-19T01:21:29.664Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-04-19T01:21:29.713Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-04-19T01:21:29.713Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-04-19T01:21:29.763Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/tarot-app-2022:testIamPermissions [none]
+[debug] [2023-04-19T01:21:29.763Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/tarot-app-2022:testIamPermissions x-goog-quota-user=projects/tarot-app-2022
+[debug] [2023-04-19T01:21:29.763Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/tarot-app-2022:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2023-04-19T01:21:29.943Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/tarot-app-2022:testIamPermissions 200
+[debug] [2023-04-19T01:21:29.943Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/tarot-app-2022:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2023-04-19T01:21:29.945Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/tarot-app-2022 [none]
+[debug] [2023-04-19T01:21:30.345Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/tarot-app-2022 200
+[debug] [2023-04-19T01:21:30.346Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/tarot-app-2022 {"projectId":"tarot-app-2022","projectNumber":"1031174377188","displayName":"Tarot App 2022","name":"projects/tarot-app-2022","resources":{"hostingSite":"tarot-app-2022","realtimeDatabaseInstance":"tarot-app-2022-default-rtdb","storageBucket":"tarot-app-2022.appspot.com","locationId":"us-west1"},"state":"ACTIVE","etag":"1_cae4300a-c9f8-4061-8e67-f530bbed6934"}
+[debug] [2023-04-19T01:21:30.347Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/tarot-app-2022 [none]
+[debug] [2023-04-19T01:21:30.724Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/tarot-app-2022 200
+[debug] [2023-04-19T01:21:30.724Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/tarot-app-2022 {"projectId":"tarot-app-2022","projectNumber":"1031174377188","displayName":"Tarot App 2022","name":"projects/tarot-app-2022","resources":{"hostingSite":"tarot-app-2022","realtimeDatabaseInstance":"tarot-app-2022-default-rtdb","storageBucket":"tarot-app-2022.appspot.com","locationId":"us-west1"},"state":"ACTIVE","etag":"1_cae4300a-c9f8-4061-8e67-f530bbed6934"}
+[info] 
+[info] === Deploying to 'tarot-app-2022'...
+[info] 
+[info] i  deploying database, storage, firestore, hosting 
+[info] i  database: checking rules syntax... 
+[debug] [2023-04-19T01:21:30.731Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/tarot-app-2022/locations/-/instances/tarot-app-2022-default-rtdb [none]
+[debug] [2023-04-19T01:21:31.162Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/tarot-app-2022/locations/-/instances/tarot-app-2022-default-rtdb 200
+[debug] [2023-04-19T01:21:31.162Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/tarot-app-2022/locations/-/instances/tarot-app-2022-default-rtdb {"name":"projects/1031174377188/locations/us-central1/instances/tarot-app-2022-default-rtdb","project":"projects/1031174377188","databaseUrl":"https://tarot-app-2022-default-rtdb.firebaseio.com","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[debug] [2023-04-19T01:21:31.165Z] >>> [apiv2][query] PUT https://tarot-app-2022-default-rtdb.firebaseio.com/.settings/rules.json dryRun=true
+[debug] [2023-04-19T01:21:31.165Z] >>> [apiv2][body] PUT https://tarot-app-2022-default-rtdb.firebaseio.com/.settings/rules.json "{\n  \"rules\": {\n    \".read\": true,\n    \".write\": false\n  }\n}"
+[debug] [2023-04-19T01:21:31.422Z] <<< [apiv2][status] PUT https://tarot-app-2022-default-rtdb.firebaseio.com/.settings/rules.json 200
+[debug] [2023-04-19T01:21:31.422Z] <<< [apiv2][body] PUT https://tarot-app-2022-default-rtdb.firebaseio.com/.settings/rules.json {"status":"ok"}
+[info] ✔  database: rules syntax for database tarot-app-2022-default-rtdb is valid 
+[debug] [2023-04-19T01:21:31.425Z] >>> [apiv2][query] GET https://appengine.googleapis.com/v1/apps/tarot-app-2022 [none]
+[debug] [2023-04-19T01:21:31.677Z] <<< [apiv2][status] GET https://appengine.googleapis.com/v1/apps/tarot-app-2022 200
+[debug] [2023-04-19T01:21:31.678Z] <<< [apiv2][body] GET https://appengine.googleapis.com/v1/apps/tarot-app-2022 {"name":"apps/tarot-app-2022","id":"tarot-app-2022","authDomain":"gmail.com","locationId":"us-west1","codeBucket":"staging.tarot-app-2022.appspot.com","servingStatus":"SERVING","defaultHostname":"tarot-app-2022.uw.r.appspot.com","defaultBucket":"tarot-app-2022.appspot.com","serviceAccount":"tarot-app-2022@appspot.gserviceaccount.com","gcrDomain":"us.gcr.io","databaseType":"CLOUD_FIRESTORE","featureSettings":{"splitHealthChecks":true,"useContainerOptimizedOs":true}}
+[info] i  firebase.storage: checking storage.rules for compilation errors... 
+[debug] [2023-04-19T01:21:31.685Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/tarot-app-2022:test [none]
+[debug] [2023-04-19T01:21:31.685Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/tarot-app-2022:test [omitted]
+[debug] [2023-04-19T01:21:31.948Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/tarot-app-2022:test 200
+[debug] [2023-04-19T01:21:31.949Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/tarot-app-2022:test {}
+[info] ✔  firebase.storage: rules file storage.rules compiled successfully 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2023-04-19T01:21:31.953Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/tarot-app-2022:test [none]
+[debug] [2023-04-19T01:21:31.953Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/tarot-app-2022:test [omitted]
+[debug] [2023-04-19T01:21:32.137Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/tarot-app-2022:test 200
+[debug] [2023-04-19T01:21:32.137Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/tarot-app-2022:test {}
+[info] ✔  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2023-04-19T01:21:32.140Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tarot-app-2022/versions [none]
+[debug] [2023-04-19T01:21:32.140Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/tarot-app-2022/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}

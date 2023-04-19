@@ -14,7 +14,7 @@ code {
 }
 
 :root {
-  --color-darkgrey: #2e2e2e;
+  --color-darkgrey: #3f3f3f;
   --color-lightgrey: #dadada;
 }
 
@@ -103,17 +103,28 @@ header {
   text-transform: capitalize;
 }
 .element #earth::after {
-  content: ' 🌎';
+  content: '🜃';
 }
 .element #fire::after {
-  content: ' 🔥';
+  content: '🜂';
 }
 .element #water::after {
-  content: ' 💧';
+  content: '🜄';
 }
 .element #air::after {
-  content: ' 🫧';
+  content: '🜁';
 }
+
+.icons {
+  margin: 0;
+  font-family: arial unicode ms,lucida sans unicode,sans-serif;
+}
+.icons > span {
+  font-size: 24px;
+  line-height: 0;
+  color: var(--color-darkgrey);
+}
+
 
 .mobile-only {
   display: none;

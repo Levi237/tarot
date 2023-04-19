@@ -138,7 +138,7 @@ const DailyCard = ({deck, layouts, viewCard}) => {
     return (<div className="dailycard-wrapper">
 
         <div className="mobile-only">
-          <h3>Welcome to Tarofied Beta</h3>
+          <h3>Welcome to Tarotfied Beta</h3>
           <p>This website is best viewed on Desktop</p>
         </div>
         <div className="dailycard-container grid two-column-grid forty-sixty">
@@ -157,7 +157,7 @@ const DailyCard = ({deck, layouts, viewCard}) => {
             <div>
             <div>
               <div className="desktop-only"> 
-            <h3>Welcome to Tarofied Beta</h3>
+            <h3>Welcome to Tarotfied Beta</h3>
                 <p>This website is best viewed on Desktop</p>
                 </div>
                 <br/><br/>

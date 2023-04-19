@@ -63,6 +63,10 @@ const CardModal = ({card, closeCardModal, placement}) => {
         }
       }
     });
+    
+    const mapIcons = card.icons.map((item, i) => {
+      return (<span key={i}>{item} </span>);
+    });
 
     const mapMajor = card.major.map((item, i) => {
       const length = card.major.length;
@@ -122,13 +126,14 @@ const CardModal = ({card, closeCardModal, placement}) => {
                   <div className="header">
                   { card.title.length > 0 && <h1>{card.title}</h1> }
                   { card.subtitle.length > 0 && <h2>{card.subtitle}</h2> }
+                  { card.icons.length > 0 && <p className="icons">{mapIcons}</p> }
                   </div>
                   { card.element.length > 0 && <p className="element">{mapElement}</p> }
                   { card.subelem.length > 0  && <p className="subelements">{mapSubElement}</p> }
                   { card.major.length > 0 && <p className="major-arcana">{mapMajor}</p> }
                   { card.seph.length > 0 && <p className="seph">{card.seph}</p> }
                   { card.astro.length > 0 && <p className="astro-p">Ruled by {mapAstro}</p>}
-                  { card.subastro.length > 0 && <ul>{mapSubastro}</ul> }
+                  { card.subastro.length > 0 && <ul className="subastro">{mapSubastro}</ul> }
                 <br/>
                 { card.keys.length > 0 &&
                   <>

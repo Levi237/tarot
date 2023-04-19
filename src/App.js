@@ -227,7 +227,7 @@ const App = () => {
       const getDeck = collection(fs, 'deck');
       const docSnap = await getDocs(getDeck);
       docSnap.forEach((doc) => {
-        if (doc.id === 'iymsYXSnDc6LZ6cwxeWn'){
+        if (doc.id === '0t0chu174tDfGDTekL8W'){
           setDeck(doc.data().deck);
         }
       });
@@ -297,9 +297,9 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> } */}
+      { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> }
       
-      {/* <UserAuth user={user} clickSignOut={clickSignOut}/> */}
+      <UserAuth user={user} clickSignOut={clickSignOut}/>
       { card.title && <CardModal card={card} placement={placement} closeCardModal={closeCardModal}/>}
       <header>
         <section>Header goes here?</section>
