@@ -19,8 +19,8 @@ return (<>
         <div>
             <NavLink exact to={routes.ROOT} onClick={toggleNavMenu}>HOME</NavLink>
             <NavLink to={routes.DRAW} onClick={toggleNavMenu}>DRAW CARDS</NavLink>
-            { user.uid && <NavLink to={routes.ACCT} onClick={toggleNavMenu} >ACCOUNT</NavLink> }
-            { user.uid ? <button className="signout-" onClick={()=>{clickSignOut();toggleNavMenu();}}>Sign Out</button> : <button id="login-btn"  onClick={()=>{openSignIn();toggleNavMenu();}} >Login</button> }
+            {/* { user.uid && <NavLink to={routes.ACCT} onClick={toggleNavMenu} >ACCOUNT</NavLink> } */}
+            {/* { user.uid ? <button className="signout-" onClick={()=>{clickSignOut();toggleNavMenu();}}>Sign Out</button> : <button id="login-btn"  onClick={()=>{openSignIn();toggleNavMenu();}} >Login</button> } */}
         </div>
     </div></>)
 }
