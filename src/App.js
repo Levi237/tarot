@@ -301,15 +301,19 @@ const App = () => {
       
       <UserAuth user={user} clickSignOut={clickSignOut}/>
       { card.title && <CardModal card={card} placement={placement} closeCardModal={closeCardModal}/>}
-      <header>
-        <section>Header goes here?</section>
-        <section>
+      <Routes>
+        <Route path={routes.ROOT} exact element={
+          <header>
+            <section>Header goes here?</section>
+            <section>
 
-        </section>
-        <section>
-        <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
-        </section>
-      </header>
+            </section>
+            <section>
+            <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
+            </section>
+          </header>
+          }/>
+      </Routes>
       <Routes>
           <Route path={routes.DRAW} exact element={
             <Draw 
