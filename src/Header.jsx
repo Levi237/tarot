@@ -3,13 +3,15 @@ import NavMenu                        from './components/nav';
 const Header = ({ user, clickSignOut, openSignIn }) => {
     return(
         <header>
-        <section>Tarot To Me</section>
-        <section>
+            <section>
+                <h1>Tarot To Me</h1>
+            </section>
+            <section>
 
-        </section>
-        <section>
-        <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
-        </section>
+            </section>
+            <section>
+                <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
+            </section>
         </header>
     );
 };
