@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'fire
 
 import './auth.css';
 
-const Login = ({ user }) => {
+const Authentication = ({ user }) => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -125,4 +125,4 @@ const hideModal = () => {
   );
 };
 
-export default Login;
+export default Authentication;
