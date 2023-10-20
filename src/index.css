@@ -87,6 +87,8 @@ button.invisible-btn,
 }
 
 header {
+  position: relative;
+  overflow: hidden;
   height: 46px;
   padding: 6px 40px;
   border-bottom: 1px solid hsla(0, 0%, 83%, 0.4);
