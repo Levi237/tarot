@@ -16,12 +16,17 @@
 }
  
 .flip-card {
+    --img-width: 90vw;
     background-color: transparent;
-    width: 174px;
-    height: 300px;
+    width: calc( var(--img-width) * 1);
+    height: calc( var(--img-width) * 1.72);
     perspective: 1000px;
   }
-  
+  @media only screen and (min-width: 639px){
+    .flip-card {
+      --img-width: 200px;
+    }
+  }
   .flip-card-inner {
     position: relative;
     width: 100%;
@@ -80,6 +85,6 @@
 
 @media only screen and (max-width: 749px){
   .dailycard-wrapper {
-    padding: 20px;
+    /* padding: 20px; */
   }
 }
