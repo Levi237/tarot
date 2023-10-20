@@ -1,29 +1,13 @@
-import React, {}  from 'react';
-import SelectSpreadBanner from './banner/SelectSpread';
-import Deck from '../components/deck';
-import DailyCard from './banner/DailyCard';
-// import { Link } from 'react-router-dom';
-// import * as routes from '../constants/routes';
+import React, {}            from 'react';
+
+import SelectSpreadBanner   from './banner/SelectSpread';
+import Deck                 from '../components/deck';
+import DailyCard            from './banner/DailyCard';
 
 const HomePage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
     return (
         <div id="home-page_id">
-                  {/* <header>
-        Header goes here?
-      </header> */}
-            {/* ADD BANNER COMPONENT FOR CARD OF THE DAY - 
-                save card of the day on local browser
-                refresh state each day?
-                
-            */}
-            {/* <div>
-                <center>
-                <br/><br/><br/>
-                <Link className="btn dark-style" to={routes.DRAW} >Start Spread</Link>
-                <br/><br/><br/>
-                </center>
-            </div> */}
             <div className="body-width">
             <h3>Welcome to Tarot App Beta</h3>
             <p>This website is best viewed on Desktop</p>
