@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import * as routes from './constants/routes';
+import { Routes, Route }              from 'react-router-dom';
+import * as routes                    from './constants/routes';
 
 import { auth }                       from './firebase/config';
 import { onAuthStateChanged }         from 'firebase/auth';
 import fs                             from './firebase/config';
 import { collection, getDocs }        from 'firebase/firestore'; 
 
-import UserAuth                       from './components/authentication';
-import NavMenu                        from './components/nav';
+import Authentication                       from './components/authentication';
+
+
+import Header                         from './Header';
 
 import Account                        from './pages/Account';
 import Draw                           from './pages/Draw';
 import Home                           from './pages/Home';
 import Admin                          from './pages/Admin';
 import CardModal                      from './components/modals/CardModal';
-import Hamburger from './components/nav/hamburger';
+import Hamburger                      from './components/nav/hamburger';
 
 const App = () => {
 
@@ -299,18 +301,19 @@ const App = () => {
     <div className="App">
       { user.uid && <div>{user.displayName ? user.displayName : user.email}</div> }
       
-      <UserAuth user={user} clickSignOut={clickSignOut}/>
-      { card.title && <CardModal card={card} placement={placement} closeCardModal={closeCardModal}/>}
+      <Authentication user={user} clickSignOut={clickSignOut}/>
+      { card.title && 
+        <CardModal 
+          card={card} 
+          placement={placement} 
+          closeCardModal={closeCardModal}
+        />}
 
-          <header>
-            <section>Header goes here?</section>
-            <section>
-
-            </section>
-            <section>
-            <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
-            </section>
-          </header>
+      <Header 
+        user={user} 
+        clickSignOut={clickSignOut} 
+        openSignIn={openSignIn} 
+      />
 
       <Routes>
           <Route path={routes.DRAW} exact element={
