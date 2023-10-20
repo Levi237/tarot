@@ -24,6 +24,10 @@ const HomePage = ({deck, layout, layouts, selectLayout, viewCard}) => {
                 <br/><br/><br/>
                 </center>
             </div> */}
+            <div className="body-width">
+            <h3>Welcome to Tarot App Beta</h3>
+            <p>This website is best viewed on Desktop</p>
+            </div>
             <DailyCard 
                 deck={deck} 
                 layouts={layouts}

@@ -99,21 +99,7 @@ header {
 }
 
 
-.element {
-  text-transform: capitalize;
-}
-.element #earth::after {
-  content: '🜃';
-}
-.element #fire::after {
-  content: '🜂';
-}
-.element #water::after {
-  content: '🜄';
-}
-.element #air::after {
-  content: '🜁';
-}
+
 
 .icons {
   margin: 0;
@@ -159,13 +145,14 @@ h1.title {
   color: red;
 }
 
-#index-deck,
-.body-width {
+#index-deck {
     max-width: 1000px;
-    /* height: 480px; */
     margin: 0 auto;
 }
-
+.body-width {
+  max-width: 900px;
+  margin: 0 auto;
+}
 
 h1 {
   font-size: 48px;

@@ -68,8 +68,8 @@
   }
   .dailycard-container > div:last-of-type {
     display: flex;
-    align-items: start;
-    justify-content: start;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
   .dailycard-container ul {
     -webkit-column-count: 3;

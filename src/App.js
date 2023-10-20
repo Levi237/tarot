@@ -301,8 +301,7 @@ const App = () => {
       
       <UserAuth user={user} clickSignOut={clickSignOut}/>
       { card.title && <CardModal card={card} placement={placement} closeCardModal={closeCardModal}/>}
-      <Routes>
-        <Route path={routes.ROOT} exact element={
+
           <header>
             <section>Header goes here?</section>
             <section>
@@ -312,8 +311,7 @@ const App = () => {
             <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
             </section>
           </header>
-          }/>
-      </Routes>
+
       <Routes>
           <Route path={routes.DRAW} exact element={
             <Draw 
@@ -324,7 +322,9 @@ const App = () => {
               viewCard={viewCard}
             />
             } />
-          <Route path={routes.ACCT} exact element={<Account />}/>
+          <Route path={routes.ACCT} exact element={
+            <Account />
+          }/>
           <Route path={routes.ROOT} exact element={
             <Home 
               deck={deck}
@@ -333,10 +333,12 @@ const App = () => {
               selectLayout={selectLayout}
               viewCard={viewCard}
             />
+          }/>
+          <Route path={routes.ROOT} element={
+            <>wrong url</>
             }/>
-          <Route path={routes.ROOT} element={<>wrong url</>}/>
         </Routes>
-      { (user.uid === 'IcaB6QA5frhOaMWRf80gqxYF8Er2') && <Admin /> }
+      { (user.uid === `${process.env.REACT_APP_ADMIN_ID}`) && <Admin /> }
     </div>
   );
 }
