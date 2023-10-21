@@ -153,9 +153,8 @@ const DailyCard = ({deck, layouts, viewCard}) => {
             <div>
               <div>
                 <br/><br/>
-                { hand.default ?
                 <>Tap for your daily card</>
-                :
+                { !hand.default &&
                 <div className="">
                    
                     <h4>{(hand.majorNum) && <span>{hand.majorNum}. </span>}<span>{hand.title}</span>{ hand.subtitle && <span>: {hand.subtitle}</span> }</h4>

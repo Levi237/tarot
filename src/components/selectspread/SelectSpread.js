@@ -1,9 +1,9 @@
-import React, {useEffect, useState}  from 'react';
-import { Link } from 'react-router-dom';
-import MenuList from '../../components/menulist/MenuList';
-import * as routes from '../../constants/routes';
+import React, {useEffect, useState} from 'react';
+import { Link }                     from 'react-router-dom';
+import MenuList                     from '../menulist/MenuList';
+import * as routes                  from '../../constants/routes';
 
-import './spread-banner.css';
+import './SelectSpread.css';
 
 const SelectSpreadBanner = ({layout, layouts, selectLayout}) => {
 

@@ -1,17 +1,13 @@
 import React, {}            from 'react';
 
-import SelectSpreadBanner   from './banner/SelectSpread';
-import Deck                 from '../components/deck';
-import DailyCard            from './banner/DailyCard';
+import SelectSpreadBanner   from '../../components/selectspread/SelectSpread';
+import Deck                 from '../../components/deck';
+import DailyCard            from '../../components/dailycard/DailyCard';
 
 const HomePage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
     return (
         <div id="home-page_id">
-            <div className="body-width">
-            <h3>Welcome to Tarot App Beta</h3>
-            <p>This website is best viewed on Desktop</p>
-            </div>
             <DailyCard 
                 deck={deck} 
                 layouts={layouts}

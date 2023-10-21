@@ -7,14 +7,14 @@ import { onAuthStateChanged }         from 'firebase/auth';
 import fs                             from './firebase/config';
 import { collection, getDocs }        from 'firebase/firestore'; 
 
-import Authentication                       from './components/authentication';
+import Authentication                 from './components/authentication';
 
 
 import Header                         from './Header';
 
 import Account                        from './pages/Account';
 import Draw                           from './pages/Draw';
-import Home                           from './pages/Home';
+import HomePage                       from './pages/home';
 import Admin                          from './pages/Admin';
 import CardModal                      from './components/modals/CardModal';
 import Hamburger                      from './components/nav/hamburger';
@@ -329,7 +329,7 @@ const App = () => {
             <Account />
           }/>
           <Route path={routes.ROOT} exact element={
-            <Home 
+            <HomePage 
               deck={deck}
               layouts={layouts}
               layout={layout}
