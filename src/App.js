@@ -29,7 +29,7 @@ const App = () => {
   const [layouts] = useState([{  
       id: `draw-single-card`,
       type: `draw-single-card`,
-      image: `./deck/back.png`,
+      image: `./deck/card-back.png`,
       cards: 1,
       name: `Single Card Draw`,
       note: `Helpful in understanding the general energy of a specific situation or period of time.`,
