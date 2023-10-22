@@ -2,7 +2,7 @@ import React, { useState }  from 'react';
 // import { Link } from 'react-router-dom';
 // import * as routes from '../../constants/routes';
 
-import './dailycard.css';
+import './DailyCard.css';
  ////-- Generate random single card for DailyCard after clicking on DailyCard back image
 
 const DailyCard = ({deck, layouts, viewCard}) => {
@@ -153,8 +153,9 @@ const DailyCard = ({deck, layouts, viewCard}) => {
             <div>
               <div>
                 <br/><br/>
+                { hand.default ?
                 <>Tap for your daily card</>
-                { !hand.default &&
+                :
                 <div className="">
                    
                     <h4>{(hand.majorNum) && <span>{hand.majorNum}. </span>}<span>{hand.title}</span>{ hand.subtitle && <span>: {hand.subtitle}</span> }</h4>
