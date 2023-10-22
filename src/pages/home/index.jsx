@@ -2,7 +2,7 @@ import React, {}            from 'react';
 
 import SelectSpreadBanner   from '../../components/selectspread/SelectSpread';
 import Deck                 from '../../components/deck';
-import DailyCard            from '../../components/dailycard/DailyCard';
+import DailyCard            from '../../sections/DailyCard';
 
 const HomePage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
