@@ -137,6 +137,9 @@ h1.title {
   color: var(--color-darkgrey);
 }
 
+.subtitle {
+  margin-bottom: 2rem;
+}
 
 .signout-home {
   position: absolute;
