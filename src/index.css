@@ -33,6 +33,7 @@ body {
   overflow-x: hidden;
   /* font-family: var(--font-fancy); */
   color: var(--color-hex-black);
+  background-color: var(--color-hex-white);
 }
 
 code {
@@ -59,7 +60,9 @@ a .cta {
   display: inline-block;
   color: var(--color-hex-darkgold);
 }
-
+#nav-menu a {
+  color: var(--color-hex-black);
+}
 button,
 input,
 select,
@@ -126,7 +129,7 @@ header {
   padding: 6px 40px;
   border-bottom: 1px solid hsla(0, 0%, 83%, 0.4);
   background-color: #110C0E;
-  color: white;
+  color: var(--color-hex-lightgold);
 }
 @media (max-width: 639px) {
   header {
@@ -134,7 +137,6 @@ header {
     padding: 16px 16px 10px;
   }
 }
-
 
 
 

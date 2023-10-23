@@ -4,7 +4,7 @@ const Header = ({ user, clickSignOut, openSignIn }) => {
     return(
         <header>
             <section>
-                <h3>Tarot To Me</h3>
+                <h3 className="header-title">Tarot To Me</h3>
             </section>
             <section>
 
