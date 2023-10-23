@@ -6,7 +6,7 @@
   --color-hex-black: #110C0E;
   --color-hex-darkgrey: #3f3f3f;
   --color-hex-lightgrey: #dadada;
-
+  --color-hex-white: #F6F5F4;
   --color-hex-lightgold: #E4C190;
   --color-hex-darkgold: #BF945D;
 
@@ -14,7 +14,7 @@
   --color-hsl-black: 336, 17%, 6%;
   --color-hsl-darkgrey: 0, 0%, 25%;
   --color-hsl-lightgrey: 0, 0%, 85%;
-
+  --color-hsl-white: 30, 10%, 96%;
   --color-hsl-lightgold: 35, 61%, 73%;
   --color-hsl-darkgold: 34, 43%, 56%;
 
@@ -51,10 +51,13 @@ code {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 a .cta {
-  border-bottom: 1px solid black;
+  padding-top: 2rem;
+  border-bottom: 1px solid var(--color-hex-darkgold);
   display: inline-block;
+  color: var(--color-hex-darkgold);
 }
 
 button,
@@ -142,7 +145,7 @@ header {
 .icons > span {
   font-size: 24px;
   line-height: 0;
-  color: var(--color-darkgrey);
+  color: var(--color-hex-darkgold);
 }
 
 @media only screen and (min-width: 640px){
@@ -186,7 +189,7 @@ p, a {
   font-size: 18px;
 }
 p {
-  line-height: 200%;
+  line-height: 180%;
 }
 p + p {
   margin-top: 1rem;
@@ -200,7 +203,12 @@ h1.title {
 
 .subtitle {
   margin-top: .5em;
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
+}
+
+a {
+  color: var(--color-darkgrey);
+  cursor: pointer;
 }
 
 .error {

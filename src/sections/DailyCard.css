@@ -15,8 +15,10 @@
   justify-self: center;
 }
 
-@media (max-width: 639px){
-
+@media (min-width: 640px){
+  .dailycard .title {
+    padding-top: 1.5rem;
+  }
 }
 
 
@@ -75,11 +77,13 @@
 
 
 .dailycard-mobile-content {
-  width: 90vw;
-  padding: 80px 5vw;
+  width: 80vw;
+  padding: 80px 10vw;
 }
 
-
+.dailycard-mobile-content p {
+padding-left: 5vw;
+}
 
 
 

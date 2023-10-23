@@ -47,6 +47,19 @@ const DailyCard = ({deck, viewCard}) => {
       };
   };
 
+  const Content = () => {
+    return (
+      <div>
+        <h2 className="title">Tarot To Me</h2>
+        <h4 className="subtitle">"A question never asked is never answered."</h4>
+        <p className="type">We come to these places in search of answers we already have.  It's just a matter of opening yourself up to seeing the signs right in front of you.</p>
+        <p className="type">Explore our variety of spreads and have fun.</p>
+        <br/>
+        <Link to={routes.DRAW}><h4 className="cta">Start Reading ➛</h4></Link>
+      </div>
+    );
+  };
+
   return (
     <>
     <div className="dailycard wrapper">
@@ -57,16 +70,8 @@ const DailyCard = ({deck, viewCard}) => {
           <section className={(card.default && deck.length > 1) && "live"}>
             <FlipCard card={card} pickRandomCard={pickRandomCard}/>
           </section>
-
           <section className="desktop-only desktop-content">
-            <div>
-                <h2>Tarot To Me</h2>
-                <h4 className="subtitle">"A question never asked is never answered."</h4>
-                <p className="type">We come to these places in search of answers we already have.  It's just a matter of opening yourself up to seeing the signs right in front of you.</p>
-                <p className="type">Explore our variety of spreads and have fun.</p>
-                <br/>
-                <Link to={routes.DRAW}><h4 className="cta">Start Reading ➛</h4></Link>
-              </div>
+            <Content/>
           </section>
         </div>
         
@@ -74,14 +79,7 @@ const DailyCard = ({deck, viewCard}) => {
     </div>
 
     <div className="mobile-only dailycard-mobile-content dark-pallet wrapper">
-      <div>
-        <h2>Tarot To Me</h2>
-        <h4 className="subtitle">"A question never asked is never answered."</h4>
-        <p className="type">We come to these places in search of answers we already have.  It's just a matter of opening yourself up to seeing the signs right in front of you.</p>
-        <p className="type">Explore our variety of spreads and have fun.</p>
-        <br/>
-        <Link to={routes.DRAW}><h4 className="cta">Start Reading </h4></Link>
-      </div>
+      <Content/>
     </div>
     </>
   );
