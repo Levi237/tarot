@@ -22,7 +22,7 @@
   margin: 6px 0;
   width: 30px;
   height: 3px;
-  background-color: #000;
+  background-color: var(--color-hex-lightgold);
   transition: all .3s ease;
 }
 
