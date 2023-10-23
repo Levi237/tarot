@@ -1,3 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+:root {
+  /* ...color: var(--color-hex-... ); */
+  --color-hex-black: #110C0E;
+  --color-hex-darkgrey: #3f3f3f;
+  --color-hex-lightgrey: #dadada;
+
+  --color-hex-lightgold: #E4C190;
+  --color-hex-darkgold: #BF945D;
+
+  /* ...color: hsla(var(--color-hsl-... ), 1)); */
+  --color-hsl-black: 336, 17%, 6%;
+  --color-hsl-darkgrey: 0, 0%, 25%;
+  --color-hsl-lightgrey: 0, 0%, 85%;
+
+  --color-hsl-lightgold: 35, 61%, 73%;
+  --color-hsl-darkgold: 34, 43%, 56%;
+
+  --font-header: 'Julius Sans One', sans-serif;
+  --font-fancy: 'Reenie Beanie', cursive;
+  --font-type: 'Special Elite', courier;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -6,6 +31,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  /* font-family: var(--font-fancy); */
+  color: var(--color-hex-black);
 }
 
 code {
@@ -13,10 +40,7 @@ code {
     monospace;
 }
 
-:root {
-  --color-darkgrey: #3f3f3f;
-  --color-lightgrey: #dadada;
-}
+
 
 /*********> global overrides */
 * {
@@ -25,7 +49,13 @@ code {
   line-height: 100%;
 }
 
-
+a {
+  text-decoration: none;
+}
+a .cta {
+  border-bottom: 1px solid black;
+  display: inline-block;
+}
 
 button,
 input,
@@ -46,7 +76,7 @@ select,
 .btn {
 cursor: pointer;
 }
-@media only screen and (max-width: 749px){
+@media only screen and (max-width: 639px){
   select {
     padding: 2px;
   }
@@ -92,8 +122,10 @@ header {
   height: 46px;
   padding: 6px 40px;
   border-bottom: 1px solid hsla(0, 0%, 83%, 0.4);
+  background-color: #110C0E;
+  color: white;
 }
-@media (max-width: 749px) {
+@media (max-width: 639px) {
   header {
     height: auto;
     padding: 16px 16px 10px;
@@ -113,23 +145,52 @@ header {
   color: var(--color-darkgrey);
 }
 
-
-.mobile-only {
-  display: none;
-}
-.deskop-only {
-  display: block;
-}
-@media only screen and (max-width: 749px){
+@media only screen and (min-width: 640px){
   .mobile-only {
-    display: block;
+    display: none!important;
+  }
+  .deskop-only {
+    display: block!important;
+  }
+}
+@media only screen and (max-width: 639px){
+  .mobile-only {
+    display: block!important;
   }
   .desktop-only {
-    display: none;
+    display: none!important;
   }
 }
 
 
+h1, h2, h3, h4, a {
+  font-family: var(--font-header);
+}
+h1 {
+  font-size: 48px;
+}
+h2 {
+  font-size: 36px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 21px;
+}
+h5 {
+  font-size: 18px;
+  font-weight: 500;
+}
+p, a {
+  font-size: 18px;
+}
+p {
+  line-height: 200%;
+}
+p + p {
+  margin-top: 1rem;
+}
 
 h1.title {
   text-align: center;
@@ -138,41 +199,22 @@ h1.title {
 }
 
 .subtitle {
-  margin-bottom: 2rem;
-}
-
-.signout-home {
-  position: absolute;
-  z-index: 3;
+  margin-top: .5em;
+  margin-bottom: 2em;
 }
 
 .error {
   color: red;
 }
 
-#index-deck {
-    max-width: 1000px;
-    margin: 0 auto;
+.fancy {
+  font-family: var(--font-fancy);
+  font-size: 160%;
 }
-.body-width {
-  max-width: 900px;
-  margin: 0 auto;
+.type {
+  font-family: var(--font-type);
 }
-
-h1 {
-  font-size: 48px;
-}
-h2 {
-  font-size: 36px;
-}
-h3 {
-font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-  /* font-weight: 100; */
-}
-@media only screen and (max-width: 749px){
+@media only screen and (max-width: 639px){
   h1 {
     font-size: clamp(32px, 12vw, 48px);
   }
@@ -183,17 +225,20 @@ h4 {
     font-size: clamp(19px, 6vw, 24px);
   }
   h4 {
+    font-size: clamp(16px, 5vw, 21px);
+  }
+  h5 {
     font-size: clamp(14px, 4vw, 18px);
   }
 }
 
 
-/* GRID GLOBAL STYLES */
-.grid {
+/* GRID GLOBAL STYLES  - discontinued for now*/
+/* .grid {
   display: grid;
-}
+} */
 
-.two-column-grid.fifty-fifty { grid-template-columns: 1fr 1fr; }
+/* .two-column-grid.fifty-fifty { grid-template-columns: 1fr 1fr; }
 .two-column-grid.sixty-forty { grid-template-columns: 60% 40%; }
 .two-column-grid.forty-sixty { grid-template-columns: 40% 60%; }
 
@@ -209,4 +254,34 @@ h4 {
     height: auto;
     max-height: inherit!important;
   }
+} */
+
+/* active cursor pointer */
+.live {
+  cursor: pointer;
+}
+
+
+
+
+#index-deck {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.body-width {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+.signout-home {
+  position: absolute;
+  z-index: 3;
+}
+
+.dark-pallet {
+  background-color: var(--color-hex-black);
+}
+.dark-pallet * {
+  color: var(--color-hex-lightgold);
 }
