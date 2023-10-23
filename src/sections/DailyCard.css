@@ -1,14 +1,93 @@
 .dailycard.wrapper {
   width: 100%;
-  max-width: 900px;
   margin: 0 auto;
+  height: calc(100dvh - 60px);
+  position: relative;
+}
+.dailycard .container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-self: center;
 }
 
-.dailycard img {
+@media (max-width: 639px){
+
+}
+
+
+.dailycard .background-img {
   height: 100%;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: left;
 }
+
+
+
+.grid {
+  max-width: 900px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 450px;
+}
+.grid > section {
+  display: flex;
+  height: 100%;
+}
+.dailycard .grid {
+  margin: 80px auto;
+}
+/* .dailycard .grid > section {  } */
+.dailycard .grid > section:first-of-type {
+  align-items: center;
+}
+.dailycard .grid > section:last-of-type {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: calc(100% * 4/45);
+}
+
+.dailycard .grid > section p {
+  padding: 0 10%;
+}
+@media (min-width: 640px){
+  .dailycard .grid > section:first-of-type {
+    justify-content: flex-end;
+    padding-right: calc(100% * 4/45);
+  }
+}
+@media (max-width: 639px){
+  .dailycard .grid {
+    margin: 80px auto;
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .dailycard .grid > section:first-of-type {
+    justify-content: center;
+  }
+}
+
+
+.dailycard-mobile-content {
+  width: 90vw;
+  padding: 80px 5vw;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* .dailycard {
     width: 100%;
