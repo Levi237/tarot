@@ -1,0 +1,9 @@
+.text-io {
+    opacity: 1;
+    margin-top: 0;
+    transition: 1s ease;
+}
+.text-io.hide-item {
+    opacity: 0;
+    margin-top: 6px;
+}
