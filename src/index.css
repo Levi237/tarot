@@ -107,7 +107,7 @@ a.btn {
   color: #fff;
 }
 
-.small.btn {
+/* .small.btn {
   font-size: 10px;
   padding: 4px 12px;
   margin: 4px;
@@ -120,7 +120,7 @@ button.invisible-btn,
   margin: 0;
   height: auto;
   width: auto;
-}
+} */
 .icons {
   margin: 0;
   font-family: arial unicode ms,lucida sans unicode,sans-serif;
@@ -276,3 +276,6 @@ a {
 .dark-pallet * {
   color: var(--color-hex-lightgold);
 }
+
+
+

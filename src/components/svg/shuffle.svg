@@ -1,7 +1,7 @@
-<svg id="Layer_1" height="24" viewBox="0 0 512 512" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-name="Layer 1">
+<svg className="shuffle-icon" height="24" viewBox="0 0 512 512" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-name="Layer 1">
     <linearGradient id="GradientFill_1" gradientUnits="userSpaceOnUse" x1="256.078" x2="256.079" y1="428.935" y2="83.234">
-        <stop offset="0" stop-color="#BF945D"/>
-        <stop offset="1" stop-color="#E4C190"/>
+        <stop offset="0"/>
+        <stop offset="1"/>
     </linearGradient>
     <path d="m397.348 428.935v-132.475l114.732 66.233zm-106.089-43.427c-22.461 0-41.771-11.153-53-30.595l-10.082-17.461 26.339-45.621 7.053 12.2c13.149 22.786 35.789 35.859 62.086 35.859h63.181v45.617zm106.089-169.794v-132.48l114.732 66.243zm-73.692-43.427h63.181v-45.626h-95.578c-22.461 0-41.771 11.153-53 30.6l-84.74 146.771c-13.149 22.786-35.78 35.859-62.091 35.859h-91.351v45.617h123.753c22.461 0 41.771-11.153 53-30.595l84.74-146.775c13.149-22.787 35.789-35.851 62.086-35.851zm-323.579-45.626h123.753c22.461 0 41.771 11.153 53 30.6l10.078 17.461-26.34 45.621-7.048-12.2c-13.149-22.787-35.78-35.851-62.091-35.851h-91.352z" fill="url(#GradientFill_1)" fill-rule="evenodd"/>
 </svg>

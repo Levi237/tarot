@@ -199,10 +199,30 @@ z
     }
   }
 
-
-  #shuffle-btn {
+.reading-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 0 2px;
+}
+  .reading-menu .btn {
     border: 1px solid var(--color-hex-lightgold);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 3px 32px;
+  }
+  .reading-menu .btn svg {
+    --length: 20px;
+    width: var(--length);
+    height: var(--length);
+  }
+
+
+  svg.shuffle-icon stop:first-of-type {
+    stop-color: #BF945D;
+  }
+  svg.shuffle-icon stop:last-of-type {
+    stop-color: #E4C190;
   }
