@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Draw.css';
+
 import Deck from '../components/deck';
 import Layout from '../components/spread/Layout';
 import Dropdown from '../components/dropdown/Dropdown';
 
 import HamMenu from '../components/nav/menu';
-import './draw.css'
+import {ReactComponent as ReactLogo} from '../components/svg/shuffle.svg';
 
 const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
@@ -211,41 +213,47 @@ const DrawPage = ({deck, layout, layouts, selectLayout, viewCard}) => {
 
     return (
         <div className="draw-display">
-            <header>
-            <section>
-            { layout.id
-            ? <h4>{layout.name}</h4>
-            : <Dropdown 
-                list={layouts} 
-                defaultText={"Choose a Spread"}
-                defaultValue={""}
-                selectedData={layout}
-                selectFunction={selectLayout} 
-                defaultOption={true}
-                />
-            }
-            </section>
-            <section>
-                <button id="shuffle-btn" onClick={shuffleBtn}>shuffle deck</button>
-            </section>
-            <section>
-                <HamMenu>
-                    <button id="reverse-btn" onClick={toggleUprightOnly} className="toggle-reverse-btn invisible-btn---- small btn">Upright Cards</button>
-                    <button onClick={refreshDeck} className="invisible-btn---- small btn">REFRESH</button>
-                    <button onClick={goBack} className="invisible-btn---- small btn">HOME</button>
-                </HamMenu>
-            </section>
-            </header>
+            {/* <header>
+                <section>
+                { layout.id
+                ? <h4>{layout.name}</h4>
+                : <Dropdown 
+                    list={layouts} 
+                    defaultText={"Choose a Spread"}
+                    defaultValue={""}
+                    selectedData={layout}
+                    selectFunction={selectLayout} 
+                    defaultOption={true}
+                    />
+                }
+                </section>
+                <section>
+                    <button className="btn" id="shuffle-btn" onClick={shuffleBtn}>Shuffle Deck&nbsp;<ReactLogo/></button>
+                </section>
+                <section>
+                    <HamMenu>
+                        <button id="reverse-btn" onClick={toggleUprightOnly} className="toggle-reverse-btn invisible-btn---- small btn">Upright Cards</button>
+                        <button onClick={refreshDeck} className="invisible-btn---- small btn">REFRESH</button>
+                        <button onClick={goBack} className="invisible-btn---- small btn">HOME</button>
+                    </HamMenu>
+                </section>
+            </header> */}
+            <div>
+            <button className="btn" id="shuffle-btn" onClick={shuffleBtn}>Shuffle Deck&nbsp;<ReactLogo/></button>
+
+                <button id="reverse-btn" onClick={toggleUprightOnly} className="toggle-reverse-btn invisible-btn---- small btn">Upright Cards</button>
+                <button onClick={refreshDeck} className="invisible-btn---- small btn">REFRESH</button>
+            </div>
             <Deck deck={newDeck} shuffleBtn={shuffleBtn} selectCard={selectCard} styleId='deal-deck'/>
             <div id="reading-window_id" className='reading-window'>
                 <section className="layout-section">
                     <Layout hand={hand} layout={layout} viewCard={viewCard}/>
                 </section>
-                <section className="text-section">
+                {/* <section className="text-section">
                     <div>
                         {handText}
                     </div>
-                </section>
+                </section> */}
             </div>
         </div>
     );

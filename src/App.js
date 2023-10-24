@@ -313,6 +313,9 @@ const App = () => {
         user={user} 
         clickSignOut={clickSignOut} 
         openSignIn={openSignIn} 
+        layout={layout}
+        layouts={layouts}
+        selectLayout={selectLayout}
       />
 
       <Routes>

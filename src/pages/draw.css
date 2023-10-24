@@ -25,8 +25,6 @@
 }
 @media (max-width: 749px) {
     .draw-display header {
-        /* height: auto; */
-        /* padding: 16px 16px 10px; */
         grid-template-columns: 100%;
         grid-template-rows: auto 10px 38px;
         grid-template-areas: 'title' 'buttons' 'shuffle';
@@ -40,7 +38,6 @@
 .draw-display header > section:first-of-type {
     grid-area: title;
     justify-content: left;
-    /* height: 26px; */
 }
 .draw-display header > section:nth-of-type(2) {
     grid-area: shuffle;
@@ -70,8 +67,8 @@
 }
 
 .reading-window {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
     gap: 20px;
     width: 100%;
     height: calc(100dvh - 200px);
@@ -106,8 +103,8 @@ z
 
 @media (orientation: portrait) and (max-width: 1200px) {
     .reading-window {
-        display: grid;
-        grid-template-columns: 100%;
+        /* display: grid; */
+        /* grid-template-columns: 100%; */
         height: calc(100dvh - 135px);
         width: 100%;
     }
@@ -200,4 +197,12 @@ z
         position: absolute;
         top: 0;
     }
+  }
+
+
+  #shuffle-btn {
+    border: 1px solid var(--color-hex-lightgold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
