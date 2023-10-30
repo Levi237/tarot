@@ -1,10 +1,10 @@
 import React, { useEffect, useState }   from 'react';
 import './Draw.css';
 
-import Deck                             from '../components/deck';
-import Layout                           from '../components/spread/Layout';
-import {ReactComponent as ShuffleIcon}  from '../components/svg/shuffle-icon.svg';
-import {ReactComponent as OrientationIcon}  from '../components/svg/orientation-icon.svg';
+import Deck                             from '../../components/deck';
+import Layout                           from '../../components/spread/Layout';
+import {ReactComponent as Shuffle}      from '../../components/svg/shuffle-icon.svg';
+import {ReactComponent as Orientation}  from '../../components/svg/orientation-icon.svg';
 
 // import { useNavigate }                  from 'react-router-dom';
 //==> Back button to return user to previous page
@@ -210,8 +210,8 @@ const DrawPage = ({deck, layout, viewCard}) => {
     return (
         <div className="draw-display">
             <div className="reading-menu">
-                <button id="shuffle-btn" className="btn"  onClick={shuffleBtn}>Shuffle Deck&nbsp;<ShuffleIcon/></button>
-                <button id="reverse-btn" className="btn"  onClick={toggleUprightOnly}>Upright Cards&nbsp;<OrientationIcon/></button>
+                <button id="shuffle-btn" className="btn"  onClick={shuffleBtn}>Shuffle Deck&nbsp;<Shuffle/></button>
+                <button id="reverse-btn" className="btn"  onClick={toggleUprightOnly}>Upright Cards&nbsp;<Orientation/></button>
                 {/* <button onClick={refreshDeck} className="invisible-btn---- small btn">REFRESH</button> */}
             </div>
             <Deck deck={newDeck} shuffleBtn={shuffleBtn} selectCard={selectCard} styleId='deal-deck'/>
