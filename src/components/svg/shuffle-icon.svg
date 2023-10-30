@@ -12,6 +12,7 @@
     <defs>
         <linearGradient 
             id="shuffle-gradient" 
+            className="linear-gradient" 
             x1="213.312" 
             y1="298.447" 
             x2="213.312" 
@@ -22,4 +23,7 @@
             <stop offset="1"/>
         </linearGradient>
     </defs>
+    <desc>
+        Shuffle Icon
+    </desc>
 </svg>

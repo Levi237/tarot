@@ -207,11 +207,16 @@ z
     padding: 8px 0 2px;
 }
   .reading-menu .btn {
-    border: 1px solid var(--color-hex-lightgold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3px 32px;
+      border: 2px solid var(--color-hex-darkgrey);
+      color: var(--color-hex-grey);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px 32px;
+      transition: border 1s ease;
+    }
+    .reading-menu .btn:hover {
+      border: 2px solid var(--color-hex-lightgold);
   }
   .reading-menu .btn svg {
     --length: 20px;
@@ -219,10 +224,29 @@ z
     height: var(--length);
   }
 
+  .linear-gradient > stop {
+    transition: .6s ease;
+  }
 
-  svg.shuffle-icon stop:first-of-type {
-    stop-color: #BF945D;
+  
+  #shuffle-gradient > stop,
+  #orientation-gradient_1 > stop:first-of-type,
+  #orientation-gradient_1 > stop:nth-of-type(2) {
+      stop-color: var(--color-hex-darkgold);
   }
-  svg.shuffle-icon stop:last-of-type {
-    stop-color: #E4C190;
+  #shuffle-gradient > stop,
+  #orientation-gradient_2 > stop:first-of-type,
+  #orientation-gradient_2 > stop:nth-of-type(2) {
+      stop-color: var(--color-hex-lightgold);
   }
+
+#shuffle-btn:hover .linear-gradient > stop:first-of-type,
+#reverse-btn:hover .linear-gradient > stop:first-of-type {
+    stop-color: var(--color-hex-black);
+}
+#shuffle-btn:hover .linear-gradient > stop:last-of-type,
+#reverse-btn:hover .linear-gradient > stop:last-of-type {
+    stop-color: var(--color-hex-grey);
+}
+
+
