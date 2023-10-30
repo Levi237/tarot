@@ -13,7 +13,7 @@ import Authentication                 from './components/authentication';
 import Header                         from './Header';
 
 import Account                        from './pages/Account';
-import Draw                           from './pages/reading/Draw';
+import Draw                           from './pages/reading';
 import HomePage                       from './pages/home';
 import Admin                          from './pages/Admin';
 import CardModal                      from './components/modals/CardModal';

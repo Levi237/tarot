@@ -1,5 +1,5 @@
 import React, { useEffect, useState }   from 'react';
-import './Draw.css';
+import './reading.css';
 
 import Deck                             from '../../components/deck';
 import Layout                           from '../../components/spread/Layout';
@@ -15,7 +15,7 @@ import {ReactComponent as Orientation}  from '../../components/svg/orientation-i
 //==> Insert 
 // onClick={goBack}
 
-const DrawPage = ({deck, layout, viewCard}) => {
+const Reading = ({deck, layout, viewCard}) => {
 
     //==> pass original deck and make new state of deal
     const [newDeck, setNewDeck] = useState([]);
@@ -229,4 +229,4 @@ const DrawPage = ({deck, layout, viewCard}) => {
     );
 };
 
-export default DrawPage;
+export default Reading;
