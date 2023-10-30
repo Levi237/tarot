@@ -1,7 +1,9 @@
 import React                        from 'react';
-import NavMenu                      from './components/nav';
+import { Routes, Route }            from 'react-router-dom';
+import * as routes                  from './constants/routes';
 import './Header.css';
 
+import NavMenu                      from './components/nav';
 import Dropdown                     from './components/dropdown/Dropdown';
 
 const Header = ({ user, clickSignOut, openSignIn, layout, layouts, selectLayout }) => {
@@ -13,17 +15,20 @@ const Header = ({ user, clickSignOut, openSignIn, layout, layouts, selectLayout 
 
             </section>
             <section>
-                { layout.id
-                ? <h4>{layout.name}</h4>
-                : <Dropdown 
-                    list={layouts} 
-                    defaultText={"Choose a Spread"}
-                    defaultValue={""}
-                    selectedData={layout}
-                    selectFunction={selectLayout} 
-                    defaultOption={true}
-                    />
-                }
+            <Routes>
+                <Route path={routes.DRAW} exact element={
+                    layout.id
+                    ? <><h4>{layout.name}</h4></>
+                    : <Dropdown 
+                        list={layouts} 
+                        defaultText={"Choose a Spread"}
+                        defaultValue={""}
+                        selectedData={layout}
+                        selectFunction={selectLayout} 
+                        defaultOption={true}
+                        />
+                } />
+                </Routes>
             </section>
             <section>
                 <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
