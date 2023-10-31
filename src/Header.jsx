@@ -10,26 +10,26 @@ const Header = ({ user, clearLayout, clickSignOut, openSignIn, layout, layouts, 
     return(
         <header>
             <section>
-                
                 <h3 className="header-title">Tarotfied</h3>
-
             </section>
+
             <section>
-            <Routes>
-                <Route path={routes.DRAW} exact element={
-                    layout.id
-                    ? <h4>{layout.name}</h4>
-                    : <Dropdown 
-                        list={layouts} 
-                        defaultText={"Choose a Spread"}
-                        defaultValue={""}
-                        selectedData={layout}
-                        selectFunction={selectLayout} 
-                        defaultOption={true}
-                        />
-                } />
+                <Routes>
+                    <Route path={routes.DRAW} exact element={
+                        layout.id
+                        ? <h4>{layout.name}</h4>
+                        : <Dropdown 
+                            list={layouts} 
+                            defaultText={"Choose a Spread"}
+                            defaultValue={""}
+                            selectedData={layout}
+                            selectFunction={selectLayout} 
+                            defaultOption={true}
+                            />
+                    } />
                 </Routes>
             </section>
+
             <section>
                 <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn} clearLayout={clearLayout}/>
             </section>

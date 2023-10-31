@@ -17,7 +17,7 @@ header {
       height: 80px;
       padding: 16px 16px 10px;
       grid-template-columns: 1fr 80px;
-      /* grid-template-rows: 1fr 1fr 1fr; */
+      grid-template-rows: auto auto;
       grid-template-areas: 'logo nav' 'mid mid';
     }
   }

@@ -55,8 +55,6 @@ const Reading = ({deck, layout, clearLayout, viewCard}) => {
         shuffleDeck();
         toggleDisplay();
         //==> shuffle options (shuffle vs reshuffle) for timing of display
-        
-
         if (reshuffle === true){
             //=> reshuffle click, delay until stack is complete
             setTimeout(() => {

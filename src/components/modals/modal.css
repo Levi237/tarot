@@ -29,25 +29,29 @@ Auth Modal
 .modal-container {
   background: white;
   display: inline-block;
-  /* padding: 32px; */
   box-shadow: 10px 9px 20px rgb(0 0 0 / 50%);
   width: calc(100vw - 40px);
-  /* height: calc(100vh - 80px); */
 }
-.cardmodal .modal-container {
-  height: calc(100dvh - 40px);
-  width: calc(100vw - 40px);
-  margin: 20px;
-  overflow: hidden;
+@media (min-width: 640px){
+  .cardmodal .modal-container {
+    height: calc(100dvh - 40px);
+    width: calc(100vw - 40px);
+    margin: 20px;
+    overflow: hidden;
+  }
 }
 
 .cardmodal .modal-container .card-info {
   overflow: scroll;
   padding-bottom: 80px;
+  flex-direction: column;
 }
 @media (max-width: 749px) {
   .cardmodal .modal-container {
     overflow: scroll;
+  }
+  .cardmodal .grid {
+    grid-template-columns: 1fr;
   }
   .cardmodal .modal-container .card-info {
     overflow: inherit;
