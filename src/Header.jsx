@@ -7,19 +7,6 @@ import NavMenu                              from './components/nav';
 import Dropdown                             from './components/dropdown/Dropdown';
 
 const Header = ({ user, clearLayout, clickSignOut, openSignIn, layout, layouts, selectLayout }) => {
-        //endable upright only
-        // const toggleUprightOnly = () => {
-        //     document.getElementById('reverse-btn').classList.toggle('toggle-reverse-btn');
-        //     if(document.querySelector('.spread-section')){
-        //         document.querySelector('.spread-section').classList.toggle('show-reverse-onclick');
-        //     }
-        //     if(document.querySelector('.reverse')){
-        //         document.querySelector('.reverse').classList.toggle('hide');
-        //     }
-        //     if(document.querySelector('.upright-hide')){
-        //         document.querySelector('.upright-hide').classList.toggle('show');
-        //     };
-        // };
     return(
         <header>
             <section>
