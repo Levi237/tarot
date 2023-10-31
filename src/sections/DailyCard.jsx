@@ -55,7 +55,7 @@ const DailyCard = ({deck, viewCard}) => {
         <p className="type">We come to these places in search of answers we already have.  It's just a matter of opening yourself up to seeing the signs right in front of you.</p>
         <p className="type">Explore our variety of spreads and have fun.</p>
         <br/>
-        <Link to={routes.DRAW}><h4 className="cta">Start Reading ➛</h4></Link>
+        <Link to={routes.READ}><h4 className="cta">Start Reading ➛</h4></Link>
       </div>
     );
   };

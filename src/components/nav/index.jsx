@@ -18,7 +18,7 @@ const NavMenu = ({user, clickSignOut, clearLayout, openSignIn}) => {
         <div id="nav-menu" className="hide-menu">
             <div>
                 <NavLink exact to={routes.ROOT} onClick={() => {toggleNavMenu(); clearLayout();}}>HOME</NavLink>
-                <NavLink to={routes.DRAW} onClick={toggleNavMenu}>READING</NavLink>
+                <NavLink to={routes.READ} onClick={toggleNavMenu}>READING</NavLink>
                 {/* { user.uid && <NavLink to={routes.ACCT} onClick={toggleNavMenu} >ACCOUNT</NavLink> } */}
                 {/* { user.uid ? <button className="signout-" onClick={()=>{clickSignOut();toggleNavMenu();}}>Sign Out</button> : <button id="login-btn"  onClick={()=>{openSignIn();toggleNavMenu();}} >Login</button> } */}
             </div>

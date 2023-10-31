@@ -322,7 +322,7 @@ const App = () => {
       />
 
       <Routes>
-          <Route path={routes.DRAW} exact element={
+          <Route path={routes.READ} exact element={
             <Reading 
               deck={deck}
               layouts={layouts}
