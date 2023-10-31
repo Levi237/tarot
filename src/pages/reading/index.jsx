@@ -142,14 +142,14 @@ const Reading = ({deck, layout, viewCard}) => {
         const toggleUprightOnly = () => {
             document.getElementById('orientation-btn').classList.toggle('toggle-orientation-btn');
             if(document.querySelector('.spread-section')){
-                document.querySelector('.spread-section').classList.toggle('show-orientation-onclick');
+                document.querySelector('.spread-section').classList.toggle('toggle-orientation');
             }
-            if(document.querySelector('.orientation')){
-                document.querySelector('.orientation').classList.toggle('hide');
-            }
-            if(document.querySelector('.upright-hide')){
-                document.querySelector('.upright-hide').classList.toggle('show');
-            };
+            // if(document.querySelector('.orientation')){
+            //     document.querySelector('.orientation').classList.toggle('hide');
+            // }
+            // if(document.querySelector('.upright-hide')){
+            //     document.querySelector('.upright-hide').classList.toggle('show');
+            // };
         };
 
     // const handText = hand.map((card, key) => {
