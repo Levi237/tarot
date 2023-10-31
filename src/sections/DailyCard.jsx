@@ -50,7 +50,7 @@ const DailyCard = ({deck, viewCard}) => {
   const Content = () => {
     return (
       <div>
-        <h2 className="title">Tarot To Me</h2>
+        <h2 className="title">Tarotfied</h2>
         <h4 className="subtitle">"A question never asked is never answered."</h4>
         <p className="type">We come to these places in search of answers we already have.  It's just a matter of opening yourself up to seeing the signs right in front of you.</p>
         <p className="type">Explore our variety of spreads and have fun.</p>

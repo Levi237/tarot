@@ -24,7 +24,7 @@ const Header = ({ user, clearLayout, clickSignOut, openSignIn, layout, layouts, 
         <header>
             <section>
                 
-                <h3 className="header-title">Tarot To Me</h3>
+                <h3 className="header-title">Tarotfied</h3>
 
             </section>
             <section>
