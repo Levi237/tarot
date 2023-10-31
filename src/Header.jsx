@@ -6,7 +6,7 @@ import './Header.css';
 import NavMenu                              from './components/nav';
 import Dropdown                             from './components/dropdown/Dropdown';
 
-const Header = ({ user, clickSignOut, openSignIn, layout, layouts, selectLayout }) => {
+const Header = ({ user, clearLayout, clickSignOut, openSignIn, layout, layouts, selectLayout }) => {
         //endable upright only
         // const toggleUprightOnly = () => {
         //     document.getElementById('reverse-btn').classList.toggle('toggle-reverse-btn');
@@ -44,7 +44,7 @@ const Header = ({ user, clickSignOut, openSignIn, layout, layouts, selectLayout 
                 </Routes>
             </section>
             <section>
-                <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn}/>
+                <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn} clearLayout={clearLayout}/>
             </section>
         </header>
     );

@@ -313,6 +313,7 @@ const App = () => {
 
       <Header 
         user={user} 
+        clearLayout={clearLayout}
         clickSignOut={clickSignOut} 
         openSignIn={openSignIn} 
         layout={layout}
