@@ -6,12 +6,15 @@
   @media only screen and (max-width: 639px){
     .flip-card {
       --img-width: 90vw;
+      --img-max-width: 320px;
     }
   }
   .flip-card {
     background-color: transparent;
     width: calc( var(--img-width) * 1);
     height: calc( var(--img-width) * 1.72);
+    max-width: calc( var(--img-max-width) * 1);
+    max-height: calc( var(--img-max-width) * 1.72);
     perspective: 1000px;
   }
   
