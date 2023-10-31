@@ -5,6 +5,7 @@ import Deck                                 from '../../components/deck';
 import Layout                               from '../../components/spread/Layout';
 import {ReactComponent as ShuffleIcon}      from '../../components/svg/shuffle-icon.svg';
 import {ReactComponent as OrientationIcon}  from '../../components/svg/orientation-icon.svg';
+import {ReactComponent as RefreshIcon}      from '../../components/svg/restart-icon.svg';
 // import { useNavigate }                  from 'react-router-dom';
 //==> Back button to return user to previous page
 // const navigate = useNavigate();
@@ -138,20 +139,16 @@ const Reading = ({deck, layout, viewCard}) => {
         };
     };
 
-        //endable upright only
-        const toggleUprightOnly = () => {
+        // toggle card orientation
+        const toggleOrientation = () => {
             document.getElementById('orientation-btn').classList.toggle('toggle-orientation-btn');
             if(document.querySelector('.spread-section')){
                 document.querySelector('.spread-section').classList.toggle('toggle-orientation');
             }
-            // if(document.querySelector('.orientation')){
-            //     document.querySelector('.orientation').classList.toggle('hide');
-            // }
-            // if(document.querySelector('.upright-hide')){
-            //     document.querySelector('.upright-hide').classList.toggle('show');
-            // };
         };
-
+        const refreshReading = () => {
+    // refresh the layout selection, and deck
+        }
     // const handText = hand.map((card, key) => {
     //     // Scroll into function
     //     // When user clicks on new card for reading, 
@@ -213,12 +210,13 @@ const Reading = ({deck, layout, viewCard}) => {
 
                 </section>
                 <section>
-                    <button id="shuffle-btn" className="btn"  onClick={shuffleBtn}>Shuffle Deck&nbsp;<ShuffleIcon/></button>
+                    <button id="shuffle-btn" className="btn" title="shuffle deck" onClick={shuffleBtn}>Shuffle Deck&nbsp;<ShuffleIcon/></button>
                 </section>
                 <section>
-                    <button id="orientation-btn" className="btn icon" title="card orientation" onClick={toggleUprightOnly}><OrientationIcon/></button>
+                    <button id="orientation-btn" className="btn icon" title="card orientation" onClick={toggleOrientation}><OrientationIcon/></button>
+                    <button id="refresh-btn" className="btn icon" title="refresh reading" onClick={refreshReading}><RefreshIcon/></button>
+                   
                 </section>
-                {/* <button onClick={refreshDeck} className="invisible-btn---- small btn">REFRESH</button> */}
             </div>
             <Deck deck={newDeck} shuffleBtn={shuffleBtn} selectCard={selectCard} styleId='deal-deck'/>
             <div id="reading-window_id" className='reading-window'>

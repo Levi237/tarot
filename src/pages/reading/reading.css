@@ -236,12 +236,6 @@ z
 }
 
 
-/* Show Upright ONLY -OR- Upright & Reverse */
-
-/* .toggle-orientation-btn {
-    opacity: .5;
-  } */
-
 /* Style Shuffle button with hover */
 #shuffle-gradient stop:last-of-type {
     stop-color: var(--color-hex-black);
@@ -249,12 +243,13 @@ z
 #shuffle-gradient stop:first-of-type {
     stop-color: var(--color-hex-lightgrey);
 }
-
+.linear-gradient stop:first-of-type,
 #orientation-gradient_1 stop:last-of-type,
 #orientation-gradient_2 stop:first-of-type,
 .btn:hover #shuffle-gradient stop:last-of-type {
     stop-color: var(--color-hex-darkgold)!important;
 }
+.linear-gradient stop:last-of-type,
 #orientation-gradient_1 stop:first-of-type,
 #orientation-gradient_2 stop:last-of-type ,
 .btn:hover #shuffle-gradient stop:first-of-type {
