@@ -139,7 +139,7 @@ const Reading = ({deck, layout, clearLayout, viewCard}) => {
         };
     };
 
-        // toggle card orientation
+
         const toggleOrientation = () => {
             document.getElementById('orientation-btn').classList.toggle('toggle-orientation-btn');
             if(document.querySelector('.spread-section')){
@@ -147,7 +147,6 @@ const Reading = ({deck, layout, clearLayout, viewCard}) => {
             }
         };
         const refreshReading = () => {
-    // refresh the layout selection, and deck
             setHand([]);
             clearLayout();
         }

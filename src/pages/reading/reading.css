@@ -200,6 +200,7 @@ z
 .reading-menu {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'left shuffle tools';
     align-items: center;
     justify-content: center;
     gap: 6px;
@@ -211,13 +212,27 @@ z
 }
 .reading-menu > section:first-of-type {
     justify-content: flex-start;
+    grid-area: left;
 }
 .reading-menu > section:nth-of-type(2) {
     justify-content: center;
+    grid-area: shuffle;
 }
 .reading-menu > section:nth-of-type(3) {
     justify-content: flex-end;
+    grid-area: tools;
 }
+@media (max-width: 649px){
+    .reading-menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'shuffle' 'tools';
+    }
+    .reading-menu > section:first-of-type {
+        display: none;
+    }
+}
+
 .reading-menu .btn {
     border: 2px solid var(--color-hex-darkgrey);
     color: var(--color-hex-grey);
