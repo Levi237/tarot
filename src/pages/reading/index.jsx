@@ -1,11 +1,10 @@
 import React, { useEffect, useState }   from 'react';
 import './reading.css';
 
-import Deck                             from '../../components/deck';
-import Layout                           from '../../components/spread/Layout';
-import {ReactComponent as Shuffle}      from '../../components/svg/shuffle-icon.svg';
-import {ReactComponent as Orientation}  from '../../components/svg/orientation-icon.svg';
-
+import Deck                                 from '../../components/deck';
+import Layout                               from '../../components/spread/Layout';
+import {ReactComponent as ShuffleIcon}      from '../../components/svg/shuffle-icon.svg';
+import {ReactComponent as OrientationIcon}  from '../../components/svg/orientation-icon.svg';
 // import { useNavigate }                  from 'react-router-dom';
 //==> Back button to return user to previous page
 // const navigate = useNavigate();
@@ -139,19 +138,19 @@ const Reading = ({deck, layout, viewCard}) => {
         };
     };
 
-    //endable upright only
-    const toggleUprightOnly = () => {
-        document.getElementById('reverse-btn').classList.toggle('toggle-reverse-btn');
-        if(document.querySelector('.spread-section')){
-            document.querySelector('.spread-section').classList.toggle('show-reverse-onclick');
-        }
-        if(document.querySelector('.reverse')){
-            document.querySelector('.reverse').classList.toggle('hide');
-        }
-        if(document.querySelector('.upright-hide')){
-            document.querySelector('.upright-hide').classList.toggle('show');
+        //endable upright only
+        const toggleUprightOnly = () => {
+            document.getElementById('orientation-btn').classList.toggle('toggle-orientation-btn');
+            if(document.querySelector('.spread-section')){
+                document.querySelector('.spread-section').classList.toggle('show-orientation-onclick');
+            }
+            if(document.querySelector('.orientation')){
+                document.querySelector('.orientation').classList.toggle('hide');
+            }
+            if(document.querySelector('.upright-hide')){
+                document.querySelector('.upright-hide').classList.toggle('show');
+            };
         };
-    };
 
     // const handText = hand.map((card, key) => {
     //     // Scroll into function
@@ -193,7 +192,7 @@ const Reading = ({deck, layout, viewCard}) => {
     //                 <ul>{mapKeys}</ul>
     //             </div>
 
-    //             <div className={(card.rotation === 1) ? 'reverse' : 'reverse-hide'}>
+    //             <div className={(card.rotation === 1) ? 'orientation' : 'orientation-hide'}>
     //                 <h4>Reverse Keys</h4>
     //                 <ul>{mapRevKeys}</ul>
     //             </div>
@@ -210,8 +209,15 @@ const Reading = ({deck, layout, viewCard}) => {
     return (
         <div className="draw-display">
             <div className="reading-menu">
-                <button id="shuffle-btn" className="btn"  onClick={shuffleBtn}>Shuffle Deck&nbsp;<Shuffle/></button>
-                <button id="reverse-btn" className="btn"  onClick={toggleUprightOnly}>Upright Cards&nbsp;<Orientation/></button>
+                <section>
+
+                </section>
+                <section>
+                    <button id="shuffle-btn" className="btn"  onClick={shuffleBtn}>Shuffle Deck&nbsp;<ShuffleIcon/></button>
+                </section>
+                <section>
+                    <button id="orientation-btn" className="btn icon" title="card orientation" onClick={toggleUprightOnly}><OrientationIcon/></button>
+                </section>
                 {/* <button onClick={refreshDeck} className="invisible-btn---- small btn">REFRESH</button> */}
             </div>
             <Deck deck={newDeck} shuffleBtn={shuffleBtn} selectCard={selectCard} styleId='deal-deck'/>

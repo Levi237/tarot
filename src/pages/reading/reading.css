@@ -113,13 +113,13 @@ z
     }
 }
 
-.reading-window .reverse-hide {
+.reading-window .orientation-hide {
     display: none;
 }
 .reading-window .upright-hide {
     display: none;
 }
-.reading-window .reverse.hide {
+.reading-window .orientation.hide {
     display: none;
 }
 .reading-window .upright-hide.show {
@@ -183,9 +183,7 @@ z
     transition: transform .3 ease;
   }
 
-.toggle-reverse-btn {
-    opacity: .5;
-  }
+
   @media (max-width: 749px) {  
     #ham-menu {
         background: #fff;
@@ -200,53 +198,72 @@ z
   }
 
 .reading-menu {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    padding: 8px 0 2px;
+    padding: 8px 40px 2px;
+    width: calc(100% - 80px);
 }
-  .reading-menu .btn {
-      border: 2px solid var(--color-hex-darkgrey);
-      color: var(--color-hex-grey);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 3px 32px;
-      transition: border 1s ease;
-    }
-    .reading-menu .btn:hover {
-      border: 2px solid var(--color-hex-lightgold);
-  }
-  .reading-menu .btn svg {
-    --length: 20px;
-    width: var(--length);
-    height: var(--length);
-  }
+.reading-menu > section {
+    display: flex;
+}
+.reading-menu > section:first-of-type {
+    justify-content: flex-start;
+}
+.reading-menu > section:nth-of-type(2) {
+    justify-content: center;
+}
+.reading-menu > section:nth-of-type(3) {
+    justify-content: flex-end;
+}
+.reading-menu .btn {
+    border: 2px solid var(--color-hex-darkgrey);
+    color: var(--color-hex-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 32px;
+    transition: border 1s ease;
+}
+.reading-menu {
+    /* border: 2px solid var(--color-hex-lightgold); */
+}
 
-  .linear-gradient > stop {
+.linear-gradient stop {
     transition: .6s ease;
-  }
+}
 
-  
-  #shuffle-gradient > stop,
-  #orientation-gradient_1 > stop:first-of-type,
-  #orientation-gradient_1 > stop:nth-of-type(2) {
-      stop-color: var(--color-hex-darkgold);
-  }
-  #shuffle-gradient > stop,
-  #orientation-gradient_2 > stop:first-of-type,
-  #orientation-gradient_2 > stop:nth-of-type(2) {
-      stop-color: var(--color-hex-lightgold);
-  }
 
-#shuffle-btn:hover .linear-gradient > stop:first-of-type,
-#reverse-btn:hover .linear-gradient > stop:first-of-type {
+/* Show Upright ONLY -OR- Upright & Reverse */
+
+/* .toggle-orientation-btn {
+    opacity: .5;
+  } */
+
+/* Style Shuffle button with hover */
+#shuffle-gradient stop:last-of-type {
     stop-color: var(--color-hex-black);
 }
-#shuffle-btn:hover .linear-gradient > stop:last-of-type,
-#reverse-btn:hover .linear-gradient > stop:last-of-type {
-    stop-color: var(--color-hex-grey);
+#shuffle-gradient stop:first-of-type {
+    stop-color: var(--color-hex-lightgrey);
 }
 
+#orientation-gradient_1 stop:last-of-type,
+#orientation-gradient_2 stop:first-of-type,
+.btn:hover #shuffle-gradient stop:last-of-type {
+    stop-color: var(--color-hex-darkgold)!important;
+}
+#orientation-gradient_1 stop:first-of-type,
+#orientation-gradient_2 stop:last-of-type ,
+.btn:hover #shuffle-gradient stop:first-of-type {
+    stop-color: var(--color-hex-lightgold)!important;
+}
 
+.toggle-orientation-btn #orientation-gradient_2 stop:first-of-type {
+    stop-color: var(--color-hex-black)!important;
+}
+.toggle-orientation-btn #orientation-gradient_2 stop:last-of-type {
+    stop-color: var(--color-hex-lightgrey)!important;
+}

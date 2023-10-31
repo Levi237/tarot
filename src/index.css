@@ -7,8 +7,9 @@
   --color-hex-burgundy: #1f000c;
   --color-hex-black: #110C0E;
   --color-hex-darkgrey: #1F1E1F;
-  --color-hex-grey: #403F40;
-  --color-hex-lightgrey: #E1E0E0;
+  --color-hex-grey: #555355;
+  --color-hex-lightgrey: hsl(300, 1%, 50%);
+  --color-hex-lightestgrey: hsl(300, 1%, 90%);
   --color-hex-white: #F6F5F4;
   --color-hex-lightgold: #E4C190;
   --color-hex-darkgold: #BF945D;
@@ -18,8 +19,9 @@
   --color-hsl-burgundy: 337, 100%, 6%;
   --color-hsl-black: 336, 17%, 6%;
   --color-hsl-darkgrey: 300, 2%, 12%;
-  --color-hsl-grey: 300, 1%, 25%;
-  --color-hsl-lightgrey: 0, 2%, 88%;
+  --color-hsl-grey: 300, 1%, 33%;
+  --color-hsl-lightgrey: 300, 1%, 50%;
+  --color-hsl-lightestgrey: 300, 1%, 90%;
   --color-hsl-white: 30, 10%, 96%;
   --color-hsl-lightgold: 35, 61%, 73%;
   --color-hsl-darkgold: 34, 43%, 56%;
@@ -266,5 +268,13 @@ a {
   color: var(--color-hex-lightgold);
 }
 
+.btn svg {
+  --length: 24px;
+  width: var(--length);
+  height: var(--length);
+}
 
-
+.btn.icon {
+  border: none!important;
+  padding: 0!important;
+}
