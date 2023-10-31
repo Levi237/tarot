@@ -15,7 +15,7 @@ import {ReactComponent as RefreshIcon}      from '../../components/svg/restart-i
 //==> Insert 
 // onClick={goBack}
 
-const Reading = ({deck, layout, viewCard}) => {
+const Reading = ({deck, layout, clearLayout, viewCard}) => {
 
     //==> pass original deck and make new state of deal
     const [newDeck, setNewDeck] = useState([]);
@@ -148,6 +148,8 @@ const Reading = ({deck, layout, viewCard}) => {
         };
         const refreshReading = () => {
     // refresh the layout selection, and deck
+            setHand([]);
+            clearLayout();
         }
     // const handText = hand.map((card, key) => {
     //     // Scroll into function

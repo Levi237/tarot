@@ -278,3 +278,6 @@ a {
   border: none!important;
   padding: 0!important;
 }
+.btn.icon + .btn.icon {
+  padding-left: 14px!important;
+}

@@ -234,8 +234,15 @@ z
 .linear-gradient stop {
     transition: .6s ease;
 }
-
-
+#orientation-btn {
+    cursor: ns-resize;
+}
+#orientation-btn.toggle-orientation-btn {
+    cursor: n-resize;
+}
+#refresh-btn {
+    cursor: alias;
+}
 /* Style Shuffle button with hover */
 #shuffle-gradient stop:last-of-type {
     stop-color: var(--color-hex-black);

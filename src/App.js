@@ -13,11 +13,11 @@ import Authentication                 from './components/authentication';
 import Header                         from './Header';
 
 import Account                        from './pages/Account';
-import Draw                           from './pages/reading';
+import Reading                           from './pages/reading';
 import HomePage                       from './pages/home';
 import Admin                          from './pages/Admin';
 import CardModal                      from './components/modals/CardModal';
-import Hamburger                      from './components/nav/hamburger';
+// import Hamburger                      from './components/nav/hamburger';
 
 const App = () => {
 
@@ -282,7 +282,9 @@ const App = () => {
       setLayout([]);
     }
   };
-
+  const clearLayout = () => {
+    setLayout([]);
+  }
   const viewCard = (e, data, layout) => {
 
     setCard(data);
@@ -320,11 +322,11 @@ const App = () => {
 
       <Routes>
           <Route path={routes.DRAW} exact element={
-            <Draw 
+            <Reading 
               deck={deck}
               layouts={layouts}
               layout={layout}
-              selectLayout={selectLayout}
+              clearLayout={clearLayout}
               viewCard={viewCard}
             />
             } />
