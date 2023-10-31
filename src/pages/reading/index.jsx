@@ -207,13 +207,13 @@ const Reading = ({deck, layout, clearLayout, viewCard}) => {
     return (
         <div className="draw-display">
             <div className="reading-menu">
-                <section>
+                <section className="blank">
 
                 </section>
-                <section>
+                <section className="shuffle">
                     <button id="shuffle-btn" className="btn" title="shuffle deck" onClick={shuffleBtn}>Shuffle Deck&nbsp;<ShuffleIcon/></button>
                 </section>
-                <section>
+                <section className="tools">
                     <button id="orientation-btn" className="btn icon" title="card orientation" onClick={toggleOrientation}><OrientationIcon/></button>
                     <button id="refresh-btn" className="btn icon" title="refresh reading" onClick={refreshReading}><RefreshIcon/></button>
                    

@@ -210,15 +210,15 @@ z
 .reading-menu > section {
     display: flex;
 }
-.reading-menu > section:first-of-type {
+.reading-menu > section.blank {
     justify-content: flex-start;
     grid-area: left;
 }
-.reading-menu > section:nth-of-type(2) {
+.reading-menu > section.shuffle {
     justify-content: center;
     grid-area: shuffle;
 }
-.reading-menu > section:nth-of-type(3) {
+.reading-menu > section.tools {
     justify-content: flex-end;
     grid-area: tools;
 }
@@ -226,9 +226,9 @@ z
     .reading-menu {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: 'shuffle' 'tools';
+        grid-template-areas: 'shuffle tools';
     }
-    .reading-menu > section:first-of-type {
+    .reading-menu > section.blank {
         display: none;
     }
 }
