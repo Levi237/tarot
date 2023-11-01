@@ -8,15 +8,18 @@ import Dropdown                             from './components/dropdown/Dropdown
 
 const Header = ({ user, clearLayout, clickSignOut, openSignIn, layout, layouts, selectLayout }) => {
     // Use page location to specify headery styles
-    const location = useLocation().pathname.replace('/','');
+    let location = useLocation().pathname.replace('/','');
+    if (!location) {
+        location = 'home';
+    }
 
     return(
-        <header classsName={`${location}-location`}>
-            <section>
+        <header className={`${location}`}>
+            <section className="section-1">
                 <h3 className="header-title">Tarotfied</h3>
             </section>
 
-            <section>
+            <section className="section-2">
                 <Routes>
                     <Route path={routes.READ} exact element={
                         layout.id
@@ -33,7 +36,7 @@ const Header = ({ user, clearLayout, clickSignOut, openSignIn, layout, layouts, 
                 </Routes>
             </section>
 
-            <section>
+            <section className="section-3">
                 <NavMenu user={user} clickSignOut={clickSignOut} openSignIn={openSignIn} clearLayout={clearLayout}/>
             </section>
         </header>
