@@ -114,13 +114,14 @@ button.close-modal-btn {
     margin: 40px auto;
     max-height: 680px;
     height: 100%;
+    max-width: 90%;
 }
 .cardmodal .grid > section:last-of-type {
   padding-left: 40px;
   padding-right: 40px;
 }
 
-@media only screen and (min-width: 750px) {
+/* @media only screen and (min-width: 750px) { */
     .cardmodal ul.two-col-ul {
         -moz-column-count: 2;
         -moz-column-gap: 32px;
@@ -129,8 +130,8 @@ button.close-modal-btn {
         column-count: 2;
         column-gap: 32px;
     }
-  }
-  @media only screen and (min-width: 1000px) {
+  /* } */
+  /* @media only screen and (min-width: 1000px) {
     .cardmodal ul.two-col-ul {
         -moz-column-count: 3;
         -moz-column-gap: 32px;
@@ -139,7 +140,7 @@ button.close-modal-btn {
         column-count: 3;
         column-gap: 32px;
     }
-  }
+  } */
   @media only screen and (max-width: 749px) {
     .cardmodal .grid > section:first-of-type {
         height: auto;
@@ -168,6 +169,7 @@ button.close-modal-btn {
     margin-top: 12px;
     font-size: 16px;
     font-weight: 300;
+    line-height: 140%;
   }
 
   .cardmodal ul {
@@ -180,9 +182,9 @@ button.close-modal-btn {
     /* list-style-position: inside; */
   }
 
-  .card-info .header {
+  /* .card-info .header {
     margin-bottom: 24px;
-  }
+  } */
   .cardmodal .card-info .element {
     text-transform: capitalize;
   }
