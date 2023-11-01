@@ -334,7 +334,8 @@ const App = () => {
           <Route path={routes.ACCT} exact element={
             <Account />
           }/>
-          <Route path={routes.ROOT} exact element={
+
+          <Route path={routes.ROOT} element={
             <HomePage 
               deck={deck}
               layouts={layouts}
@@ -343,9 +344,6 @@ const App = () => {
               viewCard={viewCard}
             />
           }/>
-          <Route path={routes.ROOT} element={
-            <>wrong url</>
-            }/>
         </Routes>
       { (user.uid === `${process.env.REACT_APP_ADMIN_ID}`) && <Admin /> }
     </div>
