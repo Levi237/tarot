@@ -68,7 +68,7 @@ const DailyCard = ({deck, viewCard}) => {
 
         <div className="grid">
           <section className={(card.default && deck.length > 1) && "live"}>
-            <FlipCard card={card} pickRandomCard={pickRandomCard}/>
+            <FlipCard card={card} pickRandomCard={pickRandomCard} viewCard={viewCard}/>
           </section>
           <section className="desktop-only desktop-content">
             <Content/>
